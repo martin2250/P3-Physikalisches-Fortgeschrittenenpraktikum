@@ -1,0 +1,34 @@
+\newcommand{\praktikum}{P3}
+\newcommand{\semester}{WS17/18}
+
+\newcommand{\wochentag}{Mo}
+\newcommand{\gruppennr}{XX}
+
+\newcommand{\nachnamea}{Elicabuk}
+\newcommand{\vornamea}{Umut}
+\newcommand{\nachnameb}{Pittermann}
+\newcommand{\vornameb}{Martin}
+
+\input{../common/emails.tex}
+
+\hyphenation
+{
+	über-nom-me-nen
+	an-ge-ge-be-nen
+}
+
+\newcommand{\maketitlepage}
+{
+	\begingroup \let\clearpage\relax
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\endgroup
+}
+
+\newcommand{\configureappendix}
+{
+	\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
+}
+
+\newcommand{\s}[1]{\ensuremath{_\text{#1}}}
