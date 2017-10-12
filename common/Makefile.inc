@@ -31,7 +31,8 @@ share: build
 	@echo
 
 ../common/emails.tex:
-	printf '\\newcommand{\\emailadressen}{TODO: umut@dick.butt, martin@dick.butt}' > ../common/emails.tex
+	printf '\\newcommand{\\emailA}{TODO: umut@dick.butt}' > ../common/emails.tex
+	printf '\\newcommand{\\emailB}{TODO: martin@dick.butt}' >> ../common/emails.tex
 
 img/%.pdf: img/%.svg
 	inkscape $< --export-pdf=$@
