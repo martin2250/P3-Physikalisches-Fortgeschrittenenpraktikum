@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="450"
+   height="400"
+   id="svg8725">
+  <title
+     id="title8727">Cherenkov radiation (a kind of shock wave)</title>
+  <defs
+     id="defs8791">
+    <linearGradient
+       id="linearGradient3229">
+      <stop
+         id="stop3231"
+         style="stop-color:#00517e;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3233"
+         style="stop-color:#000000;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <path
+       d="M 160,220 360,70"
+       id="ray"
+       style="fill:#000000;stroke:#000000" />
+    <clipPath
+       id="clipPath11835">
+      <path
+         d="m 126,152 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+         id="path11837"
+         style="fill:none;stroke:#b22222;stroke-width:2;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+    <clipPath
+       id="clipPath11831">
+      <path
+         d="m 126,152 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+         transform="matrix(1.3067618,0,0,0.9582726,-44.197896,-2.990612)"
+         id="path11833"
+         style="fill:none;stroke:#b22222;stroke-width:1.78725791;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient11823"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <path
+       d="M 160,220 360,70"
+       id="path13271"
+       style="fill:#000000;stroke:#000000" />
+    <linearGradient
+       id="linearGradient11817">
+      <stop
+         id="stop11819"
+         style="stop-color:#b22222;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop11821"
+         style="stop-color:#b22222;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient13297"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient13307"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <clipPath
+       id="clipPath14374">
+      <path
+         d="m 126,152 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+         id="path14376"
+         style="fill:none;stroke:#b22222;stroke-width:2;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+    <clipPath
+       id="clipPath14370">
+      <path
+         d="m 126,152 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+         transform="matrix(1.3067618,0,0,0.9582726,-44.197896,-2.990612)"
+         id="path14372"
+         style="fill:none;stroke:#b22222;stroke-width:1.78725791;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient14368"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <path
+       d="M 160,220 360,70"
+       id="path14362"
+       style="fill:#000000;stroke:#000000" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient14392"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <clipPath
+       id="clipPath16500">
+      <path
+         d="m 126,152 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+         id="path16502"
+         style="fill:none;stroke:#b22222;stroke-width:2;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+    <clipPath
+       id="clipPath16496">
+      <path
+         d="m 126,152 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+         transform="matrix(1.3067618,0,0,0.9582726,-44.197896,-2.990612)"
+         id="path16498"
+         style="fill:none;stroke:#b22222;stroke-width:1.78725791;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+    <path
+       d="M 160,220 360,70"
+       id="path16490"
+       style="fill:#000000;stroke:#000000" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient16554"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="80.256622"
+       y1="9.3099833"
+       x2="274.35742"
+       y2="9.3099833"
+       id="linearGradient4218"
+       xlink:href="#linearGradient3229"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9989939,-0.04484673,0.04484673,0.9989939,-0.243408,7.9831047)" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5199"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5211"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5223"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5235"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5247"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5259"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5271"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5283"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5295"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5307"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5319"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5331"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5343"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5355"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5367"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5379"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5391"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5403"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5415"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5427"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5439"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5451"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5463"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5475"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="110"
+       y1="130.75"
+       x2="110"
+       y2="148.25"
+       id="linearGradient5487"
+       xlink:href="#linearGradient11817"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     transform="translate(2.8271479,8)"
+     id="g2955">
+    <text
+       x="75"
+       y="24"
+       id="text2943"
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+         x="75"
+         y="24"
+         id="tspan2945">60</tspan></text>
+    <text
+       x="75"
+       y="39"
+       id="text2947"
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+         x="75"
+         y="39"
+         id="tspan2949">27</tspan></text>
+    <text
+       x="97"
+       y="38.5"
+       id="text2951"
+       xml:space="preserve"
+       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+         x="97"
+         y="38.5"
+         id="tspan2953">Co</tspan></text>
+  </g>
+  <g
+     transform="matrix(0,1,-1,0,305.28571,321.85714)"
+     id="layer1-1"
+     style="fill:#a40000;stroke:#a40000">
+    <path
+       d="m 15.142857,18.285714 0,4 8,-2 -8,-2 z"
+       id="path2444-7"
+       style="fill:#a40000;fill-opacity:1;stroke:#a40000;stroke-width:2.00000024;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  </g>
+  <g
+     transform="translate(1.1964509,-3)"
+     id="g3230">
+    <text
+       x="308"
+       y="370.5"
+       id="text2943-7"
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+         x="308"
+         y="370.5"
+         id="tspan2945-4">60</tspan></text>
+    <text
+       x="308"
+       y="384.5"
+       id="text2947-0"
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+         x="308"
+         y="384.5"
+         id="tspan2949-9">28</tspan></text>
+    <text
+       x="330"
+       y="385"
+       id="text2951-4"
+       xml:space="preserve"
+       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+         x="330"
+         y="385"
+         id="tspan2953-8">Ni</tspan></text>
+  </g>
+  <text
+     x="230"
+     y="75"
+     id="text3003"
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#204a87;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+       x="230"
+       y="75"
+       id="tspan3005">0.31 MeV</tspan></text>
+  <text
+     x="265"
+     y="152"
+     id="text3007"
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#a40000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+       x="265"
+       y="152"
+       id="tspan3009">1.1732 MeV</tspan></text>
+  <text
+     x="290"
+     y="279"
+     id="text3011"
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#a40000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+       x="290"
+       y="279"
+       id="tspan3013">1.3325 MeV</tspan></text>
+  <text
+     x="47.5"
+     y="150"
+     id="text3015"
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#204a87;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+       x="47.5"
+       y="150"
+       id="tspan3017">1.48 MeV</tspan></text>
+  <text
+     x="19.79899"
+     y="77.559311"
+     id="text3019"
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+       x="19.79899"
+       y="77.559311"
+       id="tspan3021">5.272 a</tspan></text>
+  <path
+     d="M 237.61719,86.139258 135.23417,57.937094 235,200"
+     id="path3023"
+     style="fill:none;stroke:#204a87;stroke-width:2" />
+  <g
+     transform="matrix(0.57347562,0.81922263,-0.81922263,0.57347562,242.67231,175.53462)"
+     id="layer1"
+     style="fill:#204a87;stroke:#204a87">
+    <path
+       d="m 15.142857,18.285714 0,4 8,-2 -8,-2 z"
+       id="path2444"
+       style="fill:#204a87;fill-opacity:1;stroke:#204a87;stroke-width:2.00000024;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  </g>
+  <g
+     transform="matrix(0.96221429,0.27229336,-0.27229336,0.96221429,220.87247,60.31841)"
+     id="layer1-2"
+     style="fill:#204a87;stroke:#204a87;stroke-width:1">
+    <path
+       d="m 15.142857,18.285714 0,4 8,-2 -8,-2 z"
+       id="path2444-4"
+       style="fill:#204a87;fill-opacity:1;stroke:#204a87;stroke-width:2.00000024;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  </g>
+  <path
+     d="M 260,87.5 260,205"
+     id="path3067"
+     style="fill:#204a87;fill-opacity:1;stroke:#a40000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <path
+     d="M 284.86174,208.64183 285,340"
+     id="path3069"
+     style="fill:#204a87;fill-opacity:1;stroke:#a40000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <path
+     d="m 238.14286,87 199.79628,0 0,0"
+     id="path6214"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-width:2.1370008;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <path
+     d="m 237.63523,345.0685 199.79627,0 0,0"
+     id="path6841"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-width:2.1370008;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <g
+     transform="matrix(0,1,-1,0,280.28571,184.85714)"
+     id="layer1-1-1"
+     style="fill:#a40000;stroke:#a40000">
+    <path
+       d="m 15.142857,18.285714 0,4 8,-2 -8,-2 z"
+       id="path2444-7-1"
+       style="fill:#a40000;fill-opacity:1;stroke:#a40000;stroke-width:2.00000024;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  </g>
+  <path
+     d="m 237.63523,208.0685 199.79627,0 0,0"
+     id="path6812"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-width:2.1370008;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <text
+     x="400"
+     y="152"
+     id="text3138"
+     xml:space="preserve"
+     style="font-size:20px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#a40000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Italic"><tspan
+       x="400"
+       y="152"
+       id="tspan3140">γ</tspan></text>
+  <text
+     x="420"
+     y="279"
+     id="text3138-5"
+     xml:space="preserve"
+     style="font-size:20px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#a40000;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Italic"><tspan
+       x="420"
+       y="279"
+       id="tspan3140-2">γ</tspan></text>
+  <text
+     x="155.5"
+     y="150"
+     id="text3167"
+     xml:space="preserve"
+     style="font-size:20px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#204a87;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Italic"><tspan
+       x="155.5"
+       y="150"
+       id="tspan3169">β</tspan></text>
+  <path
+     d="m 168.50936,136.11122 15,0"
+     id="path3171"
+     style="fill:none;stroke:#204a87;stroke-width:2" />
+  <text
+     x="342"
+     y="75"
+     id="text3167-7"
+     xml:space="preserve"
+     style="font-size:20px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#204a87;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Italic"><tspan
+       x="342"
+       y="75"
+       id="tspan3169-6">β</tspan></text>
+  <path
+     d="m 355.00936,61.111224 15,0"
+     id="path3171-1"
+     style="fill:none;stroke:#204a87;stroke-width:2" />
+  <path
+     d="m 12.635589,56.999999 198.728821,0 0,0"
+     id="path6212"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-width:2.13128424;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <text
+     x="375"
+     y="75"
+     id="text3201"
+     xml:space="preserve"
+     style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#2e3436;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+       x="375"
+       y="75"
+       id="tspan3203">99.88%</tspan></text>
+  <text
+     x="120"
+     y="125"
+     id="text3201-4"
+     xml:space="preserve"
+     style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#2e3436;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><tspan
+       x="120"
+       y="125"
+       id="tspan3203-2">0.12%</tspan></text>
+</svg>
