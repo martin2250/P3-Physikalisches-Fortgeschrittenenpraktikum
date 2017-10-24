@@ -1,4 +1,6 @@
 \chapter{Introduction}
+
+\section{Correlation Function}
 \begin{figure}[tbp]
 	\centering
 	\includegraphics[width=.3\textwidth]{./img/co60_decay.pdf}
@@ -6,9 +8,9 @@
 	\caption[The decay cascade of \ce{^{60}Co}]{\textbf{The decay cascade of \ce{^{60}Co}} After decaying from a 5+ spin state to a 4+ spin state of \ce{^{60}Ni} by beta decay with a probability of \num{99.88}\%, two gamma rays of energies \SI{1.17}{\MeV} and \SI{1.33}{\MeV} are emitted, each inhibting a spin of 2+.}
 	\label{fig:co60_cascade}
 \end{figure}
-When the nucleus emits two gamma rays in a cascade, as shown in \autoref{fig:co60_cascade}, the spatial angular distribution of the second particle with respect to the first particle's direction of travel is anisotropic.
-In particular, by detecting two particles of a cascade simultaneously, the equal engagement of states is removed, resulting in an anisotropy of the second particle.
-The relative probability of the gamma particle's emission at an angle $\theta$ relative to the first photon is denoted as $W(\theta)$.
+When the nucleus emits two gamma rays in a cascade, as shown in \autoref{fig:co60_cascade}, the spatial angular distribution of the second photon with respect to the first photon's direction of travel is anisotropic.
+In particular, by detecting two rays of a cascade simultaneously, the equal population of states is removed, resulting in an anisotropy of the second ray's angular distribution.
+The relative probability of the gamma ray's emission at an angle $\theta$ relative to the first photon is denoted as $W(\theta)$.
 Normalizing this differential cross-section at $\theta=\SI{90}{\degree}$ yields the correlation function
 
 \begin{equation*}
@@ -22,3 +24,21 @@ This results in the correlation function
 	K(\theta) = 1 + a_2\cos^{2}{\theta} + a_4\cos^{4}{\theta},
 \end{equation}
 while only pure multipole orders (quadrupoles) are assumed.
+
+The deviation of a correlation function from an isotropic angular distribution is called \textbf{anisotropy}
+\begin{equation}\label{eq:aniso}
+	An=\frac{K(180)-K(90)}{K(90)}=K(180)-1
+\end{equation}
+
+\section{Resolution Time}
+Utilizing the relation
+\begin{equation}\label{eq:res_time}
+	\tau_\text{res}=\frac{N_\text{R}}{N_1\cdot N_2}\cdot T,
+\end{equation}
+where $N_\text{R}$ denotes random event count, $N_{1/2}$ the number of events of channel 1/2 respectively and $T$ the length of the measurement, the resolution time of coincidences can be computed. \todo{Kinda bloated sentence. Any suggestions?}
+
+\section{Detectors}
+To not only being able to detect the mere presence of a gamma ray but also its energy, two \ce{NaI}-scintillators doped with \ce{Th} are employed.
+Sodium iodide is an inorganic scintillator crystal and grants the advantage of most of the gamma rays being observed through the photoelectric effect.
+Coupled to these scintillator crystals are two photomultiplier stages that output a voltage proportional to the incoming gamma ray's energy. \todo{Is it? i.e. non-linearity of crystals}
+The output is digitized for later analysis.
