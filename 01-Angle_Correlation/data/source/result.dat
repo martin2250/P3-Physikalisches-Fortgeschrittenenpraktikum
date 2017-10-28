@@ -1,22 +1,23 @@
 # e-thresh: 7000
 # t-thresh: 100ns
 # random-offset: 100ns
-/home/martin/Desktop/angle-correlation/data/135-1.npz	25556	22036	40	17
-/home/martin/Desktop/angle-correlation/data/135-2.npz	22875	22552	24	8
-/home/martin/Desktop/angle-correlation/data/135-3.npz	23436	22603	44	21
-/home/martin/Desktop/angle-correlation/data/135-4.npz	21995	22905	37	13
-/home/martin/Desktop/angle-correlation/data/135-5.npz	21963	22676	37	24
-/home/martin/Desktop/angle-correlation/data/135-6.npz	33493	23187	51	20
-/home/martin/Desktop/angle-correlation/data/180-1.npz	25959	21739	39	10
-/home/martin/Desktop/angle-correlation/data/180-2.npz	23948	22022	42	16
-/home/martin/Desktop/angle-correlation/data/180-3.npz	24419	22285	45	18
-/home/martin/Desktop/angle-correlation/data/180-4.npz	24116	22680	30	13
-/home/martin/Desktop/angle-correlation/data/180-5.npz	21887	22686	29	14
-/home/martin/Desktop/angle-correlation/data/180-6.npz	22720	22937	37	15
-/home/martin/Desktop/angle-correlation/data/90-1.npz	25701	21407	27	14
-/home/martin/Desktop/angle-correlation/data/90-2.npz	22755	21670	22	8
-/home/martin/Desktop/angle-correlation/data/90-3.npz	23832	21688	34	9
-/home/martin/Desktop/angle-correlation/data/90-4.npz	22592	21751	38	13
-/home/martin/Desktop/angle-correlation/data/90-5.npz	22439	21799	28	10
-/home/martin/Desktop/angle-correlation/data/90-6.npz	26427	22094	43	14
-/home/martin/Desktop/angle-correlation/data/background.npz	457	498	2	2
+# run, angle, channel1 events, ch2 evts, correlations, coincidences
+1	90	25701	21407	27	14
+2	90	22755	21670	22	8
+3	90	23832	21688	34	9
+4	90	22592	21751	38	13
+5	90	22439	21799	28	10
+6	90	26427	22094	43	14
+1	135	25556	22036	40	17
+2	135	22875	22552	24	8
+3	135	23436	22603	44	21
+4	135	21995	22905	37	13
+5	135	21963	22676	37	24
+6	135	33493	23187	51	20
+1	180	25959	21739	39	10
+2	180	23948	22022	42	16
+3	180	24419	22285	45	18
+4	180	24116	22680	30	13
+5	180	21887	22686	29	14
+6	180	22720	22937	37	15
+1	0	457	498	2	2
