@@ -13,7 +13,7 @@ import scipy.stats
 # - number of correlated events
 # - number of correlated events with time offset (random coincidences)
 
-energythreshold = 7000
+energythreshold = 3700	#this is so wrong
 correlationthreshold = 100
 randomoffset = 100
 
