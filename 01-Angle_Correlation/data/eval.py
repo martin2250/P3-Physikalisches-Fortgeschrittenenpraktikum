@@ -78,8 +78,22 @@ for i in range(0,3):
 	for j in range(0,6):
 		d_tot[i] = d_tot[i] + d_red_coin_theta[i][j]
 
-print(sum_coin)
-print(d_tot)
+d_A = np.sqrt( ( 1/sum_coin[0] * d_tot[1] )**2 + ( -A/sum_coin[0] * d_tot[0])**2 )
+d_B = np.sqrt( ( 1/sum_coin[0] * d_tot[2] )**2 + ( -B/sum_coin[0] * d_tot[0])**2 )
 
-print('\na2 = %.3f, a4 = %.3f, An = %.3f' %(a[0], a[1], An))
+delta_a		= np.zeros(2)
+delta_a[1]	= np.sqrt( ( -4*d_A )**2 + ( 2*d_B )**2 )	#gaussian error propagation for coefficients
+delta_a[0]	= np.sqrt( ( 4*d_A )**2 + ( -d_B )**2 )		#gaussian error propagation for coefficients
+delta_An	= d_B										#gaussian error propagation for anisotropy
+
+print('\na2 = %.3f +/- %.4f, a4 = %.3f +/- %.4f, An = %.3f +/- %.4f' %(a[0], delta_a[0], a[1], delta_a[1], An, delta_An))
+
+#relative deviations
+theo_a	= np.array([1/8, 1/24])
+theo_An	= 0.167
+
+rel_a	= np.abs(theo_a - a)/theo_a * 100
+rel_An	= np.abs(theo_An - An)/theo_An * 100
+
+print('\nrelative deviations: a2_rel = %.2f%%, a4_rel = %.2f%%, An_rel = %.2f%%\n' %(rel_a[0], rel_a[1], rel_An))
 ###------- FIRST METHOD END-----------
