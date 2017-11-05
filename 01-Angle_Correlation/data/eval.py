@@ -11,19 +11,12 @@ angle, run, ch1, ch2, corr, rand = np.loadtxt('source/result.dat', dtype=None, u
 d_fix			= 34							# in mm
 d				= np.array([32.4, 28.5, 31.2])	# in mm
 
-#distance correction
-for i in range(0,3):
-	d_corr				= (d[i]/d_fix)**2
-	ch1[i*6:i*6+6] 		= ch1[i*6:i*6+6]*d_corr
-	ch2[i*6:i*6+6]		= ch2[i*6:i*6+6]*d_corr
-	rand[i*6:i*6+6]		= rand[i*6:i*6+6]*d_corr
-	corr[i*6:i*6+6]		= corr[i*6:i*6+6]*d_corr
-
 #subtract background
 ch1_i = ch1[:-1] - ch1[-1]
 ch2_i = ch2[:-1] - ch2[-1]
 corr_i = corr[:-1] - corr[-1]
 rand_i = rand[:-1] - rand[-1]
+
 #reduce event counts by dividing by product of channels
 pch = ch1_i*ch2_i
 red_corr = corr_i/pch
@@ -31,6 +24,12 @@ red_rand = rand_i/pch
 
 #subtract random coincidences from correlations to yield reduced real coincidences
 red_coin = red_corr - red_rand
+
+#distance correction
+for i in range(0,3):
+	d_corr				= (d[i]/d_fix)**2
+	red_coin *= d_corr
+
 d_red_coin = np.sqrt(1/pch**2 * ( corr_i + rand_i + ((corr_i - rand_i)**2/ch1[:-1]**2)*ch1[:-1] + ((corr_i - rand_i)**2/ch2[:-1]**2)*ch2[:-1] ))	#assumed background to be negligable
 
 ###------- FIRST METHOD --------------------------------------------------------
