@@ -13,7 +13,7 @@ d				= np.array([32.4, 28.5, 31.2]) + 31./2	# in mm
 
 #subtract background
 ch1_i = ch1[:-1] - ch1[-1]
-ch2_i = ch2[:-1] - ch2[-1]
+ch2_i = ch2[:-1] - (np.sin(angle[:-1] * np.pi/180) * ch2[-1] - np.cos(angle[:-1] * np.pi/180) * ch1[-1])
 corr_i = corr[:-1] - corr[-1]
 rand_i = rand[:-1] - rand[-1]
 
