@@ -79,7 +79,7 @@ delta_a[1]	= np.sqrt( ( -4*d_A )**2 + ( 2*d_B )**2 )	#gaussian error propagation
 delta_a[0]	= np.sqrt( ( 4*d_A )**2 + ( -d_B )**2 )		#gaussian error propagation for coefficients
 delta_An	= d_B										#gaussian error propagation for anisotropy
 
-print('\na2 = %.3f +/- %.4f, a4 = %.3f +/- %.4f, An = %.3f +/- %.4f' %(a[0], delta_a[0], a[1], delta_a[1], An, delta_An))
+print('------------------FIRST METHOD --------------------------\na2 = %.3f +/- %.4f, a4 = %.3f +/- %.4f, An = %.3f +/- %.4f' %(a[0], delta_a[0], a[1], delta_a[1], An, delta_An))
 
 #relative deviations
 theo_a	= np.array([1/8, 1/24])
@@ -159,5 +159,11 @@ for j in range(0,6):
 
 d_prop = np.sqrt((1/6)*d_tot)
 
-print('\na2 = %.3f +/- %.7f +/- %.4f, a4 = %.3f +/- %.7f +/- %.4f, An = %.3f +/- %.7f +/- %.4f' %(a2_val, d_prop[0], d_means[0], a4_val, d_prop[1], d_means[1], An_val, d_prop[2], d_means[2]))
+print('------------------SECOND METHOD -----------------------\na2 = %.3f +/- %.7f(sys.) +/- %.4f(stat.), a4 = %.3f +/- %.7f(sys.) +/- %.4f(stat.), An = %.3f +/- %.7f(sys.) +/- %.4f(stat.)' %(a2_val, d_prop[0], d_means[0], a4_val, d_prop[1], d_means[1], An_val, d_prop[2], d_means[2]))
+
+rel_a2	= np.abs(theo_a[0] - a2_val)/theo_a[0] * 100
+rel_a4	= np.abs(theo_a[1] - a4_val)/theo_a[1] * 100
+rel_An	= np.abs(theo_An - An_val)/theo_An * 100
+
+print('\nrelative deviations: a2_rel = %.2f%%, a4_rel = %.2f%%, An_rel = %.2f%%\n' %(rel_a2, rel_a4, rel_An))
 ###--------SECOND METHOD END ---------------------------------------------------
