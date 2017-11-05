@@ -8,8 +8,8 @@ angle, run, ch1, ch2, corr, rand = np.loadtxt('source/result.dat', dtype=None, u
 # see section 7.7.4 (p. 147)
 
 #constants
-d_fix			= 34							# in mm
-d				= np.array([32.4, 28.5, 31.2])	# in mm
+d_fix			= 34 + 31./2							# in mm
+d				= np.array([32.4, 28.5, 31.2]) + 31./2	# in mm
 
 #subtract background
 ch1_i = ch1[:-1] - ch1[-1]
@@ -27,8 +27,7 @@ red_coin = red_corr - red_rand
 
 #distance correction
 for i in range(0,3):
-	d_corr				= (d[i]/d_fix)**2
-	red_coin *= d_corr
+	red_coin[6*i:6*(i+1)] *= (d[i]/d_fix)**2
 
 d_red_coin = np.sqrt(1/pch**2 * ( corr_i + rand_i + ((corr_i - rand_i)**2/ch1[:-1]**2)*ch1[:-1] + ((corr_i - rand_i)**2/ch2[:-1]**2)*ch2[:-1] ))	#assumed background to be negligable
 
