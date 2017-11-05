@@ -31,8 +31,9 @@ red_rand = rand_i/pch
 
 #subtract random coincidences from correlations to yield reduced real coincidences
 red_coin = red_corr - red_rand
+d_red_coin = np.sqrt(1/pch**2 * ( corr_i + rand_i + ((corr_i - rand_i)**2/ch1[:-1]**2)*ch1[:-1] + ((corr_i - rand_i)**2/ch2[:-1]**2)*ch2[:-1] ))	#assumed background to be negligable
 
-###------- FIRST METHOD -----------
+###------- FIRST METHOD --------------------------------------------------------
 
 #fields
 coin		= np.zeros(shape=(3, 6))
@@ -56,28 +57,21 @@ a[1] = 2*(1 + B - 2*A)	#a_4
 An = B - 1				#anisotropy
 
 ##ERROR CALCULATION
-d_Ni1 = np.sqrt(ch1[:-1] + ch1[-1])
-d_Ni2 = np.sqrt(ch1[:-1] + ch1[-1])
-
-d_Nci = np.sqrt(corr[:-1] + corr[-1])
-d_Nri = np.sqrt(rand[:-1] + rand[-1])
-
-d_red_corr_i = np.sqrt( ( 1/pch * d_Nci )**2 + ( -red_corr/ch1[:-1] * d_Ni1 )**2 + ( -red_corr/ch2[:-1] * d_Ni2 )**2 )
-d_red_rand_i = np.sqrt( ( 1/pch * d_Nri )**2 + ( -red_rand/ch1[:-1] * d_Ni1 )**2 + ( -red_rand/ch2[:-1] * d_Ni2 )**2 )
-
-d_red_coin_i = np.sqrt( d_red_corr_i**2 + d_red_rand_i**2 )
-
+#slice delta red. coin per angle
 d_red_coin_theta = np.zeros(shape=(3, 6))
 for i in range(0,3):
-	d_red_coin_theta[i] = d_red_coin_i[i*6:i*6+6]
+	d_red_coin_theta[i] = d_red_coin[i*6:i*6+6]
 
+#errors for means per angle
 d_tot = np.zeros(3)
-d_tot[0] = np.sqrt( d_red_coin_theta[0][0]**2 + d_red_coin_theta[0][1]**2 + d_red_coin_theta[0][2]**2)
 
 for i in range(0,3):
 	for j in range(0,6):
-		d_tot[i] = d_tot[i] + d_red_coin_theta[i][j]
+		d_tot[i] = d_tot[i] + d_red_coin_theta[i][j]**2
 
+d_tot = np.sqrt(d_tot)
+
+#error for calculation coefficients
 d_A = np.sqrt( ( 1/sum_coin[0] * d_tot[1] )**2 + ( -A/sum_coin[0] * d_tot[0])**2 )
 d_B = np.sqrt( ( 1/sum_coin[0] * d_tot[2] )**2 + ( -B/sum_coin[0] * d_tot[0])**2 )
 
@@ -96,4 +90,75 @@ rel_a	= np.abs(theo_a - a)/theo_a * 100
 rel_An	= np.abs(theo_An - An)/theo_An * 100
 
 print('\nrelative deviations: a2_rel = %.2f%%, a4_rel = %.2f%%, An_rel = %.2f%%\n' %(rel_a[0], rel_a[1], rel_An))
-###------- FIRST METHOD END-----------
+###------- FIRST METHOD END-----------------------------------------------------
+
+###--------SECOND METHOD -------------------------------------------------------
+coin	= np.zeros(shape=(6, 3))
+
+#slice red. coincidences per measurement series
+for i in range(0,6):
+	for j in range(0,3):
+		coin[i][j] = red_coin[i+6*j]
+
+#coefficients for calculation of correlation function coeff.
+A	= np.zeros(6)
+B	= np.zeros(6)
+An	= np.zeros(6)
+
+for i in range(0, 6):
+	A[i] = coin[i][1]/coin[i][0]
+	B[i] = coin[i][2]/coin[i][0]
+
+#correlation function coeff.
+a2 = 4*A - B - 3
+a4 = 2*(1 + B - 2*A)
+An = B-1
+
+#mean over those
+a2_val = np.mean(a2)
+a4_val = np.mean(a4)
+An_val = np.mean(An)
+
+##ERROR CALCULATION
+#slice delta red. coincidences per measurement series
+d_coin = np.zeros(shape=(6,3))
+for i in range(0,6):
+	for j in range(0,3):
+		d_coin[i][j] = d_red_coin[i+6*j]
+
+#errors for calculation coefficients
+d_A		= np.zeros(6)
+d_B		= np.zeros(6)
+d_An	= np.zeros(6)
+
+for i in range(0,6):
+	d_A[i] = np.sqrt( ( 1/coin[i][0] * d_coin[i][1] )**2 + ( -A[i]/coin[i][0] * d_coin[i][0] )**2 )	#gaussian error propagation for coefficients
+	d_B[i] = np.sqrt( ( 1/coin[i][0] * d_coin[i][2] )**2 + ( -B[i]/coin[i][0] * d_coin[i][0] )**2 )	#gaussian error propagation for coefficients
+
+#errors for correlation coefficients
+d_a = np.zeros(shape=(2, 6))
+d_An = d_B	#gaussian error propagation for anisotropy
+d_a[1]	= np.sqrt( ( -4*d_A )**2 + ( 2*d_B )**2 )	#gaussian error propagation for coefficients
+d_a[0]	= np.sqrt( ( 4*d_A )**2 + ( -d_B )**2 )		#gaussian error propagation for coefficients
+
+#errors for means of correlation coefficients
+d_means = np.zeros(3)
+
+d_means[0] = np.std(a2)/np.sqrt(6)
+d_means[1] = np.std(a4)/np.sqrt(6)
+d_means[2] = np.std(An)/np.sqrt(6)
+
+#errors from mean propagation
+d_prop = np.zeros(3)
+
+for i in range(0,2):
+	for j in range(0,6):
+		d_prop[i] = d_prop[i] + d_a[i][j]**2
+
+for j in range(0,6):
+	d_prop[2] = d_prop[2] + d_An[j]**2
+
+d_prop = np.sqrt((1/6)*d_tot)
+
+print('\na2 = %.3f +/- %.7f +/- %.4f, a4 = %.3f +/- %.7f +/- %.4f, An = %.3f +/- %.7f +/- %.4f' %(a2_val, d_prop[0], d_means[0], a4_val, d_prop[1], d_means[1], An_val, d_prop[2], d_means[2]))
+###--------SECOND METHOD END ---------------------------------------------------
