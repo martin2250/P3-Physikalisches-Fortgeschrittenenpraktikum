@@ -116,10 +116,17 @@ for i in range(0, 6):
 	A[i] = coin[i][1]/coin[i][0]
 	B[i] = coin[i][2]/coin[i][0]
 
+#print(A)
+#print(B)
+
 #correlation function coeff.
 a2 = 4*A - B - 3
 a4 = 2*(1 + B - 2*A)
 An = B-1
+
+# print(a2)
+# print(a4)
+# print(An)
 
 #mean over those
 a2_val = np.mean(a2)
@@ -142,12 +149,17 @@ for i in range(0,6):
 	d_A[i] = np.sqrt( ( 1/coin[i][0] * d_coin[i][1] )**2 + ( -A[i]/coin[i][0] * d_coin[i][0] )**2 )	#gaussian error propagation for coefficients
 	d_B[i] = np.sqrt( ( 1/coin[i][0] * d_coin[i][2] )**2 + ( -B[i]/coin[i][0] * d_coin[i][0] )**2 )	#gaussian error propagation for coefficients
 
+#print(d_A)
+#print(d_B)
 #errors for correlation coefficients
 d_a = np.zeros(shape=(2, 6))
 d_An = d_B	#gaussian error propagation for anisotropy
 d_a[1]	= np.sqrt( ( -4*d_A )**2 + ( 2*d_B )**2 )	#gaussian error propagation for coefficients
 d_a[0]	= np.sqrt( ( 4*d_A )**2 + ( -d_B )**2 )		#gaussian error propagation for coefficients
 
+# print(d_a[0])
+# print(d_a[1])
+# print(d_An)
 #errors for means of correlation coefficients
 d_means = np.zeros(3)
 

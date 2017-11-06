@@ -59,10 +59,10 @@ Using formulae \ref{eq:A} and \ref{eq:B}, the auxiliary quantities $A$ and $B$ a
 	B &= \num{1.086(33)},
 \end{align*}
 while their corresponding errors propagate like
-\begin{align*}
-	\sigma_\text{A} &= \sqrt{\left(\pdb{A}{R_\theta (90)}\cdot\sigma_{R_\theta(90)}\right)^2 + \left(\pdb{A}{R_\theta (135)}\cdot\sigma_{R_\theta(135)}\right)^2} \\
-	\sigma_\text{B} &= \sqrt{\left(\pdb{B}{R_\theta (90)}\cdot\sigma_{R_\theta(90)}\right)^2 + \left(\pdb{B}{R_\theta (180)}\cdot\sigma_{R_\theta(180)}\right)^2}.
-\end{align*}
+\begin{align}
+	\sigma_\text{A} &= \sqrt{\left(\pdb{A}{R_\theta (90)}\cdot\sigma_{R_\theta(90)}\right)^2 + \left(\pdb{A}{R_\theta (135)}\cdot\sigma_{R_\theta(135)}\right)^2} \label{eq:err_A} \\
+	\sigma_\text{B} &= \sqrt{\left(\pdb{B}{R_\theta (90)}\cdot\sigma_{R_\theta(90)}\right)^2 + \left(\pdb{B}{R_\theta (180)}\cdot\sigma_{R_\theta(180)}\right)^2}. \nonumber
+\end{align}
 
 Finally, the required correlation function coefficients and anisotropy can be calculated.
 Utilizing equations \ref{eq:a2}, \ref{eq:a4} and \ref{eq:aniso} yields the values
@@ -72,12 +72,49 @@ Utilizing equations \ref{eq:a2}, \ref{eq:a4} and \ref{eq:aniso} yields the value
 	An  &= \num{0.086(33)}   &&\Rightarrow \text{(relative deviation from theoretical value: 48.61\%)},
 \end{alignat*}
 while their errors propagate like
-\begin{align*}
-	\sigma_\text{$a_2$} &= \sqrt{\left(\pdb{a_2}{A}\cdot\sigma_\text{A}\right)^2 + \left(\pdb{a_2}{B}\cdot\sigma_\text{B}\right)^2} \\
-	&=\sqrt{\left(4\cdot\sigma_\text{A} \right)^2 + \left(-1\cdot\sigma_\text{B} \right)^2} \\
-	\sigma_\text{$a_4$} &= \sqrt{\left(\pdb{a_4}{A}\cdot\sigma_\text{A}\right)^2 + \left(\pdb{a_4}{B}\cdot\sigma_\text{B}\right)^2} \\
-	&=\sqrt{\left(-4\cdot\sigma_\text{A} \right)^2 + \left(2\cdot\sigma_\text{B} \right)^2} \\
-	\sigma_\text{An} &= \sigma_\text{B}.
-\end{align*}
+\begin{align}
+	\sigma_\text{$a_2$} &= \sqrt{\left(\pdb{a_2}{A}\cdot\sigma_\text{A}\right)^2 + \left(\pdb{a_2}{B}\cdot\sigma_\text{B}\right)^2} \label{eq:err_a}\\
+	&=\sqrt{\left(4\cdot\sigma_\text{A} \right)^2 + \left(-1\cdot\sigma_\text{B} \right)^2} \nonumber\\
+	\sigma_\text{$a_4$} &= \sqrt{\left(\pdb{a_4}{A}\cdot\sigma_\text{A}\right)^2 + \left(\pdb{a_4}{B}\cdot\sigma_\text{B}\right)^2}\nonumber \\
+	&=\sqrt{\left(-4\cdot\sigma_\text{A} \right)^2 + \left(2\cdot\sigma_\text{B} \right)^2}\nonumber \\
+	\sigma_\text{An} &= \sigma_\text{B}\nonumber.
+\end{align}
 
 \section{Evaluation: Method Two}
+\begin{table}[tbp]\small
+	\centering
+	\caption[Method Two: Coefficient Values]{\textbf{Method Two: Coeffcient Values} for each measurement series}
+	\label{tab:aux_coeff}
+	\begin{tabular}{c|cccccc}
+		\toprule
+		& 1	&	2	&	3	&	4	&	5	&	6	\\
+		\midrule
+		$A_i$			&	\num{0.822(67)}	&	\num{1.006(82)}	&	\num{0.872(70)}	&	\num{0.851(70)}	&	\num{0.902(71)}	&	\num{1.003(75)}	\\
+		$B_i$			&	\num{1.094(80)}	&	\num{1.252(94)}	&	\num{1.054(78)}	&	\num{1.017(77)}	&	\num{1.039(77)}	&	\num{1.076(79)}	\\
+		$a_{2,i}$	&	\num{-0.807(281)}	&	\num{-0.229(343)}	&	\num{-0.567(292)}	&	\num{-0.614(291)}	&	\num{-0.433(295)}	&	\num{-0.062(312)}	\\
+		$a_{4,i}$	&	\num{0.901(313)}	&	\num{0.481(380)}	&	\num{0.621(321)}	&	\num{0.631(320)}	&	\num{0.472(323)}	&	\num{0.138(340)}	\\
+		$An_i$		&	\num{0.094(80)}	&	\num{0.252(94)}	&	\num{0.054(78)}	&	\num{0.017(77)}	&	\num{0.039(77)}	&	\num{0.076(79)}	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Calculating the auxiliary coefficients $A$ and $B$ for each measurement series yields six individual values for these quantities.
+Errors propagate in the same fashion as in \autoref{eq:err_A}.
+Using these values, correlation function coefficients $a_2$, $a_4$ and anisotropy $An$ can be calculated, with error propagation as seen in \autoref{eq:err_a}.
+All previously mentioned data can be seen in \autoref{tab:aux_coeff}.
+Finally, the mean values of all quantities are computed.
+Mean value formation over $N$ values generates a statistical error of
+\begin{equation*}
+	\sigma_\text{stat} = \frac{\sigma_\text{std}}{\sqrt{N}},
+\end{equation*}
+with standard deviation $\sigma_\text{std}$.
+Additionally, the errors from previously calculated coefficients propagate into their mean value as
+\begin{equation*}
+	\sigma_\text{sys} = \sqrt{\frac{1}{N}\sum_{i=1}^N\sigma_\text{$a_2/a_4/An$}^2}.
+\end{equation*}
+However, these errors turn out to be negligable ($\approx\pm\num{0.363e-4}$).
+Applying these deliberations yields the final values for the sought-after quantities
+\begin{alignat*}{3}
+ a_2 &= \num{-0.452}\pm\num{0.1010}\ \text{(stat.)} &&\Rightarrow \text{(relative deviation from theoretical value: 461.48\%)}\\
+ a_4 &= \num{0.541}\pm\num{0.0935}\ \text{(stat.)}  &&\Rightarrow \text{(relative deviation from theoretical value: 1197.27\%)} \\
+ An  &= \num{0.089}\pm\num{0.0315}\ \text{(stat.)}   &&\Rightarrow \text{(relative deviation from theoretical value: 46.90\%)},
+\end{alignat*}
