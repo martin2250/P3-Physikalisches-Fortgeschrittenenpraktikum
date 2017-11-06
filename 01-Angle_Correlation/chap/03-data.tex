@@ -12,7 +12,7 @@ This way, true coincidences are generally excluded and only false coincidences r
 
 In the following, false coicidences are denoted with $N_\text{F}$.
 
-\section{Background}
+\section{Background}\label{sec:bg}
 Background radiation data can be seen in \autoref{tab:background}.
 As data suggests, background radiation will not have a significant effect on the data as it is several orders of magnitude weaker than the examined effect.
 
@@ -27,11 +27,28 @@ To account for temperature drifts and thresholds, all coincidence counts must be
 \begin{equation}\label{eq:red}
 	R(\theta)=\frac{N_\text{c}-N_\text{cbg}-N_\text{F}}{(N_1-N_\text{bg})(N_2-N_\text{bg})}.
 \end{equation}
+
 Assuming a poisson distribution, the errors of event counts are their square root, which gives
 \begin{align*}
 	\sigma_\text{R} &= \sqrt{\left(\pdb{R}{N_\text{c}}\cdot\sigma_{N_\text{c}}\right)^2
 	+ \left(\pdb{R}{N_\text{F}}\cdot\sigma_{N_\text{F}}\right)^2
 	+ \left(\pdb{R}{N_1}\cdot\sigma_{N_2}\right)^2
 	+ \left(\pdb{R}{N_2}\cdot\sigma_{N_2}\right)^2} \\
-	&=\frac{1}{(N_1-N_\text{bg})(N_2-N_\text{bg})}\cdot\sqrt{sds}
+	&=\frac{1}{(N_1-N_\text{bg})(N_2-N_\text{bg})}
+	\cdot\sqrt{N_\text{c} + N_\text{F} + \left(\frac{N_\text{c}-N_\text{F}}{N_1-N_\text{bg}}\right)^2\cdot N_1
+	+ \left(\frac{N_\text{c}-N_\text{F}}{N_2-N_\text{bg}}\right)^2\cdot N_2},
 \end{align*}
+for the propagated error of reduced event counts, where background radiation is negligably small as discussed in \autoref{sec:bg}.
+
+\section{Evaluation: Method One}
+Adding all reduced event counts for each angle and propagating their corresponding errors like
+\begin{equation*}
+	\sigma_{R_\theta}=\sum_{i=1}^{6}\sigma_\text{R,i}^2,
+\end{equation*}
+where $i$ denotes the number of the measurement series, yields the values
+\begin{itemize}
+	\item $R_\theta (90)=\num{3.640(79)e-7}$
+	\item $R_\theta (135)=\num{3.303(80)e-7}$
+	\item $R_\theta (90)=\num{3.953(83)e-7}$
+\end{itemize}
+for the sum of reduced coincidences per angle.

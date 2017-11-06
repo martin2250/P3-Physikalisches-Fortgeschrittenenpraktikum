@@ -12,10 +12,10 @@ d_fix			= 34 + 31./2							# in mm
 d				= np.array([32.4, 28.5, 31.2]) + 31./2	# in mm
 
 #subtract background
-print('ch1:', ch1)
-print('ch2:', ch2)
-print('corr:', corr)
-print('false:', rand)
+# print('ch1:', ch1)
+# print('ch2:', ch2)
+# print('corr:', corr)
+# print('false:', rand)
 ch1_i = ch1[:-1] - ch1[-1]
 ch2_i = ch2[:-1] - (np.sin(angle[:-1] * np.pi/180) * ch2[-1] - np.cos(angle[:-1] * np.pi/180) * ch1[-1])
 corr_i = corr[:-1] - corr[-1]
@@ -48,6 +48,7 @@ for i in range(0,3):
 #sum event counts per angle
 sum_coin = np.sum(coin, axis=1)
 
+#print(sum_coin)
 #coefficients for calculation of correlation function coeff.
 A = sum_coin[1]/sum_coin[0]
 B = sum_coin[2]/sum_coin[0]
@@ -73,6 +74,7 @@ for i in range(0,3):
 
 d_tot = np.sqrt(d_tot)
 
+#print(d_tot)
 #error for calculation coefficients
 d_A = np.sqrt( ( 1/sum_coin[0] * d_tot[1] )**2 + ( -A/sum_coin[0] * d_tot[0])**2 )
 d_B = np.sqrt( ( 1/sum_coin[0] * d_tot[2] )**2 + ( -B/sum_coin[0] * d_tot[0])**2 )
