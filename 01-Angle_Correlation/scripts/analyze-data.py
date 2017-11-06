@@ -15,7 +15,7 @@ import scipy.stats
 
 energythreshold = 3700	#this is so wrong
 correlationthreshold = 100
-randomoffset = 100
+randomoffset = 300
 
 if len(sys.argv) == 1:
 	print('usage: %s [data1.npz] [data2.npz] ...'%sys.argv[0])
