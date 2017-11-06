@@ -53,6 +53,7 @@ sum_coin = np.sum(coin, axis=1)
 A = sum_coin[1]/sum_coin[0]
 B = sum_coin[2]/sum_coin[0]
 
+#print(A, B)
 #correlation function coeff.
 a = np.zeros(2)
 a[0] = 4*A - B - 3		#a_2
@@ -78,6 +79,8 @@ d_tot = np.sqrt(d_tot)
 #error for calculation coefficients
 d_A = np.sqrt( ( 1/sum_coin[0] * d_tot[1] )**2 + ( -A/sum_coin[0] * d_tot[0])**2 )
 d_B = np.sqrt( ( 1/sum_coin[0] * d_tot[2] )**2 + ( -B/sum_coin[0] * d_tot[0])**2 )
+
+#print(d_A, d_B)
 
 delta_a		= np.zeros(2)
 delta_a[1]	= np.sqrt( ( -4*d_A )**2 + ( 2*d_B )**2 )	#gaussian error propagation for coefficients

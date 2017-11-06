@@ -52,3 +52,32 @@ where $i$ denotes the number of the measurement series, yields the values
 	\item $R_\theta (90)=\num{3.953(83)e-7}$
 \end{itemize}
 for the sum of reduced coincidences per angle.
+
+Using formulae \ref{eq:A} and \ref{eq:B}, the auxiliary quantities $A$ and $B$ are calculated as
+\begin{align*}
+	A &= \num{0.907(30)} \\
+	B &= \num{1.086(33)},
+\end{align*}
+while their corresponding errors propagate like
+\begin{align*}
+	\sigma_\text{A} &= \sqrt{\left(\pdb{A}{R_\theta (90)}\cdot\sigma_{R_\theta(90)}\right)^2 + \left(\pdb{A}{R_\theta (135)}\cdot\sigma_{R_\theta(135)}\right)^2} \\
+	\sigma_\text{B} &= \sqrt{\left(\pdb{B}{R_\theta (90)}\cdot\sigma_{R_\theta(90)}\right)^2 + \left(\pdb{B}{R_\theta (180)}\cdot\sigma_{R_\theta(180)}\right)^2}.
+\end{align*}
+
+Finally, the required correlation function coefficients and anisotropy can be calculated.
+Utilizing equations \ref{eq:a2}, \ref{eq:a4} and \ref{eq:aniso} yields the values
+\begin{alignat*}{3}
+	a_2 &= \num{-0.456(123)} &&\Rightarrow \text{(relative deviation from theoretical value: 464.96\%)}\\
+	a_4 &= \num{0.542(136)}  &&\Rightarrow \text{(relative deviation from theoretical value: 1200.87\%)} \\
+	An  &= \num{0.086(33)}   &&\Rightarrow \text{(relative deviation from theoretical value: 48.61\%)},
+\end{alignat*}
+while their errors propagate like
+\begin{align*}
+	\sigma_\text{$a_2$} &= \sqrt{\left(\pdb{a_2}{A}\cdot\sigma_\text{A}\right)^2 + \left(\pdb{a_2}{B}\cdot\sigma_\text{B}\right)^2} \\
+	&=\sqrt{\left(4\cdot\sigma_\text{A} \right)^2 + \left(-1\cdot\sigma_\text{B} \right)^2} \\
+	\sigma_\text{$a_4$} &= \sqrt{\left(\pdb{a_4}{A}\cdot\sigma_\text{A}\right)^2 + \left(\pdb{a_4}{B}\cdot\sigma_\text{B}\right)^2} \\
+	&=\sqrt{\left(-4\cdot\sigma_\text{A} \right)^2 + \left(2\cdot\sigma_\text{B} \right)^2} \\
+	\sigma_\text{An} &= \sigma_\text{B}.
+\end{align*}
+
+\section{Evaluation: Method Two}
