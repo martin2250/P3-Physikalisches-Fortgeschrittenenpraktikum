@@ -3,14 +3,22 @@
 \section{Physics}
 This experiment validates \todo{actually validate and don't disprove} the anisotropy of the emission of gamma rays from excited nuclei states.
 The angular distribution is dependent on the change of the magnetic quantum number between the inital and final states of the nucleus.
-As the higher energy state has a spin number $j$ of at least one, there are multiple possible states which the excited nucleus can occupy.
-At room temperature all possible states of the magnetic quantum number are populated equally, which results in an overall isotropic radiation pattern.
+As the higher energy state has a spin number $j$ of at least one, there are multiple possible states which the excited nucleus can occupy.\\
+The angular probaility distributions for a transition from a triplet state ($j=1, m=-1,0,1$) to a singlet state is given by
+\begin{alignat}{2}
+	W_+ \cdot d\Omega &= \frac{3}{16} \; \uppi \; (1 + \cos^2 \Theta) \cdot d\Omega \qquad &(\Delta m = +1)\\
+	W_0 \cdot d\Omega &= \frac{3}{8} \; \uppi \; \sin^2 \Theta \cdot d\Omega \qquad &(\Delta m = 0)\\
+	W_- \cdot d\Omega &= \frac{3}{16} \; \uppi \; (1 + \cos^2 \Theta) \cdot d\Omega \qquad &(\Delta m = -1)
+\end{alignat}
 
-To isolate transitions with the same magnetic quantum number, a cascade of two transitions is observed, where the first transition leaves the nucleus in a defined state.
-Naturally, the initial state also has multiple possible transitions which occur equally frequent.
-The method demonstrated here makes use of the fact that the radiation pattern of the first transition is also anisotropic.
+At room temperature all possible states of the magnetic quantum number are populated equally.
+Adding the radiation patterns of all possible states results in an overall isotropic radiation pattern, which is observed when no care is taken to isolate single quantum states.
 
-By selecting a nucleus with few enough states where there is a direction in which only one state emits radiation, it is possible use a first detector to detect this first gamma ray, confirming that the decaying nucleus is in the desired state, and observing the angular distribution with a second detector.
+To isolate transitions with the same magnetic quantum number, a cascade of two transitions (here refered to level-2 $\rightarrow$ level-1 $\rightarrow$ ground) is observed, where the first transition leaves the nucleus in a defined state.
+Naturally, the initial state also has multiple possible transitions which occur equally frequently.
+The method demonstrated makes use of the fact that the radiation pattern of the first transition is also anisotropic.
+
+By selecting a nucleus with few enough states where there is a direction in which only one of the initial level-2 states emits radiation (namely $\Theta = 0$, where tranistions with $\Delta m = 0$ do not emit radiation), it is possible use a first detector to detect this first gamma ray, confirming that the decaying nucleus is in the desired state, and observing the angular distribution with a second detector.
 
 In this interpretation, the first detector also selects the quantization axis for the decay.
 In reality, both detectors are interchangable.
@@ -21,4 +29,7 @@ Two photomultiplier tubes with \ce{NaI}-scintillators are used as  detecors.
 The signals are fed into a digitizer which records a \SI{2}{\ms} waveform at \SI{125}{\kilo\samples\per\second} centered around the trigger event.
 The trigger event is a peak coming from either PMT.
 
+Waveforms are recorded for all events that occur in a predefined period.
 In later analysis, peaks are found for both channels of each waveform and waveforms which contain two peaks that are both strong enough and close enough in time are counted to obtain the number of corellated events.
+
+Later corrections include subtracting the background radiation with respect for a possible anisotropic distribution and correcting the distance between the detector and radiation source, which varies between the different angles.
