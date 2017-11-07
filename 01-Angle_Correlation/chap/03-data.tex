@@ -85,15 +85,16 @@ while their errors propagate like
 	\centering
 	\caption[Method Two: Coefficient Values]{\textbf{Method Two: Coeffcient Values} for each measurement series}
 	\label{tab:aux_coeff}
-	\begin{tabular}{c|cccccc}
+	\begin{tabular}{cS[separate-uncertainty=false,table-format=1.2e-1]S[separate-uncertainty=false,table-format=1.2e-1]S[separate-uncertainty=false,table-format=1.2e-1]S[separate-uncertainty=false,table-format=1.2e-1]S[separate-uncertainty=false,table-format=1.2e-1]S[separate-uncertainty=false,table-format=1.2e-1]}
 		\toprule
-		& 1	&	2	&	3	&	4	&	5	&	6	\\
+		{Run}& {$A_i$}& {$B_i$}& {$a_{2,i}$}& {$a_{4,i}$}& {$An_i$}\\
 		\midrule
-		$A_i$			&	\num{0.822(67)}	&	\num{1.006(82)}	&	\num{0.872(70)}	&	\num{0.851(70)}	&	\num{0.902(71)}	&	\num{1.003(75)}	\\
-		$B_i$			&	\num{1.094(80)}	&	\num{1.252(94)}	&	\num{1.054(78)}	&	\num{1.017(77)}	&	\num{1.039(77)}	&	\num{1.076(79)}	\\
-		$a_{2,i}$	&	\num{-0.807(281)}	&	\num{-0.229(343)}	&	\num{-0.567(292)}	&	\num{-0.614(291)}	&	\num{-0.433(295)}	&	\num{-0.062(312)}	\\
-		$a_{4,i}$	&	\num{0.901(313)}	&	\num{0.481(380)}	&	\num{0.621(321)}	&	\num{0.631(320)}	&	\num{0.472(323)}	&	\num{0.138(340)}	\\
-		$An_i$		&	\num{0.094(80)}	&	\num{0.252(94)}	&	\num{0.054(78)}	&	\num{0.017(77)}	&	\num{0.039(77)}	&	\num{0.076(79)}	\\
+		1&0.822 \pm 0.067&	1.094 \pm 0.080&	-0.81 \pm 0.28&	-0.81 \pm 0.31&0.094 \pm 0.080\\
+		2&1.006 \pm 0.082&	1.252 \pm 0.094&	-0.23 \pm 0.34&	-0.23 \pm 0.38&0.252 \pm 0.094\\
+		3&0.872 \pm 0.070&	1.054 \pm 0.078&	-0.57 \pm 0.29&	-0.57 \pm 0.32&0.054 \pm 0.078\\
+		4&0.851 \pm 0.070&	1.017 \pm 0.077&	-0.61 \pm 0.29&	-0.61 \pm 0.32&0.017 \pm 0.077\\
+		5&0.902 \pm 0.071&	1.039 \pm 0.077&	-0.43 \pm 0.29&	-0.43 \pm 0.32&0.039 \pm 0.077\\
+		6&1.003 \pm 0.075&	1.076 \pm 0.079&	-0.06 \pm 0.31&	-0.06 \pm 0.34&0.076 \pm 0.079\\
 		\bottomrule
 	\end{tabular}
 \end{table}

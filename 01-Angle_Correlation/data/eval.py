@@ -194,12 +194,15 @@ d_prop = np.zeros(3)
 
 for i in range(0,2):
 	for j in range(0,6):
-		d_prop[i] = d_prop[i] + d_a[i][j]**2
+		d_prop[i] += d_a[i][j]**2
 
 for j in range(0,6):
-	d_prop[2] = d_prop[2] + d_An[j]**2
+	d_prop[2] += d_An[j]**2
 
 d_prop = np.sqrt((1/6)*d_tot)
+
+for i in range(0, 6):
+	print('%0.3f \\pm %0.3f&\t%0.3f \\pm %0.3f&\t%0.2f \\pm %0.2f&\t%0.2f \\pm %0.2f&\t%0.3f \\pm %0.3f\\\\'%(A[i], d_A[i], B[i], d_B[i], a2[i], d_a[0, i], a2[i], d_a[1, i], An[i], d_An[i]))
 
 print('------------------SECOND METHOD -----------------------\na2 = %.3f +/- %.7f(sys.) +/- %.4f(stat.), a4 = %.3f +/- %.7f(sys.) +/- %.4f(stat.), An = %.3f +/- %.7f(sys.) +/- %.4f(stat.)' %(a2_val, d_prop[0], d_means[0], a4_val, d_prop[1], d_means[1], An_val, d_prop[2], d_means[2]))
 
