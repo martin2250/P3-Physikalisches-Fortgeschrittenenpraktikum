@@ -80,7 +80,7 @@ while their errors propagate like
 	\sigma_\text{An} &= \sigma_\text{B}\nonumber.
 \end{align}
 
-\section{Evaluation: Method Two}
+\section{Evaluation: Method Two}\label{sec:meth_two_lel_i_said_meth}
 \begin{table}[tbp]\small
 	\centering
 	\caption[Method Two: Coefficient Values]{\textbf{Method Two: Coeffcient Values} for each measurement series}
@@ -118,3 +118,23 @@ Applying these deliberations yields the final values for the sought-after quanti
  a_4 &= \num{0.541}\pm\num{0.0935}\ \text{(stat.)}  &&\Rightarrow \text{(relative deviation from theoretical value: 1197.27\%)} \\
  An  &= \num{0.089}\pm\num{0.0315}\ \text{(stat.)}   &&\Rightarrow \text{(relative deviation from theoretical value: 46.90\%)},
 \end{alignat*}
+
+\section{Evaluation: Resolution Time}
+Using formula \ref{eq:res_time} for each measurement, effectively generating $3\times 6 = 18$ values for $\tau$ and averaging these yields
+\begin{equation*}
+	\tau = (\num{106.15}\pm\num{72.15}\ \text{(sys.)}\pm \num{26.18}\ \text{(stat.)})\ \si{\ns}.
+\end{equation*}
+Errors for each value of tau propagate like
+\begin{align*}
+	\sigma_{\tau_i,\text{sys}} &= \sqrt{\left(\pdb{\tau}{N_\text{F}}\cdot\sigma_{N_\text{F}}\right)^2 + \left(\pdb{\tau}{N_1}\cdot\sigma_{N_1}\right)^2 + \left(\pdb{\tau}{N_2}\cdot\sigma_{N_2}\right)^2} \\
+	&= \sqrt{ \left(\frac{T}{N_1\cdot N_2}\cdot\sigma_{N_\text{F}}\right)^2 + \left(-\frac{\tau}{N_1}\cdot\sigma_{N_1}\right)^2 + \left(-\frac{\tau}{N_2}\cdot\sigma_{N_2}\right)^2}
+\end{align*}
+and finally, by averaging, the systematic error propagates like
+\begin{equation*}
+	\sigma_{\tau,\text{sys}} = \sqrt{\frac{1}{18}\sum_{i=1}^{18}\sigma_{\tau_i,\text{sys}}^2}.
+\end{equation*}
+Additionally, averaging generates a statistical error of
+\begin{equation*}
+	\sigma_{\tau,\text{stat}} = \frac{\sigma_{\tau,\text{std}}}{\sqrt{18}},
+\end{equation*}
+just as in \autoref{sec:meth_two_lel_i_said_meth}.

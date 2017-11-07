@@ -9,7 +9,7 @@
 	\label{fig:co60_cascade}
 \end{figure}
 When a nucleus in an excited state emits two gamma rays in a cascade, as shown in \autoref{fig:co60_cascade}, the spatial angular distribution of the second photon with respect to the first photon's direction of travel is anisotropic.
-In particular, by detecting two rays of a cascade simultaneously, the equal population of states is removed, resulting in an anisotropy of the second ray's angular distribution.	\todo{redo this sentence and explain more of the mechanism beforehand}
+In particular, by detecting two rays of a cascade simultaneously, the equal population of states is removed, resulting in an anisotropy of the second ray's angular distribution.
 The relative probability of the gamma ray's emission at an angle $\theta$ relative to the first photon is denoted as $W(\theta)$.
 Normalizing this differential cross-section at $\theta=\SI{90}{\degree}$ yields the correlation function
 
@@ -26,12 +26,12 @@ This results in the correlation function
 while only pure multipole orders (quadrupoles) are assumed.
 
 By measuring coincidence counts for varying angles, coefficients $a_2$ and $a_4$ can be determined.
-Defining the quantities \todo{explain what $N_\text{C}$ is}
+Defining the quantities
 \begin{align}
 	A&=\frac{N_\text{C}(\SI{135}{\degree})}{N_\text{C}(\SI{90}{\degree})} \label{eq:A}\\
-	B&=\frac{N_\text{C}(\SI{180}{\degree})}{N_\text{C}(\SI{90}{\degree})} \label{eq:B}
+	B&=\frac{N_\text{C}(\SI{180}{\degree})}{N_\text{C}(\SI{90}{\degree})}, \label{eq:B}
 \end{align}
-simplifies the equations for $a_2$ and $a_4$ to
+where $N_\text{C}(\theta)$ are coincidence event counts, simplifies the equations for $a_2$ and $a_4$ to
 \begin{align}
 	a_2 &= 2\cdot(1+B-2A) \label{eq:a2}\\
 	a_4 &= 4A-B-3. \label{eq:a4}
@@ -45,18 +45,18 @@ The deviation of a correlation function from an isotropic angular distribution i
 \section{Detectors}\label{sec:detectors}
 To detect and measure the energy of gamma rays, which allows to discriminate between secondary and tertiary gamma radiation (for example caused by Compton scattering with the detector coating), two \ce{NaI}-scintillators doped with \ce{Th} are employed.
 Sodium iodide is an inorganic scintillator crystal and grants the advantage of most of the gamma rays being observed through the photoelectric effect.
-Coupled to these scintillator crystals are two photomultiplier stages that output a voltage spike proportional to the incoming gamma ray's energy. \todo{Is it? i.e. non-linearity of crystals}
+Coupled to these scintillator crystals are two photomultiplier stages that output a voltage spike proportional to the incoming gamma ray's energy.
 The output is digitized for later analysis.
 
 \section{Resolution Time}
 The timeframe, in which two individual events on each detector channel can be interpreted as a coincidence, is called the \textbf{resolution time (of a coincidence)}.
 Utilizing the relation
 \begin{equation}\label{eq:res_time}
-	\tau_\text{res}=\frac{N_\text{R}}{N_1\cdot N_2}\cdot T,
+	\tau_\text{res}=\frac{N_\text{F}}{N_1\cdot N_2}\cdot T,
 \end{equation}
 the resolution time can be computed, where used quantities are denoted as follows:
 \begin{itemize}
-	\item $N_\text{R}$ - random event count
-	\item $N_{1/2}$ - number of events of channel 1/2
+	\item $N_\text{F}$ - false coincidences event count
+	\item $N_{1/2}$ - number of events on channel 1/2
 	\item $T$ length of measurement.
 \end{itemize}

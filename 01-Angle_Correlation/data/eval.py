@@ -21,6 +21,28 @@ ch2_i = ch2[:-1] - (np.sin(angle[:-1] * np.pi/180) * ch2[-1] - np.cos(angle[:-1]
 corr_i = corr[:-1] - corr[-1]
 rand_i = rand[:-1] - rand[-1]
 
+###------------RESOLUTION TIME--------------------------------------------------
+T = 320
+tau_i = rand_i/(ch1_i*ch2_i) * T
+
+d_rand = np.sqrt(rand_i)
+d_ch1  = np.sqrt(ch1_i)
+d_ch2  = np.sqrt(ch2_i)
+d_tau_i = np.sqrt( ( T/(ch1_i*ch2_i) * d_rand )**2 + ( -tau_i/ch1_i * d_ch1 )**2 + ( -tau_i/ch2_i * d_ch2 )**2 )
+
+tau = np.mean(tau_i)*1e9
+
+d_tau = np.zeros(2)
+d_tau[1] = np.std(tau_i)/np.sqrt(tau_i.size)*1e9
+
+for i in range(0, tau_i.size):
+	d_tau[0] = d_tau[0] + d_tau_i[i]**2
+
+d_tau[0]=np.sqrt(1/tau_i.size * d_tau[0])*1e9
+
+print('\n------------------RESOLUTION --------------------------\ntau = %.4f ns +/- %.6f ns (sys.) +/- %.6f ns (stat.)\n' %(tau, d_tau[0], d_tau[1]))
+###------------RESOLUTION TIME END----------------------------------------------
+
 #reduce event counts by dividing by product of channels
 pch = ch1_i*ch2_i
 red_corr = corr_i/pch
