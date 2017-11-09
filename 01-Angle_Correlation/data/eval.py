@@ -4,6 +4,11 @@ import numpy as np
 
 angle, run, ch1, ch2, corr, rand = np.loadtxt('source/res.dat', dtype=None, unpack=True)
 
+print('raw data:')
+
+for row in zip(run, angle, ch1, ch2, corr, rand):
+	print('%d&\t%d&\t%d&\t%d&\t%d&\t%d\t\\\\'%row)
+
 # method for evaluating data: http://www.physik.kit.edu/Studium/F-Praktika/Downloads/bb_gesamt_oktober_2017.pdf
 # see section 7.7.4 (p. 147)
 
