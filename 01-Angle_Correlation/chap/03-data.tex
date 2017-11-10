@@ -110,7 +110,7 @@ Mean value formation over $N$ values generates a statistical error of
 with standard deviation $\sigma_\text{std}$.
 Additionally, the errors from previously calculated coefficients propagate into their mean value as
 \begin{equation*}
-	\sigma_\text{sys} = \sqrt{\frac{1}{N}\sum_{i=1}^N\sigma_\text{$a_2/a_4/An$}^2}.
+	\sigma_\text{stat} = \sqrt{\frac{1}{N}\sum_{i=1}^N\sigma_\text{$a_2/a_4/An$}^2}.
 \end{equation*}
 However, these errors turn out to be negligable ($\approx\pm\num{0.363e-4}$).
 Applying these deliberations yields the final values for the sought-after quantities
@@ -123,19 +123,19 @@ Applying these deliberations yields the final values for the sought-after quanti
 \section{Evaluation: Resolution Time}
 Using formula \ref{eq:res_time} for each measurement, effectively generating $3\times 6 = 18$ values for $\tau$ and averaging these yields
 \begin{equation*}
-	\tau = (\num{106.15}\pm\num{72.15}\ \text{(sys.)}\pm \num{26.18}\ \text{(stat.)})\ \si{\ns}.
+	\tau = (\num{106.15}\pm\num{72.15}\ \text{(stat., 1)}\pm \num{26.18}\ \text{(stat., 2)})\ \si{\ns}.
 \end{equation*}
 Errors for each value of tau propagate like
 \begin{align*}
-	\sigma_{\tau_i,\text{sys}} &= \sqrt{\left(\pdb{\tau}{N_\text{F}}\cdot\sigma_{N_\text{F}}\right)^2 + \left(\pdb{\tau}{N_1}\cdot\sigma_{N_1}\right)^2 + \left(\pdb{\tau}{N_2}\cdot\sigma_{N_2}\right)^2} \\
+	\sigma_{\tau_i,\text{stat.}} &= \sqrt{\left(\pdb{\tau}{N_\text{F}}\cdot\sigma_{N_\text{F}}\right)^2 + \left(\pdb{\tau}{N_1}\cdot\sigma_{N_1}\right)^2 + \left(\pdb{\tau}{N_2}\cdot\sigma_{N_2}\right)^2} \\
 	&= \sqrt{ \left(\frac{T}{N_1\cdot N_2}\cdot\sigma_{N_\text{F}}\right)^2 + \left(-\frac{\tau}{N_1}\cdot\sigma_{N_1}\right)^2 + \left(-\frac{\tau}{N_2}\cdot\sigma_{N_2}\right)^2}
 \end{align*}
 and finally, by averaging, the systematic error propagates like
 \begin{equation*}
-	\sigma_{\tau,\text{sys}} = \sqrt{\frac{1}{18}\sum_{i=1}^{18}\sigma_{\tau_i,\text{sys}}^2}.
+	\sigma_{\tau,\text{stat., 1}} = \sqrt{\frac{1}{18}\sum_{i=1}^{18}\sigma_{\tau_i,\text{stat}}^2}.
 \end{equation*}
 Additionally, averaging generates a statistical error of
 \begin{equation*}
-	\sigma_{\tau,\text{stat}} = \frac{\sigma_{\tau,\text{std}}}{\sqrt{18}},
+	\sigma_{\tau,\text{stat., 2}} = \frac{\sigma_{\tau,\text{std}}}{\sqrt{18}},
 \end{equation*}
 just as in \autoref{sec:meth_two_lel_i_said_meth}.
