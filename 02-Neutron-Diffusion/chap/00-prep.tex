@@ -3,24 +3,24 @@
 \section{Neutron Interactions}\label{sec:inter}
 There are three processes in which fast neutrons may interact with nuclei:
 \begin{itemize}
-	\item \textbf{Absorption:} The nucleus accepts the neutron through emission of quanta of corresponding energies.
-	The cross section for this process reaches its maximum at low energies.
+	\item \textbf{Absorption:} The nucleus absorbs the neutron through emission of quanta of corresponding energies.
+	The cross section for this process is higher at low energies.
 	\item \textbf{Elastic Scattering:} The total kinetic energy of the system is conserved.
-	Since the target usually is at rest in the lab frame, the neutrons lose part of their kinetic energy and are scattered into different directions.
+	Since the target usually is at rest in the lab frame, the neutrons lose part of their kinetic energy and are scattered in different directions.
 	The energy transfer is dependent on the target's mass and takes its maximum value for the proton's mass.
 	Here too, the maximal cross section is achieved with low energies.
 	\item \textbf{Inelastic Scattering:} The neutron interacts with the nucleus and the total kinetic energy of the system is changed, often activating the nucleus.
-	The neutrons usually lose more energy in this process than by elastic scattering, albeit the cross sections generally taking smaller values.
+	The neutrons usually lose more energy in this process than by elastic scattering, though the cross sections is generally smaller.
 \end{itemize}
 
 \section{Neutron Flow}\label{sec:flow}
 To describe the neutron radiation field, we can define a quantity $n(\vec{r}, \vec{\Omega}, E)$, the differential neutron density.
-It describes the amount of neutrons at a location $\vec{r}$ in space with unit energies around $E$ per unit solid angle around $\vec{\Omega}$.
+It describes the amount of neutrons at a location $(\vec{r}, \vec{r} + d\vec{r})$ with kinetic energy in $(E, E+dE)$ and travelling in a direction within $d\Omega$ around $\vec{\Omega}$.
 Like this, we may define a radiant flux
 \begin{equation}\label{eq:flux}
 	\phi(\vec{r}) = \int_E \int_\Omega n(\vec{r}, \vec{\Omega}, E)\cdot v(E)\cdot \,dE \,d\Omega,
 \end{equation}
-where $v(E)$ denotes the absolute value of the neutrons' velocity, which is subject to their energies $E$.
+where $v(E)$ denotes the absolute value of the neutrons' velocity, which is a function of their energy $E$.
 Defining the neutrons' mean velocity as
 \begin{equation*}
 	\bar{v} = \frac{\phi(\vec{r})}{\int_E \int_\Omega n(\vec{r}, \vec{\Omega}, E)\cdot \,dE \,d\Omega}
@@ -29,11 +29,10 @@ Defining the neutrons' mean velocity as
 \begin{equation*}
 	\phi(r) = n(r)\cdot \bar{v} \qquad \left[\phi\right]=\si{\per\meter\squared\per\second},
 \end{equation*}
-which can be understood as the amount of neutrons that pass through the unit area per time unit.
+which can be interpreted as the amount of neutrons that pass through the unit area per time unit.
 
 \section{Relaxation Length}
-Consider a point source emitting neutrons.
-Its radiant flux is given by
+The radiant flux of a point source emitting neutrons is given by
 \begin{equation}\label{eq:relax}
 	\phi(r) = \frac{Q_0}{4\pi r^2}\cdot e^{N\sigma_\text{t}\cdot r}
 \end{equation}
@@ -43,50 +42,48 @@ $N\sigma_t$ is the total linear absorption coefficient, given by the sum of the 
 	N\sigma_t = N\cdot(\sigma_\text{el} + \sigma_\text{a}),
 \end{equation*}
 where $\sigma_\text{el}$ and $\sigma_\text{a}$ denote the cross sections for elastic scattering and absorption.
-As the cross section for inelastic scattering is negligably small.
+As the cross section for inelastic scattering is negligably small, inelastic scattering can be omitted.
 $N$ is the density of target nuclei.
 
-With this knowledge, we can define the quantity
+With this knowledge, the \textbf{relaxation length}, the mean path length of neutrons before being scattered or absorbed, is defined as
 \begin{equation*}
-	\lambda = \frac{1}{N\cdot\sigma_\text{t}},
+	\lambda = \frac{1}{N\cdot\sigma_\text{t}}.
 \end{equation*}
-which we call \textbf{relaxation length}, the mean path length of neutrons before being scattered or absorbed.
 
 \section{Thermalization of Fast Neutrons}
 Neutrons emitted by a source with kinetic energies higher than those of their target nuclei will always lose energy through interactions.
-After a fair amount of collisions, their excess kinetic energy will have been completely transferred into the target.
+After many collisions, their excess kinetic energy is transferred into the target.
 The neutrons now are in thermal equillibrium with their environment, they are \textbf{thermalized}.
 Their velocities now obey a Maxwell distribution with the mean velocity of
 \begin{equation*}
 	\bar{v}_\text{th}=\sqrt{\frac{2kT}{m_\text{n}}},
 \end{equation*}
-with a respective energy of
+with a respective mean energy of
 \begin{equation*}
 	E_\text{th}=\frac{m\bar{v}_\text{th}^2}{2} = kT,
 \end{equation*}
-which are \SI{25}{\meV} at room temperature.
-This knowledge will be of use for the measurement of the \textbf{diffusion length} of thermal neutrons.
+which is \SI{25}{\meV} at room temperature.
+%This knowledge will be of use for the measurement of the \textbf{diffusion length} of thermal neutrons.
 
 \section{Diffusion Length}
 The fundamental goal of diffusion analysis is to find energy and spatial distributions for a given setup of neutron source and target.
 This can be accomplished by considering the \textbf{transport equation}, a partial differential equation for the differential neutron density $n(\vec{r}, \vec{\Omega}, E)$, discussed in \autoref{sec:flow}.
 Substantially, it is a continuity relation, which describes the neutron balance for a given differential neutron density.
 The transport equation has no solutions in a closed form, however, it can be solved approximately under a few conditions.
-Considering stationary solutions which are not dependent on the energy.
-The only processes allowed are scattering and absorption, which is deemed to be very weak ($\sigma_\text{a}\ll \sigma_\text{s}$).
-Naturally, these considerations do not allow for the description of the thermalization process itself, since it is no monoenergetic process but can be applied to already thermalized neutrons.
+Considering stationary solutions which are not dependent on the energy, the only processes allowed are scattering and absorption, which is deemed to be very weak ($\sigma_\text{a}\ll \sigma_\text{s}$).
+Naturally, these considerations do not allow for the description of the thermalization process itself, since it is no monoenergetic process, but it can be applied to already thermalized neutrons.
 
 With these conditions the transport equation simplifies to
 \begin{alignat*}{3}
-	D\cdot\Delta\phi(r) - N\sigma_\text{a}\cdot\phi(r) + S(r) &= 0 \qquad D&&=\frac{1}{3N\sigma_\text{a}}\\
-	\Delta\phi(r) - \frac{1}{L^2}\cdot\phi(r) + \frac{S(r)}{D} &= 0 \qquad L&&=\frac{D}{N\sigma_\text{a}},
+	D\cdot\Delta\phi(r) - N\sigma_\text{a}\cdot\phi(r) + S(r) &= 0 \qquad D&&\coloneqq\frac{1}{3N\sigma_\text{a}}\\
+	\Delta\phi(r) - \frac{1}{L^2}\cdot\phi(r) + \frac{S(r)}{D} &= 0 \qquad L&&\coloneqq\frac{D}{N\sigma_\text{a}},
 \end{alignat*}
 where $L$ is called the \textbf{diffusion length}.
 The solution of the equation above with the boundary condition $\lim_{r\rightarrow\infty}\phi = 0$ is
 \begin{equation}\label{eq:sol}
 	\phi(r) = \frac{Q_0}{4\pi\cdot D}\cdot \frac{e^{-r/_L}}{r},
 \end{equation}
-which can be used as a sample form for the measurement of $L$.
+which the gathered data can be fitted against to determine $L$.
 
 \chapter{Experiment}
 \section{Neutron Source}
