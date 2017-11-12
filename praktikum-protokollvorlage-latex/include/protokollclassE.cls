@@ -52,6 +52,7 @@
                                                 % between bib items
 %\usepackage{cite}                              % for bibtex without babel
 
+\usepackage{mathtools}
 \usepackage{amsmath}                            % lots of math packages
 \usepackage{amssymb}                            % ... even more math packages
 %\usepackage{mathtools}                         % ... (not necessary package)
