@@ -186,7 +186,7 @@
         pdfauthor={\namea, \nameb},
         pdftitle={Lab Report on \versuch},
         pdfsubject={Lab Report on
-                    \versuch~(\praktikum-\versuchsnr)},
+                    \versuch},%~(\praktikum-\versuchsnr)},
         pdfkeywords={kit,physik,praktikum,protokoll,%
                     \versuch,\nachnamea,\nachnameb}
     }
