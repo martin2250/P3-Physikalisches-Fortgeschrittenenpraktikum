@@ -1,0 +1,133 @@
+\setcounter{chapter}{-1}
+\chapter{Prep}
+\section{Neutron Interactions}\label{sec:inter}
+There are three processes in which fast neutrons may interact with nuclei:
+\begin{itemize}
+	\item \textbf{Absorption:} The nucleus accepts the neutron through emission of quanta of corresponding energies.
+	The cross section for this process reaches its maximum at low energies.
+	\item \textbf{Elastic Scattering:} The total kinetic energy of the system is conserved.
+	Since the target usually is at rest in the lab frame, the neutrons lose part of their kinetic energy and are scattered into different directions.
+	The energy transfer is dependent on the target's mass and takes its maximum value for the proton's mass.
+	Here too, the maximal cross section is achieved with low energies.
+	\item \textbf{Inelastic Scattering:} The neutron interacts with the nucleus and the total kinetic energy of the system is changed, often activating the nucleus.
+	The neutrons usually lose more energy in this process than by elastic scattering, albeit the cross sections generally taking smaller values.
+\end{itemize}
+
+\section{Neutron Flow}\label{sec:flow}
+To describe the neutron radiation field, we can define a quantity $n(\vec{r}, \vec{\Omega}, E)$, the differential neutron density.
+It describes the amount of neutrons at a location $\vec{r}$ in space with unit energies around $E$ per unit solid angle around $\vec{\Omega}$.
+Like this, we may define a radiant flux
+\begin{equation}\label{eq:flux}
+	\phi(\vec{r}) = \int_E \int_\Omega n(\vec{r}, \vec{\Omega}, E)\cdot v(E)\cdot \,dE \,d\Omega,
+\end{equation}
+where $v(E)$ denotes the absolute value of the neutrons' velocity, which is subject to their energies $E$.
+Defining the neutrons' mean velocity as
+\begin{equation*}
+	\bar{v} = \frac{\phi(\vec{r})}{\int_E \int_\Omega n(\vec{r}, \vec{\Omega}, E)\cdot \,dE \,d\Omega}
+\end{equation*}
+\autoref{eq:flux} can be written more compactly
+\begin{equation*}
+	\phi(r) = n(r)\cdot \bar{v} \qquad \left[\phi\right]=\si{\per\meter\squared\per\second},
+\end{equation*}
+which can be understood as the amount of neutrons that pass through the unit area per time unit.
+
+\section{Relaxation Length}
+Consider a point source emitting neutrons.
+Its radiant flux is given by
+\begin{equation}\label{eq:relax}
+	\phi(r) = \frac{Q_0}{4\pi r^2}\cdot e^{N\sigma_\text{t}\cdot r}
+\end{equation}
+where $Q_0$ denotes the source strength, which is defined by the amount of emissions per time unit.
+$N\sigma_t$ is the total linear absorption coefficient, given by the sum of the absorption coefficients for all possible interactions (see \autoref{sec:inter})
+\begin{equation*}
+	N\sigma_t = N\cdot(\sigma_\text{el} + \sigma_\text{a}),
+\end{equation*}
+where $\sigma_\text{el}$ and $\sigma_\text{a}$ denote the cross sections for elastic scattering and absorption.
+As the cross section for inelastic scattering is negligably small.
+$N$ is the density of target nuclei.
+
+With this knowledge, we can define the quantity
+\begin{equation*}
+	\lambda = \frac{1}{N\cdot\sigma_\text{t}},
+\end{equation*}
+which we call \textbf{relaxation length}, the mean path length of neutrons before being scattered or absorbed.
+
+\section{Thermalization of Fast Neutrons}
+Neutrons emitted by a source with kinetic energies higher than those of their target nuclei will always lose energy through interactions.
+After a fair amount of collisions, their excess kinetic energy will have been completely transferred into the target.
+The neutrons now are in thermal equillibrium with their environment, they are \textbf{thermalized}.
+Their velocities now obey a Maxwell distribution with the mean velocity of
+\begin{equation*}
+	\bar{v}_\text{th}=\sqrt{\frac{2kT}{m_\text{n}}},
+\end{equation*}
+with a respective energy of
+\begin{equation*}
+	E_\text{th}=\frac{m\bar{v}_\text{th}^2}{2} = kT,
+\end{equation*}
+which are \SI{25}{\meV} at room temperature.
+This knowledge will be of use for the measurement of the \textbf{diffusion length} of thermal neutrons.
+
+\section{Diffusion Length}
+The fundamental goal of diffusion analysis is to find energy and spatial distributions for a given setup of neutron source and target.
+This can be accomplished by considering the \textbf{transport equation}, a partial differential equation for the differential neutron density $n(\vec{r}, \vec{\Omega}, E)$, discussed in \autoref{sec:flow}.
+Substantially, it is a continuity relation, which describes the neutron balance for a given differential neutron density.
+The transport equation has no solutions in a closed form, however, it can be solved approximately under a few conditions.
+Considering stationary solutions which are not dependent on the energy.
+The only processes allowed are scattering and absorption, which is deemed to be very weak ($\sigma_\text{a}\ll \sigma_\text{s}$).
+Naturally, these considerations do not allow for the description of the thermalization process itself, since it is no monoenergetic process but can be applied to already thermalized neutrons.
+
+With these conditions the transport equation simplifies to
+\begin{alignat*}{3}
+	D\cdot\Delta\phi(r) - N\sigma_\text{a}\cdot\phi(r) + S(r) &= 0 \qquad D&&=\frac{1}{3N\sigma_\text{a}}\\
+	\Delta\phi(r) - \frac{1}{L^2}\cdot\phi(r) + \frac{S(r)}{D} &= 0 \qquad L&&=\frac{D}{N\sigma_\text{a}},
+\end{alignat*}
+where $L$ is called the \textbf{diffusion length}.
+The solution of the equation above with the boundary condition $\lim_{r\rightarrow\infty}\phi = 0$ is
+\begin{equation}\label{eq:sol}
+	\phi(r) = \frac{Q_0}{4\pi\cdot D}\cdot \frac{e^{-r/_L}}{r},
+\end{equation}
+which can be used as a sample form for the measurement of $L$.
+
+\chapter{Experiment}
+\section{Neutron Source}
+In the following experiment, an Am-Be-source is used.
+Neutrons are produced when the $\alpha$-particles impinge upon a low-atomic-weight isotope.
+Here, Am is used as an $\alpha$-source which affects Be.
+The reaction equation can be written as
+\begin{equation*}
+	\ce{^{9}Be} + \alpha \rightarrow n + \ce{^{12}C} + Q.
+\end{equation*}
+Typical neutron radiation energies are in a \si{MeV}-range.
+No significant amount of $\alpha$ radiation is to be expected, since \ce{^{241}Am} and \ce{^{9}Be} are finely mixed and each $\alpha$-particle is expected to hit a beryllium nucleus within its reach.
+The energy spectrum is continuous, as a result of the isotropy of radiation.
+
+\section{Relaxation Length of Fast Neutrons}\label{sec:relaxa}
+Taking the logarithm on both sides of \autoref{eq:relax} and using the definition of the relaxation length $\lambda$, it follows that
+\begin{equation*}
+	\log(r^2\cdot\phi(r)) = -\frac{r}{\lambda} + \text{const.}.
+\end{equation*}
+This equation can be used to measure $\lambda$ by measuring $\phi$ for varying distances $r$ and fitting the data to this model.
+
+However, only primary neutrons are permitted to be measured using this method.
+Unfortunately, primary and secondary neutrons are difficult to distinguish.
+This problem is addressed by using the \ce{^{10}B} detection method, which is only sensitive for thermal neutrons.
+This sounds contrdictory, since we want to detect primary neutrons.
+However, the emitted neutrons primarily interact with the protons of the water molecules, the cross section increases with descreasing energy.
+This means that the neutrons have a small mean free path inside the moderator.
+Thermalization takes place near the location of interaction.
+As a result, the distribution of thermal neutrons follows the distribution of primary neutrons.
+
+Nevertheless, this method only yields an approximation of the true relaxation length of fast neutrons inside water and can only be interpreted qualitatively.
+
+\section{Diffusion Length}
+Applying the same transformations as in \autoref{sec:relaxa} to \autoref{eq:relax} yields
+\begin{equation*}
+	\log(r\cdot\phi(r)) = -\frac{r}{L} + \text{const.}.
+\end{equation*}
+This equation is only applicable for point sources, which is not possible for thermal neutrons.
+That is why the so called \ce{Cd} differential method is used:
+Two measurements are carried out, one measuring the flux $\phi_0(r)$ of the emitted neutrons by the source and one measuring the flux $\phi_\text{Cd}(r)$ with the neutron source being enclosed by a cadmium case.
+This cadmium case filters out any thermal neutrons up to \SI{5}{meV}.
+The first measurement detects a mixture of fast and thermal neutrons, the second only detects fast neutrons.
+Subtracting the data of the second from the data of the first measurement hence yields a virtual thermal neutron point source.
+\end{document}
