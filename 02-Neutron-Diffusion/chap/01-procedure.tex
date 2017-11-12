@@ -1,0 +1,42 @@
+\chapter{Procedure}
+\section{Neutron Source}
+In the following experiment, an Am-Be-source is used.
+Neutrons are produced when the $\alpha$-particles are absorbed by a low-atomic-weight isotope.
+Here, Americium is used as an $\alpha$-source and beryllium is used as a target.
+The reaction equation can be written as
+\begin{equation*}
+	\ce{^{9}Be} + \alpha \rightarrow n + \ce{^{12}C} + Q.
+\end{equation*}
+Typical neutron radiation energies are in a \si{MeV}-range.
+No significant amount of $\alpha$ radiation leaves the source, since \ce{^{241}Am} and \ce{^{9}Be} are alloyed together and each $\alpha$-particle is expected to hit a beryllium nucleus within its reach.
+The energy spectrum is continuous, as a result of the isotropy of radiation.
+
+\section{Relaxation Length of Fast Neutrons}\label{sec:relaxa}
+Taking the logarithm of \autoref{eq:relax} and using the definition of the relaxation length $\lambda$, it follows that
+\begin{equation*}
+	\log(r^2\cdot\phi(r)) = -\frac{r}{\lambda} + \text{const.}.
+\end{equation*}
+This equation can be used to determine $\lambda$ by measuring $\phi$ for varying distances $r$ and fitting the data to this model.
+
+However, this relation is only true for primary neutrons.
+Experimentally, primary and secondary neutrons are difficult to distinguish.
+This problem is addressed by using a \ce{^{10}B} detector, which is only sensitive for thermal neutrons.
+This sounds contradictory, since we want to detect primary neutrons.
+However, the emitted neutrons primarily interact with the protons of the water molecules, the cross section increases with descreasing energy.
+This means that the neutrons have a small mean free path inside the moderator.
+Thermalization takes place near the location of interaction.
+As a result, the distribution of thermal neutrons follows the distribution of primary neutrons.
+
+Nevertheless, this method only yields an approximation of the true relaxation length of fast neutrons inside water and can only be interpreted qualitatively.
+
+\section{Diffusion Length}
+Applying the same transformations to \autoref{eq:relax} as in \autoref{sec:relaxa} yields
+\begin{equation*}
+	\log(r\cdot\phi(r)) = -\frac{r}{L} + \text{const.}.
+\end{equation*}
+This equation is only applicable for point sources, which is not possible for thermal neutrons.
+That is why the so called \ce{Cd} differential method is used:
+Two measurements are carried out, one measuring the flux $\phi_0(r)$ of the emitted neutrons by the unshielded source and one measuring the flux $\phi_\text{Cd}(r)$ with the neutron source enclosed by a cadmium case.
+This cadmium case filters out any thermal neutrons below to \SI{5}{meV}.
+The first measurement detects neutrons which were thermalized at any point in space, the second only detects neutrons that were thermalized outside the cadmium shield.
+Subtracting the data of the second from the data of the first measurement yields the flux of neutrons that were thermalized within the cadmium shield, creating a virtual thermal neutron point source.
