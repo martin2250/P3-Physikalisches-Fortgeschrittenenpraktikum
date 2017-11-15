@@ -14,7 +14,7 @@ dE = 1*np.ones(d.shape)			# 1mm error for d
 Y = np.log(d**2 * wo)
 YE = np.sqrt(
 	(1/(d**2 * wo) * woE)**2 +		# error on count
-	(1/(d**2 * wo) * dE)**2)			# error on d
+	(2*d/(d**2 * wo) * dE)**2)			# error on d
 
 if len(sys.argv) <= 2:
 	import kafe

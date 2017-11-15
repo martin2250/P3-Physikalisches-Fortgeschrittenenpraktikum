@@ -1,0 +1,45 @@
+\chapter{Data}
+The gathered data listed in \autoref{tab:data} is evaluated as described in \autoref{chap:explaining-shit}.
+The error on $r$ is estimated to be one division of the used ruler $\Delta r = \SI{1}{\mm}$.
+
+\begin{table}[tbp]
+	\centering
+	\caption[Measured Event Counts with and without cadmium shield]{\textbf{Measured Event Counts} with and without cadmium shield\\measurements below the break are discarded as the event count with cadmium shield is higher than without}
+	\label{tab:data}
+	\begin{tabular}{SSS}
+		\toprule
+		{distance $r$ (\si{\mm})}& {$N_\text{w/o}$}& {$N_\text{w}$}\\
+		\midrule
+		140&	50586&	47775\\
+		145&	46153&	43739\\
+		150&	43202&	37590\\
+		160&	33284&	32182\\
+		165&	29319&	27739\\
+		170&	27628&	26682\\
+		175&	24928&	24363\\
+		180&	22559&	21621\\
+		185&	20232&	19868\\
+		190&	18349&	18010\\
+		\midrule
+		140&	45505&	47963\\
+		155&	34781&	36095\\
+		155&	35074&	35896\\
+		175&	23410&	24140\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\section{Relaxation Length}
+The error on $r$ and $N_\text{w/o}$ propagate into the linearized term $L$ as follows:
+\begin{alignat}{1}
+	L &= \log(r^2 \cdot N_\text{w/o}) \nonumber\\
+	\Delta L &= \sqrt{
+		\left(\frac{\sqrt{N_\text{w/o}}}{r^2 \cdot N_\text{w/o}}\right)^2 +
+		\left(\frac{2r \cdot \Delta r}{r^2 \cdot N_\text{w/o}}\right)^2
+	}
+\end{alignat}
+This error and the error on $r$ are provided to the fitting tool \texttt{kafe}.
+The result of the linear fit is a relaxation length of
+\begin{equation*}
+	\lambda = \SI{119.5 +- 2.3}{\mm}
+\end{equation*}
