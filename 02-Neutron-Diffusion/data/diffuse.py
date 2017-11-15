@@ -11,10 +11,13 @@ woE = np.sqrt(wo)	# poisson error for series without Cd shield
 wE = np.sqrt(w)
 dE = 1*np.ones(d.shape)			# 1mm error for d
 
-Y = np.log(d**2 * wo)
+diff = wo - w
+diffE = np.sqrt(woE**2 + wE**2)
+
+Y = np.log(d * diff)
 YE = np.sqrt(
-	(1/(d**2 * wo) * woE)**2 +		# error on count
-	(1/(d**2 * wo) * dE)**2)			# error on d
+	(1/(d * diff) * diffE)**2 +		# error on diff
+	(1/(d * diff) * dE)**2)			# error on d
 
 if len(sys.argv) <= 2:
 	import kafe
@@ -31,6 +34,7 @@ if len(sys.argv) <= 2:
 	slopeE = fit.final_parameter_errors[0]
 	yoffset = fit.final_parameter_values[1]
 
+
 	os.execv(__file__, ['test', str(slope), str(slopeE), str(yoffset), 'save' if len(sys.argv) == 2 else 'show'])
 
 else:
@@ -38,19 +42,19 @@ else:
 	slopeE = float(sys.argv[2])
 	yoffset = float(sys.argv[3])
 
-	relaxlength = -1/slope
-	relaxlengthE = slopeE/slope**2
+	difflength = -1/slope
+	difflengthE = slopeE/slope**2
 
-	print('relaxation length:', relaxlength, '+-', relaxlengthE, 'mm')
+	print('diffusion length:', difflength, '+-', difflengthE, 'mm')
 
 
-	plt.errorbar(d, Y, fmt='o', yerr=YE, label='$\\log(d^2 \cdot N)$')
+	plt.errorbar(d, Y, fmt='o', yerr=YE, label='$\\log(d \cdot \\Delta N)$')
 
 	linX = np.array([d[0], d[-1]])
-	plt.plot(linX, slope * linX + yoffset, label='$-\\frac{d}{\\lambda} + c$, $\\lambda = %0.1f \pm %0.1f$mm'%(relaxlength, relaxlengthE))
+	plt.plot(linX, slope * linX + yoffset, label='$-\\frac{d}{\\lambda} + c$, $\\lambda = %0.1f \pm %0.1f$mm'%(difflength, difflengthE))
 
 	plt.xlabel('distance from  source $d$ (mm)')
-	plt.ylabel('$\\log(d^2 \\cdot N)$')
+	plt.ylabel('$\\log(d \\cdot \Delta N)$')
 
 	#plt.text(150, 13.4, 'test')
 
@@ -58,6 +62,6 @@ else:
 	plt.legend()
 
 	if sys.argv[4] == 'save':
-		plt.savefig('plots/relax.pdf')
+		plt.savefig('plots/diffusion.pdf')
 	else:
 		plt.show()
