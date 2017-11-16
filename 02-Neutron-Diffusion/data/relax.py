@@ -6,15 +6,15 @@ import matplotlib.pyplot as plt
 import os
 
 #distance, count without Cd, count with Cd
-d, wo, w = np.loadtxt('values.dat', unpack=True)
+d, wo, w = np.loadtxt(sys.path[0] + '/values.dat', unpack=True)
 woE = np.sqrt(wo)	# poisson error for series without Cd shield
 wE = np.sqrt(w)
 dE = 1*np.ones(d.shape)			# 1mm error for d
 
 Y = np.log(d**2 * wo)
 YE = np.sqrt(
-	(1/(d**2 * wo) * woE)**2 +		# error on count
-	(2*d/(d**2 * wo) * dE)**2)			# error on d
+	(1/(wo) * woE)**2 +		# error on count
+	(2*d/(d**2) * dE)**2)			# error on d
 
 if len(sys.argv) <= 2:
 	import kafe
