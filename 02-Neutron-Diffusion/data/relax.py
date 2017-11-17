@@ -44,13 +44,13 @@ else:
 	print('relaxation length:', relaxlength, '+-', relaxlengthE, 'mm')
 
 
-	plt.errorbar(d, Y, fmt='o', yerr=YE, label='$\\log(d^2 \cdot N)$')
+	plt.errorbar(d, Y, fmt='o', yerr=YE, label='$\\log(r^2 \cdot N_\\mathrm{w/o})$')
 
 	linX = np.array([d[0], d[-1]])
-	plt.plot(linX, slope * linX + yoffset, label='$-\\frac{d}{\\lambda} + c$, $\\lambda = %0.1f \pm %0.1f$mm'%(relaxlength, relaxlengthE))
+	plt.plot(linX, slope * linX + yoffset, label='$-\\frac{r}{\\lambda} + c$, $\\lambda = %0.1f \pm %0.1f$mm'%(relaxlength, relaxlengthE))
 
-	plt.xlabel('distance from  source $d$ (mm)')
-	plt.ylabel('$\\log(d^2 \\cdot N)$')
+	plt.xlabel('distance from  source $r$ (mm)')
+	plt.ylabel('$\\log(r^2 \\cdot N_\\mathrm{w/o})$')
 
 	#plt.text(150, 13.4, 'test')
 

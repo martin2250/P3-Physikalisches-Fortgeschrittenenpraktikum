@@ -1,7 +1,7 @@
 \chapter{Data}
 The gathered data listed in \autoref{tab:data} is evaluated as described in \autoref{chap:explaining-shit}.
 The error on $r$ is estimated to be one division of the used ruler $\Delta r = \SI{1}{\mm}$.
-The linearized terms $Y$ and their respective errors are provided to the fitting tool \texttt{kafe}.
+The linearized terms $Y$ and their respective errors are provided to the fitting tool \texttt{kafe} which applies a linear fit and returns the fitting parameters along with estimated uncertainties.
 
 \begin{table}[tbp]
 	\centering
@@ -30,8 +30,18 @@ The linearized terms $Y$ and their respective errors are provided to the fitting
 	\end{tabular}
 \end{table}
 
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=.7\textwidth]{data/plots/relax.pdf}
+	\caption{Relaxation Length Fit}
+	\includegraphics[width=.7\textwidth]{data/plots/diffusion.pdf}
+	\caption{Diffusion Length Fit}
+\end{figure}
+
+\todo{reorder stuff so it doesn't take up as much space}
+
 \section{Relaxation Length}
-The error on $r$ and $N_\text{w/o}$ propagate into the linearized term $Y$ as follows:
+As the error on $r$ and $N_\text{w/o}$ are uncorrelated, they propagate into the linearized term $Y$ through gaussian error propagation:
 \begin{alignat}{1}
 	Y &= \log(r^2 \cdot N_\text{w/o}) \nonumber\\
 	\Delta Y &= \sqrt{
@@ -47,7 +57,7 @@ The result of the linear fit is a relaxation length of \todo{insert final value 
 \end{equation*}
 
 \section{Diffusion Length}
-The error on $r$, $N_\text{w/o}$ and $N_\text{w}$propagate into the linearized term $Y$ as follows:
+The error on $r$, $N_\text{w/o}$ and $N_\text{w}$ too are ucorrelated and propagate into the linearized term $Y$ as:
 \begin{alignat}{1}
 	Y &= \log(r \cdot (N_\text{w/o} - N_\text{w})) \nonumber\\
 	\Delta Y &= \sqrt{

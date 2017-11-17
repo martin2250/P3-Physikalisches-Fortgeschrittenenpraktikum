@@ -48,13 +48,13 @@ else:
 	print('diffusion length:', difflength, '+-', difflengthE, 'mm')
 
 
-	plt.errorbar(d, Y, fmt='o', yerr=YE, label='$\\log(d \cdot \\Delta N)$')
+	plt.errorbar(d, Y, fmt='o', yerr=YE, label='$\\log(r \cdot (N_\\mathrm{w/o} - N_\\mathrm{w}))$')
 
 	linX = np.array([d[0], d[-1]])
-	plt.plot(linX, slope * linX + yoffset, label='$-\\frac{d}{\\lambda} + c$, $\\lambda = %0.1f \pm %0.1f$mm'%(difflength, difflengthE))
+	plt.plot(linX, slope * linX + yoffset, label='$-\\frac{r}{\\lambda} + c$, $\\lambda = %0.1f \pm %0.1f$mm'%(difflength, difflengthE))
 
-	plt.xlabel('distance from  source $d$ (mm)')
-	plt.ylabel('$\\log(d \\cdot \Delta N)$')
+	plt.xlabel('distance from  source $r$ (mm)')
+	plt.ylabel('$\\log(r \\cdot (N_\\mathrm{w/o} - N_\\mathrm{w}))$')
 
 	#plt.text(150, 13.4, 'test')
 
