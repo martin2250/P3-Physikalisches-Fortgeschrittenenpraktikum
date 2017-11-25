@@ -9,3 +9,52 @@ In both experiments, an external magnetic field is applied to lift the degenerac
 \section{ESR}
 
 \section{NMR}
+Nuclear Magnetic Resonance is used to analyze the different energy states that nuclei with a nonzero magnetic moment take in an external magnetic field.
+NMR is used in medicine (MRI) or to detect isotopes of elements.
+The resonance frequency is also affected by the electron hull of the atom (''nuclear shielding''), which makes it possible to analyze chemical structures with NMR.
+Only nuclei that don't have an even number of protons and neutrons each can be analyzed, as protons and neutrons each form pairs that have opposing spin and thus have no net spin and magnetic moment.\\
+In this experiment hydrogen atoms of different chemical compounds are analyzed.
+
+\subsection{Resonance Frequency}
+
+The energy of a hydrogen atom's proton's magnetic diopole $\mu_z = m \gamma \hbar$ in a magnetic field $B_0$ is
+\begin{equation*}
+	E = - \mu_z \cdot B_0 = m \gamma \hbar \cdot B_0,
+\end{equation*}
+where $m = \pm \tfrac{1}{2}$ denotes the magnetic quantum number and $\gamma$ the proton's gyromagnetic ratio.
+The resulting resonance frequency is
+\begin{equation*}
+	f_0 = \frac{\Delta E}{h} = \frac{1}{2 \uppi} \gamma \cdot B_0,
+\end{equation*}
+which is \SI{60}{\mega\hertz} for the used field strength of \SI{1.41}{\tesla}.
+
+\subsection{Nuclear Shielding}
+A nucleus' environment can weaken the effective magnetic field that reaches the nucleus.
+The resulting change in resonance frequency can be detected:
+\begin{alignat*}{1}
+	B_\text{eff} &= \left(1 - \sigma \right) \, B_0\\
+	f_\text{r} &= \left(1 - \sigma \right) \, f_0
+\end{alignat*}
+
+\subsection{$\updelta$ Scale}
+The exact resonance frequency is linearly dependent on the strength of the external magnetic field.
+Calibrating this magnetic field to the required accuracies of $< \SI{1}{ppm}$ and accounting for temperature coefficients and drift is difficult at best.
+Since only hydrogen atoms are analyzed and the expected resonance frequencies are very similar, frequencies are measured relative to the resoance frequency of the hydrogen atoms in a known chemical structure.
+
+Tetramethylsilane proves to be a good reference compound, as it contains twelve hydrogens atoms which are chemically identical.
+
+Frequencies are converted to the delta scale as
+\begin{equation*}
+	\delta = \frac{f - f_\text{TMS}}{f_\text{TMS}},
+\end{equation*}
+which is not dependent on $B_0$.
+Values for delta are usually expressed in \si{ppm}.
+
+\subsection{Spin-Spin Coupling}
+The dipole moments of neighbouring nuclei can contribute to the external magnetic field.
+Depending on the number of neighbouring atoms, this results in doublets, triplets or quaduplets instead of single peaks.
+The frequency difference between peaks is independent of the external field, so it is specified directly.
+
+For $n$ neighbouring, chemically equivalent nuclei $n + 1$ peaks are detected, with intensities proportional to ${{n + 1}\choose{m}}, m = 0 \dots n$.
+
+Nuclei that are not chemically identical will result in more compliacated patterns.
