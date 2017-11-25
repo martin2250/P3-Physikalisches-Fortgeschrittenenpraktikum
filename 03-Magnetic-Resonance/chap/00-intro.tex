@@ -3,7 +3,7 @@ Magnetic Resonance is used to find energies of possible quantum transitions in m
 A sample in an oscillating field can absorb energy when the oscillating frequency coincides with the energy difference between two quantum states. %and some other rules are met (include?)
 In both experiments, an external magnetic field is applied to lift the degeneracy of different magnetic states of particles that carry a magnetic dipole, creating the different energy states.
 
-\section{Zeeman Effect}
+\section{Zeeman Effect}\label{sec:zeeman}
 The \textsc{Zeeman} effect describes the splitting of a spectral line due to an external static magnetic field and is important in applications such as \textbf{ESR} and \textbf{NMR}, which will be discussed later on.
 
 \subsection{Normal Zeeman Effect}
@@ -37,6 +37,37 @@ Consider a doublet level transistion $\ce{^{2}P}_{1/2}\rightarrow \ce{^{2}S}_{1/
 The selection rule $\Delta m_J =0, \pm 1$ gives 4 lines.
 
 \section{ESR}
+Electron spin resonance or electron paramagnetic resonance is a spectroscopy meth%hehe, said meth
+od for analyzing materials with unpaired electrons, such as organic radicals.
+As discussed in \autoref{sec:zeeman}, if a sample is subjected to a static magnetic field, its energies split into Zeeman levels.
+An unpaired electron can shift between energy levels by absorbing/emitting a circular polarized photon with frequency $\nu$, such that the resonance condition
+\begin{equation*}
+	\Delta E = h\nu = g_\text{e}\mu_\text{B}B_0
+\end{equation*}
+is satisfied. %unlike yo mama, she ugly.
+The unpaired electron can now alter its energy state by either absorbing this photon or by stimulated emission.
+Consider a two-level-system with energies $E_1$ and $E_2$ and $n=n_1+n_2$.
+The population of the different energy levels obeys a Boltzmann distribution
+\begin{equation*}
+	\frac{n_2}{n_1}=\text{exp}\left(-\frac{E_2-E_1}{k_\text{B}T}\right).
+\end{equation*}
+Expanding the exponential function to the first order gives
+\begin{equation*}
+	\Delta n = \frac{n}{2}\cdot\frac{g_\text{e}\mu_\text{B}B_0}{k_\text{B}T}.
+\end{equation*}
+The lower-energy state is preferred minimally, so absorption will be observed most of the time.
+The amount of absoprtion can be increased by lowering the temperature.
+
+\subsection{Spectrum}
+The form of the ESR spectrum can be influenced by many effects.
+For example, an unpaired electron may interact with the magnetic moments of the nuclei, which is called \textbf{hyperfine-structure} and results into further splitting of energy levels.
+Furthermore, internal \textbf{dipole-dipole interactions} which result into additional fluctuating magnetic fields, can influence the width of the ESR peak.
+Fast fluctuations relative to the charactersitic frequency of dipole-dipole interaction give narrower peaks, whereas slow fluctuations result into wider peaks.
+The main influence, however, surely is the external, \textbf{inhomogenous magnetic field}.
+Although we make use of a Helmoltz coil, the homogenity of the magnetic field cannot be ensured at the edges of the relatively big sample.
+The resonance condition is met at different frequencies throughout the sample, which effectively widens the peak drastically.
+Furthermore, the \textbf{orientation of spins} as a consequence of an external magnetic field produces additional magnetic fields, which shift the resonance.
+Moreover, if the distances between paramagnetic molecules is small enough for the wave functions to overlap, electrons may dislocate between molecules, which effectively decreases the effect of dipole-dipole peak widenings.
 
 \section{NMR}
 Nuclear Magnetic Resonance is used to analyze the different energy states that nuclei with a nonzero magnetic moment take in an external magnetic field.
