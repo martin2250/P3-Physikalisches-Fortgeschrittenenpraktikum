@@ -22,45 +22,56 @@ The frequencies are \SI{2.18}{ppm} for the methyl group and \SI{11.5}{ppm} for t
 The high shift of the carboxyl group is due to the high electronegativity of oxygen, pulling the electrons close to the carboxyl group and shielding the single hydrogen nucleus from the external field.
 
 \section{Booze (sample 2)}
-In booze (also referred to as ethanol), there are three distinctive groups containing hydrogen atoms:
+In booze (also referred to as ethanol), there are three distinctive groups containing hydrogen atoms.
 
-\center
-{
+\begin{center}
 	\begin{tabular}{cSSc}
 		\toprule
-		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}\\
+		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}& multiplet\\
 		\midrule
 		hydroxy (\ce{OH})&	5.44& {singlet}\\
 		alkyl (\ce{CH_2})&	3.81&	0.123&	4\\
 		methyl (\ce{CH_3})&	1.22&	0.117&	3\\
 		\bottomrule
 	\end{tabular}
-}
+\end{center}
 
-\section{Ethanol and Hydrochloric Acid}
+The hydroxy and alkyl lines again are shifted strongly due to the electronegative oxygen atom.
+Also the lines of the alkyl and methyl groups are split into a quadruplet and triplet, with very similar coupling constants.
 
-\center
-{
+\section{Ethanol and Hydrochloric Acid (sample 8)}
+
+The sample that also contains hydrochloric acid is missing the hydroxy line and instead shows a peak that corresponds to the acid.
+This is due to NMR being a slow process on atomic scale.
+The hydrogen atom of the hydroxy group is in an equilibrium reaction between \ce{HCl} and \ce{OH}.
+This means that the difference in the population between higher and lower energy states, which is necessary for net absorption of radiation to occur, cannot form.
+
+The chemical shifts of the two carbon groups are higher, this can be explained by the electronegative chlorine attracting electrons from the ethanol and thus leaving the nuclei shielded less.
+
+\begin{center}
 	\begin{tabular}{cSSc}
 		\toprule
-		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}\\
+		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}& multiplet\\
 		\midrule
-		hydroxy (\ce{OH})&	suppressed\\
+		hydroxy (\ce{OH})&\\
 		alkyl (\ce{CH_2})&	3.84&	0.128&	4\\
 		methyl (\ce{CH_3})&	1.28&	0.123&	3\\
 		\ce{HCl}&	7.5& {singlet}\\
 		\bottomrule
 	\end{tabular}
-}
+\end{center}
 
-\section{1- and 2-Propanol}
+\section{1- and 2-Propanol (sample 9 and 3)}
 
-\center
-{
-	n-PrOH\\
+Despite sharing the same chemical formula, the two isomers contain different chemical groups.
+Isopropanol contains two equivalent methyl groups which show up as one peak and one \ce{CH} group, whereas the 1-propanol has one methyl group and two \ce{CH_2} groups which are not equivalent and show up as two separate peaks.
+The two separate peaks of the \ce{CH_2} groups are due to the different neighbouring groups, the ''B'' group, which is closer to the oxygen atom, has a higher shift than group ''A''.
+
+\begin{center}
+	n-PrOH (groups are sorted by position in molecule)\\
 	\begin{tabular}{cSSc}
 		\toprule
-		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}\\
+		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}& multiplet\\
 		\midrule
 		methyl (\ce{CH_3})&	0.97&	0.116&	3\\
 		alkyl A (\ce{CH_2})&	1.63&	0.116&	5\\
@@ -72,25 +83,29 @@ In booze (also referred to as ethanol), there are three distinctive groups conta
 	i-PrOH\\
 	\begin{tabular}{cSSc}
 		\toprule
-		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}\\
+		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}& multiplet\\
 		\midrule
 		2x methyl (\ce{CH_3})&	1.28&	0.103& 3\\
 		alkyl (\ce{CH})&	4.19&	0.109&	5\\
 		hydroxy (\ce{OH})&	5.28&	\\
 		\bottomrule
 	\end{tabular}
-}
+\end{center}
 
-\section{}
+\section{Methyl(methylthio)methylsulfate (sample 10)}
+The compund contains three detectable groups.
+Two dissimilar methyl groups show up as separate peaks, where the group next to the sulfinyl group ''A'' has a weaker shift than the group next to the sulfide ''B'', as the oxygen attracts electrons away from methyl group ''A'', decresing the shielding effect.
+The \ce{CH_2} group shows a shift similar to previous samples.
 
-\center
-{
+\begin{center}
 	\begin{tabular}{cSS}
 		\toprule
 		functional group&	{chemical shift $\delta$}&	{coupling constant $J$}\\
 		\midrule
-
+		methyl A (\ce{CH_3})&	2.51\\
+		methyl B (\ce{CH_3})&	2.87\\
+		alkyl (\ce{CH_2})&	4.21\\
 		\ce{HCl}&	7.5& {singlet}\\
 		\bottomrule
 	\end{tabular}
-}
+\end{center}
