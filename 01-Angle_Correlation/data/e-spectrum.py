@@ -11,8 +11,9 @@ def annotateallthethings(x, y):
 	y_trimmed1 = y[230:285]
 	y_trimmed2 = y[289:366]
 	i = (np.argmax(y_trimmed1), np.argmax(y_trimmed2))
-	plt.annotate('1173 keV photopeak', xy=(x[i[0]+230]+10, y[i[0]+230]+10), xytext=(x[i[0]+230]+150, y[i[0]+230]+300), arrowprops=dict(facecolor='black', shrink=0.005))
-	plt.annotate('1332 keV photopeak', xy=(x[i[1]+289]+10, y[i[1]+289]+10), xytext=(x[i[1]+289]+150, y[i[1]+289]+150), arrowprops=dict(facecolor='black', shrink=0.005))
+	plt.annotate('compton edge', xy=(x[i[0]+230]+10, y[i[0]+230]+10), xytext=(x[i[0]+230]+150, y[i[0]+230]+300), arrowprops=dict(facecolor='black', shrink=0.005))
+	plt.annotate('1173 keV photopeak', xy=(x[i[1]+289]+10, y[i[1]+289]+10), xytext=(x[i[1]+289]+150, y[i[1]+289]+150), arrowprops=dict(facecolor='black', shrink=0.005))
+	plt.annotate('1332 keV photopeak', xy=(8000, 500), xytext=(8000+150, 500+150), arrowprops=dict(facecolor='black', shrink=0.005))
 
 	plt.text(3730, 1680, 'energy threshold', color='xkcd:teal')
 
