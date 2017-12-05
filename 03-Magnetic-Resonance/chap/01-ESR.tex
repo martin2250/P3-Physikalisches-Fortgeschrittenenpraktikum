@@ -6,24 +6,24 @@
 	\caption[]{\textbf{2,2-diphenyl-1-picrylhydrazyl (DPPH)} The unpaired electron of the nitrogen radical makes the sample suitable for ESR experiments.}
 	\label{fig:DPPH}
 \end{figure}
-The whole experiment is layed out around a main system which consists of the ESR probe with three interchangable ESR coils, which all cover different frequency ranges.
+The experiment builds on a main system which consists of the ESR probe with three interchangable ESR coils, which cover different frequency ranges.
 This ESR probe emits microwaves.
 
 A sample can be inserted into the coils.
-In this experiment, an organic compound called DPPH (2,2-diphenyl-1-picrylhydrazyl) is used (\autoref{fig:DPPH}).
+In this experiment, the organic compound DPPH (2,2-diphenyl-1-picrylhydrazyl) is used (\autoref{fig:DPPH}).
 DPPH has a distinct ESR spectral line which also acts as a standard in ESR experiments.
 
-The ESR probe is powered by the basic device which also contains a frequency gauge.
+The ESR probe is powered by the base device which also contains a frequency counter.
 Helmholtz coils (distance between coils: $d=r=\SI{68}{\mm}$), which are used to create an external magnetic field, are powered by an adjustable transformer.
 The Zeeman splitting discussed in \autoref{sec:zeeman} is provided by the Helmholtz coils.
 
 Both the ESR probe's signal and the Helmholtz coils' current (using a shunt resistor) are connected to a 2-channel oscilloscope.
 
 \section{Exercise 1: Intro-Experiment}
-A passive, resonant circuit consisting of a coil and variable capacitor is mounted next to the ESR probe.
+A passive resonant circuit consisting of a coil and variable capacitor is mounted next to the ESR probe.
 The AC voltage across the variable capacitor is measured with a multimeter while varying the ESR probe's frequency.
-However, the multimeter does not provide the bandwidth to carry out such measurements.
-Although a miniscule voltage is observed at the multimeter for a specific tuning of the HF frequency, the result is not significant enough.
+The multimeter does not provide the bandwidth to carry out such measurements.
+Still, a miniscule voltage is observed at the multimeter for a specific tuning of the HF frequency, though the result carries no significant value.
 If a significant voltage had been measured, it would prove that the resonant circuit drained energy from the ESR probe's electromagnetic field.
 
 \section{Exercise 2 and 3: External Field Dependence}
@@ -33,13 +33,13 @@ The probe's resonance peaks are measured with three different ESR coils.
 
 The maximum magnetic field is varied by changing the voltage amplitude of the Helmholtz coils.
 With decreasing amplitude, the peaks in the spectrum drift apart from the modulation signal's zero crossing.
-This can be explained by the fact that, for low amplitudes, the resonance field strengths are shifted towards the voltage peak, until resonance is only visible once per period for sufficiently small amplitudes.
+This can be explained by the fact that, for low amplitudes, the resonance field strengths are shifted towards the voltage peaks, until resonance is only visible once per period for sufficiently small amplitudes.
 
 Upon removing the sample from the ESR probe, the characteristic spectrum vanishes.
 This means that the measured peaks actually originate from the sample's resonance.
 Increasing the HF amplitude of the ESR probe increases the signal strength in the spectrum.
 This behavior can be explained by the increasing number of spins that are excited inside of the sample.
-Hence, for extraordinarily high amplitudes the signal strength should reach a saturation point.
+For extraordinarily high amplitudes the signal strength should reach a saturation point.
 This behavior cannot be observed as the amplitude available is limited by the ESR probe.
 
 \section{Exercise 4: Measuring the g-Factor}
@@ -119,7 +119,7 @@ The voltage is measured across a \SI{1.07}{\ohm} shunt resistor and is determine
 \end{equation*}
 
 \subsection{Error Calculation}
-Assuming an error of $\Delta U_i=\SI{20}{\mV}$, which complies with 2 LSB of the used oscilloscope, the voltage uncertainty propagates like
+Assuming an error of $\Delta U_i=\SI{20}{\mV}$, which equals 2 LSB of the used oscilloscope, the voltage uncertainty propagates like
 \begin{alignat*}{2}
 	\Delta U &= \sqrt{\sum^2_{i=1}\left(\pdb{U}{U_i}\cdot \Delta U_i\right)^2} \\
 	&=\frac{1}{\sqrt{2}}\Delta U_i,
@@ -163,7 +163,7 @@ Additionally, the errors from previously calculated values propagate into their 
 	\includegraphics[width=\linewidth]{./data/plots/coilG.pdf}
 	\caption*{Linear fit for Coil G ($f=75-130\si{\MHz}$)}\label{fig:coilG}
 	\endminipage
-	\caption[Linear fits for all ESR coils]{\textbf{Linear fits for all ESR coils} The linear behavior is proven for all three frequency ranges with a coefficient of determination $R^2=\num{99.9}\%$}
+	\caption[Linear fits for all ESR coils]{\textbf{Linear fits for all ESR coils} The linear behavior is confirmed for all three frequency ranges with a coefficient of determination $R^2=\num{99.9}\%$}
 	\label{fig:allcoils}
 \end{figure}
 
@@ -202,4 +202,4 @@ This result is consistent with the literature value $g_\text{lit}%it's lit yo
 \end{table}
 The line width $\Delta U$ for coil G is measured by determining the FWHM of the observed peak.
 The measurement was carried out for three different frequencies, occupying the lower, mid and higher frequency region of the available bandwidth.
-\autoref{tab:linewidth} demonstrates, that the linewidth shows almost no frequency dependence within the recorded interval.
+\autoref{tab:linewidth} demonstrates that the linewidth shows almost no frequency dependence within the recorded interval.
