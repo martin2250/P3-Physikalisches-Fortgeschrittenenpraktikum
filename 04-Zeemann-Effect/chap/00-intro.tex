@@ -29,7 +29,7 @@ By performing the vector addition of $\vec{L}$ and $\vec{S}$, $g_\text{J}$ takes
 \begin{equation*}
 	g_\text{j} = 1+\frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}.
 \end{equation*}
-Consider a doublet level transistion $\ce{^{2}P}_{1/2}\rightarrow \ce{^{2}S}_{1/2}$.
+Consider a doublet level transition $\ce{^{2}P}_{1/2}\rightarrow \ce{^{2}S}_{1/2}$.
 The selection rule $\Delta m_J =0, \pm 1$ gives 4 lines.
 
 \section{Paschen-Back Effect}
@@ -46,8 +46,26 @@ Therefore, the energy eigenvalues for a state $\ket{\psi}$ can simply be calcula
 \end{align*}
 
 \subsection{Polarizations}
+The transitions produce light of different polarization depending on the change in angular momentum $\Delta m$.
+$\Delta m = 0$ produces linearly ($\uppi$-) polarized light, while $\Delta m = \pm 1$ transitions produce light with circular ($\upsigma$-) polarization.
+
+The emission of light is not isotropic, the intensity of light at an angle $\Theta$ relative to the magnetic field is given by
+\begin{alignat}{2}
+	W_+ \cdot d\Omega &= \frac{3}{16} \; \uppi \; (1 + \cos^2 \Theta) \cdot d\Omega \qquad &(\Delta m = +1) \nonumber\\
+	W_0 \cdot d\Omega &= \frac{3}{8} \; \uppi \; \sin^2 \Theta \cdot d\Omega \qquad &(\Delta m = 0) \nonumber\\
+	W_- \cdot d\Omega &= \frac{3}{16} \; \uppi \; (1 + \cos^2 \Theta) \cdot d\Omega \qquad &(\Delta m = -1). \nonumber
+\end{alignat}
+Linearly polarized light is emitted primarily perpendicular to the magnetic field.
+
+Polarization filters can be used to block single transitions, eg. when peaks overlap in the spectrum.
 
 \section{Electron Mass-to-Charge Ratio}
+The \textsc{Bohr} magneton, given by
+\begin{equation*}
+\mu_\text{B} = \frac{e \hbar}{2 m_\text{e}},
+\end{equation*}
+is proportional to the mass-to-charge ratio $\frac{e}{m}$.
+In the experiment, $\mu_\text{B}$ is determined and used to calculate $\frac{e}{m}$.
 
 \section{Term Scheme of Helium}
 Helium contains 2 electrons, whose spins can be aligned parallel (orthohelium) or anti-parallel (parahelium), where orthohelium is a triplet state and parahelium a singlet state.
