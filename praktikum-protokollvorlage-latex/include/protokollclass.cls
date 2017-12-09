@@ -29,25 +29,25 @@
 %% |    Packages    |
 %% ------------------
 \usepackage[utf8]{inputenc}                     % for using utf8 chars (äöüß)
-\usepackage[T1]{fontenc}                        % for correct font encoding (you 
-                                                % can't search for non-ascii 
+\usepackage[T1]{fontenc}                        % for correct font encoding (you
+                                                % can't search for non-ascii
                                                 % chars in pdf otherwise)
 \usepackage{lmodern}                            % the font used by T1 font enc
-\usepackage[protrusion=true,                    % microtype package for better 
+\usepackage[protrusion=true,                    % microtype package for better
             expansion,                          % line breaks, kerning, etc.
             tracking,
             kerning,
             spacing]{microtype}
-\microtypecontext{spacing=nonfrench}            % option for scrbook to allow 
+\microtypecontext{spacing=nonfrench}            % option for scrbook to allow
                                                 % microtype->nonfrenchspacing
                                                 % for info on nonfrenchspacing:
                                                 % en.wikipedia.org/wiki/       \
                                                 % History_of_sentence_spacing# \
                                                 % French_and_English_spacing
 
-\usepackage[english,ngerman]{babel}             % babel language styles. you may 
+\usepackage[english,ngerman]{babel}             % babel language styles. you may
                                                 % add languages, if need to be.
-\usepackage[fixlanguage]{babelbib}              % use babel bibtex. fixlanguage 
+\usepackage[fixlanguage]{babelbib}              % use babel bibtex. fixlanguage
                                                 % = don't switch language
                                                 % between bib items
 %\usepackage{cite}                              % for bibtex without babel
@@ -56,45 +56,46 @@
 \usepackage{amssymb}                            % ... even more math packages
 %\usepackage{mathtools}                         % ... (not necessary package)
 %\usepackage{bbm}                               % blackboard style fonts.
-                                                % You may prefer the provided 
-                                                % \mathbbm{R} to ordinary 
+                                                % You may prefer the provided
+                                                % \mathbbm{R} to ordinary
                                                 % \mathbb{R}.
-                                                
+
+\usepackage{physics}
 \usepackage{upgreek}                            % use $\uppi$ etc.
-\usepackage{nicefrac}                           % use \nicefrac{1}{2} 
+\usepackage{nicefrac}                           % use \nicefrac{1}{2}
                                                 % for inline text, if you want
 \usepackage[load-configurations=abbreviations]
-{siunitx}                                       % package for units. Use 
-                                                % \si{\ampere} or 
+{siunitx}                                       % package for units. Use
+                                                % \si{\ampere} or
                                                 % \SI{0.3}{\angstrom}.
 \sisetup{per-mode=fraction}                     % style of writing units
 \sisetup{separate-uncertainty=true}             % to allow for $\pm...$ as un-
                                                 % certainty instead of 0.34(12)
 \usepackage{textcomp}							% fix siunitsx warning for font
-\usepackage[version=3]{mhchem}                  % to nicely write chemcial 
+\usepackage[version=3]{mhchem}                  % to nicely write chemcial
                                                 % elements (e.g.
                                                 % \ce{^{227}_{90}Th+})
 
-\usepackage{vmargin}                            % Adjust margins in a simple way 
+\usepackage{vmargin}                            % Adjust margins in a simple way
                                                 % (is used below).
-\usepackage{fancyhdr}                           % Define simple page headings 
+\usepackage{fancyhdr}                           % Define simple page headings
                                                 % (is used below).
 \usepackage{placeins}                           % To use \FloatBarrier
 
-\usepackage[nottoc,                             % So that the Bibliography will 
+\usepackage[nottoc,                             % So that the Bibliography will
             notlot,                             % be added to the ToC
             notlof]{tocbibind}
 
-\usepackage{varioref}                           % Intelligent page 
-                                                % references. Provides \vref 
+\usepackage{varioref}                           % Intelligent page
+                                                % references. Provides \vref
                                                 % and \vpageref
 
 \usepackage{booktabs}
-\usepackage[table]{xcolor}                      % used for some coloring 
-                                                % commands. table option for 
+\usepackage[table]{xcolor}                      % used for some coloring
+                                                % commands. table option for
                                                 % beautiful colored tables.
-\definecolor{kitcolor}{rgb}{0 0.61 0.50}        % color is defined here and 
-                                                % later used for several 
+\definecolor{kitcolor}{rgb}{0 0.61 0.50}        % color is defined here and
+                                                % later used for several
                                                 % definitions
 
 \usepackage[pdftex]{graphicx}                   % including images
@@ -107,21 +108,21 @@
                                                 % for subpictures
 
 \usepackage[absolute,overlay]{textpos}          % used for titlepage
-\usepackage{tikz}                               % used for titlepage, 
-                                                % but may be useful for other 
+\usepackage{tikz}                               % used for titlepage,
+                                                % but may be useful for other
                                                 % stuff, too.
-\usepackage{ifthen}                             % for some control 
+\usepackage{ifthen}                             % for some control
                                                 % sequences in this class
-\usepackage[fit,breakall]{truncate}             % used for creating 
+\usepackage[fit,breakall]{truncate}             % used for creating
                                                 % textfields on titlepage
-\usepackage{etoolbox}                           % necessary to update page 
+\usepackage{etoolbox}                           % necessary to update page
                                                 % numbering for chapters
-\usepackage{xstring}                            % used for creating substring 
+\usepackage{xstring}                            % used for creating substring
                                                 % out of \appendixname
-\usepackage{multicol}                           % used for titlepage. Usefull 
+\usepackage{multicol}                           % used for titlepage. Usefull
                                                 % for other stuff, too.
 
-\DeclareGraphicsRule{*}{mps}{*}{}               % enables compiling 
+\DeclareGraphicsRule{*}{mps}{*}{}               % enables compiling
                                                 % images with pdf-latex
 \DeclareGraphicsExtensions{.eps,                % different image exts used
                            .pdf,
@@ -129,7 +130,7 @@
                            .jpg,
                            .jpeg,
                            .mps}
-\usepackage{epstopdf}                           % may be necessary for miktex to 
+\usepackage{epstopdf}                           % may be necessary for miktex to
                                                 % convert eps to pdf figures
 
 \usepackage[raiselinks=true,                    % package enables hyperlinks in
@@ -177,7 +178,7 @@
 %% ---------------------
 %% |    PDF - Setup    |
 %% ---------------------
-% This information will appear embed into the PDF file as meta data, but will 
+% This information will appear embed into the PDF file as meta data, but will
 % not be printed anywhere
 \AtBeginDocument
 {
@@ -188,7 +189,7 @@
         pdfsubject={Praktikumsprotokoll zum Versuch%
                     \versuch~(\praktikum-\versuchsnr) des physikalischen%
                     Anfängerpraktikums Teil \praktikumteil\ der Fakultät für%
-                    Physik, \semester, KIT. Versuchsgruppe: 
+                    Physik, \semester, KIT. Versuchsgruppe:
                     \wochentag-\gruppennr},
         pdfkeywords={kit,physik,praktikum,protokoll,%
                     \versuch,\nachnamea,\nachnameb}
@@ -377,7 +378,7 @@
 
     \pagestyle{empty}
 
-    \fancypagestyle{plain}{            % to ensure toc page style is really 
+    \fancypagestyle{plain}{            % to ensure toc page style is really
                                        % empty (it uses \thispagestyle{plain})
         \fancyhf{}                     % clear all header and footer fields
         \fancyfoot{}                   % except the center
@@ -390,7 +391,7 @@
 {
     \clearpage
 
-    \begingroup                        % make sure that there is no involuntary 
+    \begingroup                        % make sure that there is no involuntary
                                        % blankpage added after toc.
     \let\cleardoubleoddstandardpage\relax
     \mainmatter
@@ -475,7 +476,7 @@
         \setcounter{tmppage}{\arabic{page}}
     }
     \addtocounter{chapter}{1}
-    
+
     \ifthenelse{\boolean{chapWiseNumb}}
     {
         \addtocontents{toc}{\protect\contentsline
@@ -514,7 +515,7 @@
         \renewcommand{\arraystretch}{0}
         \begin{tabular}{@{}l@{}r@{}}
             \begin{tabular}{@{}c@{}} \\[0.18cm] {#1}: \end{tabular} &%
-                \TextField[name={#7}, value={#2}, borderwidth=0, charsize={#4}, 
+                \TextField[name={#7}, value={#2}, borderwidth=0, charsize={#4},
                            width=#3, maxlen={#6}]{}~~\\[0.2cm]
                 \\[2px]
                 \cline{2-2}

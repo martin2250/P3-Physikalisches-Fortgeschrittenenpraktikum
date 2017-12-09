@@ -60,7 +60,7 @@
                                                 % You may prefer the provided
                                                 % \mathbbm{R} to ordinary
                                                 % \mathbb{R}.
-
+\usepackage{physics}
 \usepackage{upgreek}                            % use $\uppi$ etc.
 \usepackage{nicefrac}                           % use \nicefrac{1}{2}
                                                 % for inline text, if you want

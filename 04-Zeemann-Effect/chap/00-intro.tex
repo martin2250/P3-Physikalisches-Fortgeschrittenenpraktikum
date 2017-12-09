@@ -32,6 +32,37 @@ By performing the vector addition of $\vec{L}$ and $\vec{S}$, $g_\text{J}$ takes
 Consider a doublet level transistion $\ce{^{2}P}_{1/2}\rightarrow \ce{^{2}S}_{1/2}$.
 The selection rule $\Delta m_J =0, \pm 1$ gives 4 lines.
 
+\section{Paschen-Back Effect}
+This strong-field limit of the Zeeman effect appears when the external magnetic field perturbation significantly exceeds spin-orbit interaction.
+The magnetic field effect dominates over the coupling between orbital $\left(\vec{L}\right)$ and spin $\left(\vec{S}\right)$ angular momenta, thus, it is safe to assume that
+\begin{equation*}
+	\comm{H_0}{S} = 0,
+\end{equation*}
+where $H_0$ denotes the unperturbed Hamiltonian of the system.
+Therefore, the energy eigenvalues for a state $\ket{\psi}$ can simply be calculated as
+\begin{align*}
+	E_\text{PB} &= \ev{H_0+\frac{\mu_\text{B}B_\text{z}}{\hbar}\left(g_\text{L}L+g_\text{S}S\right)}{\psi} \\
+	&= E_0 + \mu_\text{B}B_\text{z}\left(g_\text{L}m_\text{L}+g_\text{S}m_\text{S}\right).
+\end{align*}
+
 \subsection{Polarizations}
 
 \section{Electron Mass-to-Charge Ratio}
+
+\section{Term Scheme of Helium}
+Helium contains 2 electrons, whose spins can be aligned parallel (orthohelium) or anti-parallel (parahelium), where orthohelium is a triplet state and parahelium a singlet state.
+The term diagram of helium consists of these two states' term shemes, which do not combine because of the selection rule $\Delta S = 0$.
+
+The singlet state has no fine structure, since its total spin $S$ is equal to 0.
+For the triplet state, however, the total spin is equal to 1.
+Therefore, the state splits into three different energy levels and features a fine structure as a consequence of a non-zero total spin.
+
+Orthohelium's ground state is a $2S$ state, since the Pauli exclusion principle forbids the electrons from occupying the $1S$-state as they have the same spin quantum number.
+Parahelium, on the other hand, can occupy the $1S$-state.
+
+The selection rules are
+\begin{align*}
+	\Delta J &= 0, \pm 1 \\
+	\Delta L &= 0, \pm 1 \\
+	\Delta S &= 0.
+\end{align*}
