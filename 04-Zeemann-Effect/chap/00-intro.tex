@@ -1,1 +1,37 @@
 \chapter{Theory}
+\section{Zeeman Effect}\label{sec:zeeman}
+The \textsc{Zeeman} effect describes the splitting of a spectral line due to an external static magnetic field.
+
+\subsection{Normal Zeeman Effect}
+The effect that appears for spectral lines resulting from a transition between singlet states is called the \textbf{normal} effect.
+For singlet states, the total angular momentum $\vec{J}$ is given solely by the angular momentum $\vec{L}$, which couples with the external magnetic field.
+
+The change in energy is a function of this external field
+\begin{equation*}
+	\Delta E = -\mu_\text{z}\cdot B=m_l\mu_\text{B}B, \tag{$\vec{B}=B\hat{e}_\text{z}$}
+\end{equation*}
+where $\mu_\text{z}=-m_l\mu_\text{B}$ denotes the magnetic moment with the Bohr magneton $\mu_\text{B}=\frac{e\hbar}{2m_\text{e}}$.
+Since there are $2l+1$ possible values for $m_l$, the energy levels split into $2l+1$ energy levels.
+The selection rule $\Delta m_l=\pm 1$ reduces the number of possible lines.
+For example, there are nine transitions from $l=2$ to $l=1$ states.
+However, as a consequence of the uniformity of the level splittings, only three different lines, corresponding to the $\Delta m_l=-1,0,1$ transitions, are visible in the spectrum.
+
+\subsection{Anomalous Zeeman Effect}
+This effect appears for states with a nonzero total spin.
+Consider an atom with the total spin $\vec{S}$ and orbital angular momentum $\vec{L}$.
+We can then switch to a new basis $\ket{J, m_j}$ with $J=L+S$, where the total magnetic moment is given by
+\begin{align*}
+	\vec{\mu}_\text{tot} &= -\mu_\text{B}\left(g_\text{l}\frac{\vec{L}}{\hbar} + g_\text{s}\frac{\vec{S}}{\hbar}\right) \\
+	&= -g_\text{J}\mu_\text{B}\frac{\vec{J}}{\hbar},
+\end{align*}
+where $g_\text{l} = 1$ and $g_\text{s}\approx 2$ are called the \textsc{Landé} factors.
+By performing the vector addition of $\vec{L}$ and $\vec{S}$, $g_\text{J}$ takes the form
+\begin{equation*}
+	g_\text{j} = 1+\frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}.
+\end{equation*}
+Consider a doublet level transistion $\ce{^{2}P}_{1/2}\rightarrow \ce{^{2}S}_{1/2}$.
+The selection rule $\Delta m_J =0, \pm 1$ gives 4 lines.
+
+\subsection{Polarizations}
+
+\section{Electron Mass-to-Charge Ratio}
