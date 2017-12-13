@@ -53,10 +53,10 @@ This behavior cannot be observed as the amplitude available is limited by the ES
 		{$f$ in \si{\MHz}}	&	{$U_1$ in \si{\mV}}	&	{$U_2$ in \si{\mV}}	&	{$\bar{U}$ in \si{\mV}} \\
 		\midrule
 		13	 & 	160	 & 	-96.6	&	128.3	\\
-		18	 & 	210	 & 	-150	&	180	\\
+		18	 & 	210	 & 	-150	&	180.0	\\
 		23	 & 	257	 & 	-200	&	228.5	\\
 		28	 & 	300	 & 	-267	&	283.5	\\
-		33	 & 	347	 & 	-307	&	327	\\
+		33	 & 	347	 & 	-307	&	327.0	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -68,13 +68,13 @@ This behavior cannot be observed as the amplitude available is limited by the ES
 		\toprule
 		{$f$ in \si{\MHz}}	&	{$U_1$ in \si{\mV}}	&	{$U_2$ in \si{\mV}}	&	{$\bar{U}$ in \si{\mV}} \\
 		\midrule
-		70	 & 	720	 & 	-666	&	693	\\
-		80	 & 	806	 & 	-753	&	779.5	\\
-		90	 & 	916	 & 	-866	&	891	\\
-		100	 & 	1020	 & 	-966	&	993	\\
-		110	 & 	1120	 & 	-1070	&	1095	\\
-		120	 & 	1220	 & 	-1170	&	1195	\\
-		130	 & 	1320	 & 	-1270	&	1295	\\
+		20 & 233 & -183	& 208.0 \\
+		30 & 333 & -280	& 306.5	\\
+		40 & 446 & -380 &	413.0	 \\
+		50 & 553 & -480	& 516.5	\\
+		60 & 640  & -586	& 613.0	\\
+		70 & 746 & -700	 & 723.0	\\
+		77.7 & 826 & -766	 & 796.0	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -87,13 +87,13 @@ This behavior cannot be observed as the amplitude available is limited by the ES
 		\toprule
 		{$f$ in \si{\MHz}}	&	{$U_1$ in \si{\mV}}	&	{$U_2$ in \si{\mV}}	&	{$\bar{U}$ in \si{\mV}} \\
 		\midrule
-		70	 & 	720	 & 	-666	&	693	\\
+		70	 & 	720	 & 	-666	&	693.0	\\
 		80	 & 	806	 & 	-753	&	779.5	\\
-		90	 & 	916	 & 	-866	&	891	\\
-		100	 & 	1020	 & 	-966	&	993	\\
-		110	 & 	1120	 & 	-1070	&	1095	\\
-		120	 & 	1220	 & 	-1170	&	1195	\\
-		130	 & 	1320	 & 	-1270	&	1295	\\
+		90	 & 	916	 & 	-866	&	891.0	\\
+		100	 & 	1020	 & 	-966	&	993.0	\\
+		110	 & 	1120	 & 	-1070	&	1095.0	\\
+		120	 & 	1220	 & 	-1170	&	1195.0	\\
+		130	 & 	1320	 & 	-1270	&	1295.0	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -119,7 +119,7 @@ The voltage is measured across a \SI{1.07}{\ohm} shunt resistor and is determine
 \end{equation*}
 
 \subsection{Error Calculation}
-Assuming an error of $\Delta U_i=\SI{20}{\mV}$, which equals 2 LSB of the used oscilloscope, the voltage uncertainty propagates like
+Assuming an error of $\Delta U_i=\SI{20}{\mV}$, which equals 2 LSB (least significant bit) of the used oscilloscope, the voltage uncertainty propagates like
 \begin{alignat*}{2}
 	\Delta U &= \sqrt{\sum^2_{i=1}\left(\pdb{U}{U_i}\cdot \Delta U_i\right)^2} \\
 	&=\frac{1}{\sqrt{2}}\Delta U_i,
@@ -150,24 +150,23 @@ Additionally, the errors from previously calculated values propagate into their 
 \end{equation*}
 
 \subsection{Results}
-\begin{figure}[tbp]
-	\minipage{0.5\textwidth}
-		\includegraphics[width=\linewidth]{./data/plots/coilE.pdf}
-		\caption*{\textbf{Linear fit for Coil E} ($f=13-30\si{\MHz}$)\newline $a=\SI{26.95(241)}{\MHz\per\milli\tesla}$\newline $b=\SI{0.118(2141)}{\MHz}$}\label{fig:coilE}
-	\endminipage\hfill
-	\minipage{0.5\textwidth}
-		\includegraphics[width=\linewidth]{./data/plots/coilF.pdf}
-		\caption*{\textbf{Linear fit for Coil F} ($f=30-75\si{\MHz}$)\newline $a=\SI{26.37(71)}{\MHz\per\milli\tesla}$\newline $b=\SI{-0.192(1434)}{\MHz}$}\label{fig:coilF}
-	\endminipage\hfill\centering
-	\minipage{0.5\textwidth}%
-		\includegraphics[width=\linewidth]{./data/plots/coilG.pdf}
-		\caption*{\textbf{Linear fit for Coil G} ($f=75-130\si{\MHz}$)\newline $a=\SI{26.62(70)}{\MHz\per\milli\tesla}$\newline $b=\SI{2.31(263)}{\MHz}$}\label{fig:coilG}
-	\endminipage
-	\caption[Linear fits for all ESR coils]{\textbf{Linear fits for all ESR coils} The linear behavior is confirmed for all three frequency ranges with a coefficient of determination $R^2=\num{99.9}\%$}
-	\label{fig:allcoils}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{./data/plots/coilE.pdf}
+	\caption{\textbf{Linear fit for Coil E} ($f=13-30\si{\MHz}$)\newline $a=\SI{26.95(241)}{\MHz\per\milli\tesla}$\newline $b=\SI{0.118(2141)}{\MHz}$}\label{fig:coilE}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{./data/plots/coilF.pdf}
+	\caption{\textbf{Linear fit for Coil F} ($f=30-75\si{\MHz}$)\newline $a=\SI{26.37(71)}{\MHz\per\milli\tesla}$\newline $b=\SI{-0.192(1434)}{\MHz}$}\label{fig:coilF}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{./data/plots/coilG.pdf}
+	\caption{\textbf{Linear fit for Coil G} ($f=75-130\si{\MHz}$)\newline $a=\SI{26.62(70)}{\MHz\per\milli\tesla}$\newline $b=\SI{2.31(263)}{\MHz}$}\label{fig:coilG}
 \end{figure}
 
-Linear fits for all three ESR coils can be seen in \autoref{fig:allcoils}.
+Linear fits for all three ESR coils can be seen in figures \ref{fig:coilE}, \ref{fig:coilF} and \ref{fig:coilG}.
 As expected, there is a linear dependence between the HF frequency $f$ and the resonant magnetic field strength $B$.
 Using the determined slopes, the g-factors are calculated as
 \begin{alignat*}{3}
