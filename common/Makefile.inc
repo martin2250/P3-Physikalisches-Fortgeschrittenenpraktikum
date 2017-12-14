@@ -10,7 +10,7 @@ endif
 
 .PHONY: all show upload share clean data build
 
-all: $(FILE).pdf show
+all: | $(FILE).pdf show
 
 build: $(FILE).pdf
 
