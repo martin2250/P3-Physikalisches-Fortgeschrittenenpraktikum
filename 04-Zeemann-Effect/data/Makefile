@@ -10,7 +10,7 @@ refresh: | remove external
 
 external:
 	mkdir external
-	wget -o external.zip 127.0.0.1
+	wget https://github.com/martin2250/P3-Physikalisches-Fortgeschrittenenpraktikum/releases/download/04-external/external.zip
 	unzip external.zip -d external
 
 clean:
