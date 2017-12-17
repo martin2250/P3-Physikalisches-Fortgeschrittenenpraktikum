@@ -1,7 +1,6 @@
 \chapter{Results}
 \section{Mass-to-Charge Ratio}
-The magnetic field is varied from \SI{0.4}{\tesla} to \SI{1}{\tesla}.
-A spectrogram is made \todo{sounds stupid} in \SI{0.1}{\tesla} steps.
+A spectrogram is recorded for each particular field strength within a range of \SIrange{0.4}{1}{\tesla} in \SI{0.1}{\tesla} steps.
 Measurements are listed in \autoref{tab:meas}.
 Individual peaks are not discernible for $B = \SI{0.4}{\tesla}$, so this measurement is not listed.
 
@@ -23,7 +22,7 @@ Individual peaks are not discernible for $B = \SI{0.4}{\tesla}$, so this measure
 	\end{tabular}
 \end{table}
 
-The mass-to-charge ratio is calculated from the energy difference of the zeeman levels via the Bohr magneton.
+The mass-to-charge ratio is calculated from the energy difference of the Zeeman levels via the Bohr magneton.
 Individual peaks are usually drowned out by the center ($\Delta m = 0$) peak, so a $\upsigma$-filter is used to block the center peak.
 The positions of the outer ($\Delta m = \pm 1$) peaks are used to obtain $\frac{e}{m_\text{e}}$:
 \begin{alignat}{2}
@@ -35,18 +34,19 @@ The positions of the outer ($\Delta m = \pm 1$) peaks are used to obtain $\frac{
 \end{alignat}
 with $g_\text{L} = 1$.
 
+\todo{Too much 'the' in the following paragraphs, reword.}
 The only quantities for which an error can be specified are $\lambda_\pm$ and $B$.
 The error on $\lambda_\pm$ is further split into the error on the absolute ($\lambda^2$) and relative ($\Delta \lambda$) value.
 
 The error on the mean wavelength $\lambda$ is mostly dependent on the calibration of the spectroscope.
-There are no error bounds provided, so the value for $\lambda$ is assumed to be exact.
+There are no error bounds provided, so the value for $\lambda$ is assumed to be exact. \todo{Rather than assuming the wavelength to be exact, it would be better to assume that 'the uncertainty is negligably small.'}
 Comparing the average mean wavelength from the data $\lambda = \SI{6676.6}{\angstrom}$ with the literature value $\lambda_\text{lit} = \SI{6678.1517}{\angstrom}$ justifies this assumpion.
 
 The relative wavelength $\Delta \lambda$ is mostly influenced by the error between the mismatch of the speed of the diffraction grating's rotation and the computer's internal clock.
 The computer's clock can safely be assumed to be exact.
 The speed of the synchronous motor is affected by the frequency of mains voltage.
 Mains frequency is stable to within $\SI{\pm 100}{\milli\hertz}$ short term.
-This statistic error propagates linearly, resulting in a $\SI{0.2}{\percent}$ error on $\delta \lambda$.
+This statistic error propagates linearly, resulting in a $\SI{0.2}{\percent}$ error on $\Delta\lambda$.
 
 The magnetic field is dependent on the accuracy of the provided $I-B$ chart, the shunt resistor and the voltmeter.
 As an analog instrument is used to read the current, a statistic error of $\SI{\pm 0.05}{\tesla}$ is assumed.
@@ -56,7 +56,7 @@ This was also confirmed by reading the current again at the end of the measureme
 
 The errors on mains frequency and the magnetic field are uncorreltated, so gaussian error propagation is used.
 
-$\frac{e}{m_\text{e}} := \kappa$ is calculated for every measurement, the results are listed in \autoref{tab:res}.
+$\frac{e}{m_\text{e}} := \kappa$ is calculated for every measurement, the results are listed in \autoref{tab:res}. \todo{doubling of 'results'}
 The result is $\frac{e}{m_\text{e}} = \num{1.95} \pm 42$.
 \todo{standard deviation}
 
