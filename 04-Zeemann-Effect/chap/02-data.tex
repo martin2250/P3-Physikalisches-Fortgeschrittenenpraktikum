@@ -1,4 +1,35 @@
 \chapter{Data}
+\section{Overview Spectrum}
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=.7\textwidth]{./data/external/300nm_800nm.pdf}
+	\caption[Overview Spectrum: Spectrogram]{\textbf{Overview Spectrum: Spectrogram} Peaks are highlighted in plum.}
+	\label{fig:overview300}
+\end{figure}
+\begin{table}
+	\centering
+	\caption[Overview Spectrum: Peaks]{\textbf{Overview Spectrum: Peaks} DO DESCRIPTION! CMON MORTY, YOU HAVE TO DO IT MORTY!}
+	\label{tab:peaks300}
+	\begin{tabular}{SS|c}
+		\toprule
+		{$\lambda$ (\si{\angstrom})}	&	{$\lambda_\text{lit}$ (\si{\angstrom})}	&	transition	\\
+		\midrule
+		3909.9	&	3888.65	&	$3p\rightarrow 2s$ \\
+		4490.05	&	4471.48	&	$4d\rightarrow 2p$ \\
+		4946.41	&	4921.93	&	$4d\rightarrow 2p$ \\
+		5039.27	&	5047.74	&	$4S\rightarrow 2P$ \\
+		5891.58	&	5875.62	&	$3d\rightarrow 2p$ \\
+		6693.49	&	6678.15	&	$3D\rightarrow 2P$ \\
+		7079.65	&	7065.71	&	$3s\rightarrow 2p$ \\
+		7801.35	&	{$2\times3888.65$}	&	$3p\rightarrow 2s$ (2nd order) \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+To gather general information about the considered helium spectrum, an overview spectrum in the wavelength range $\lambda\in [\SI{300}{\nm}, \SI{800}{\nm}]$ is recorded.\todo{Doubling of 'spectrum'.}
+The gap opening is \SI{100}{\um}, while the grating rotates at a speed of \SI{200}{\angstrom\per\minute}.
+\autoref{fig:overview300} depicts the spectrogram, peaks are listed in \autoref{tab:peaks300} with their corresponding transitions \cite{hetrans}.
+Only peaks of first and second order are examined.
+
 \section{Mass-to-Charge Ratio}
 A spectrogram is recorded for each particular field strength within a range of \SIrange{0.4}{1}{\tesla} in \SI{0.1}{\tesla} steps.
 Measurements are listed in \autoref{tab:meas}.
