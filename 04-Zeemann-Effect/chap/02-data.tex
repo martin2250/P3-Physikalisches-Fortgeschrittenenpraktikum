@@ -6,9 +6,15 @@
 	\caption[Overview Spectrum: Spectrogram]{\textbf{Overview Spectrum: Spectrogram} Peaks are highlighted in plum.}
 	\label{fig:overview300}
 \end{figure}
+\begin{figure}[tp]
+	\centering
+	\includegraphics[width=.6\textwidth]{./data/external/500nm_800nm.pdf}
+	\caption[\SIrange{500}{800}{\nm}-Spectrum: Spectrogram]{\textbf{\SIrange{500}{800}{\nm}-Spectrum: Spectrogram} Peaks are highlighted in plum.}
+	\label{fig:overview500}
+\end{figure}
 \begin{table}
 	\centering
-	\caption[Overview Spectrum: Peaks]{\textbf{Overview Spectrum: Peaks} DO DESCRIPTION! CMON MORTY, YOU HAVE TO DO IT MORTY!}
+	\caption[Overview Spectrum: Peaks]{\textbf{Overview Spectrum: Peaks}}
 	\label{tab:peaks300}
 	\begin{tabular}{SS|c}
 		\toprule
@@ -25,10 +31,32 @@
 		\bottomrule
 	\end{tabular}
 \end{table}
+\begin{table}
+	\centering
+	\caption[\SIrange{500}{800}{\nm}-Spectrum: Peaks]{\textbf{\SIrange{500}{800}{\nm}-Spectrum: Peaks} With applied red filter, only first-order peaks are observed.}
+	\label{tab:peaks500}
+	\begin{tabular}{SS|c}
+		\toprule
+		{$\lambda$ (\si{\angstrom})}	&	{$\lambda_\text{lit}$ (\si{\angstrom})}	&	transition	\\
+		\midrule
+		5888.48	&	5875.62	&	$3d\rightarrow 2p$ \\
+		5909.83	&	5875.64	&	$3d\rightarrow 2p$ \\
+		6690.02	&	6678.15	&	$3D\rightarrow 2P$ \\
+		7076.18	&	7065.71	&	$3s\rightarrow 2p$ \\
+		7292.1	&	7281.35	&	$3S\rightarrow 2P$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 To gather general information about the considered helium spectrum, an overview spectrum in the wavelength range $\lambda\in [\SI{300}{\nm}, \SI{800}{\nm}]$ is recorded.\todo{Doubling of 'spectrum'.}
 The gap opening is \SI{100}{\um}, while the grating rotates at a speed of \SI{200}{\angstrom\per\minute}.
 \autoref{fig:overview300} depicts the spectrogram, peaks are listed in \autoref{tab:peaks300} with their corresponding transitions \cite{hetrans}.
 Only peaks of first and second order are examined.
+
+\section{\SIrange{500}{800}{\nm}-Spectrum}
+A red filter is placed between the gap opening of the spectrometer and the helium light source which serves the purpose of filtering out higher order peaks.
+\autoref{fig:overview500} depicts the spectrogram, peaks are listed in \autoref{tab:peaks500} with their corresponding transitions \cite{hetrans}.
+It is easy to see, that the list in \autoref{tab:peaks500} does not feature the $2\times\SI{3888.65}{\nm} = \SI{7801.35}{\nm}$ transition, which is observed in the overview spectrum without red filter.
+
 
 \section{Mass-to-Charge Ratio}
 A spectrogram is recorded for each particular field strength within a range of \SIrange{0.4}{1}{\tesla} in \SI{0.1}{\tesla} steps.
