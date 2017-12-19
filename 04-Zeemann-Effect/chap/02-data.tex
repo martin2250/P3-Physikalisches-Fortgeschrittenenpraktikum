@@ -52,7 +52,7 @@ The gap opening is \SI{100}{\um}, while the grating rotates at a speed of \SI{20
 \autoref{fig:overview300} depicts the spectrogram, peaks are listed in \autoref{tab:peaks300} with their corresponding transitions \cite{hetrans}.
 Only peaks of first and second order are examined.
 
-\section{\SIrange{500}{800}{\nm}-Spectrum}
+\section{\SIrange{500}{800}{\nm}-Spectrum}\label{sec:500800nm}
 A red filter is placed between the gap opening of the spectrometer and the helium light source which serves the purpose of filtering out higher order peaks.
 \autoref{fig:overview500} depicts the spectrogram, peaks are listed in \autoref{tab:peaks500} with their corresponding transitions \cite{hetrans}.
 It is easy to see, that the list in \autoref{tab:peaks500} does not feature the $2\times\SI{3888.65}{\nm} = \SI{7801.35}{\nm}$ transition, which is observed in the overview spectrum without red filter.
@@ -114,3 +114,24 @@ As the power supply was operated in constant current mode, this effect can be ne
 This was also confirmed by reading the current again at the end of the measurement.
 
 The errors on mains frequency and the magnetic field are uncorrelated, so gaussian error propagation is used. \todo{Do explicit calculation. They want that. :(}
+
+\section{Examination of an Arbitrary Spectral Line}
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=.6\textwidth]{./data/external/587_nf.pdf}
+	\caption[\SI{587.6}{\nm}-line w/o $\sigma$-filter]{\textbf{\SI{587.6}{\nm}-line without $\sigma$-filter} One peak with a minor bump on the right side is visible.}
+	\label{fig:587nf}
+\end{figure}
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=.6\textwidth]{./data/external/587_f1.pdf}
+	\caption[\SI{587.6}{\nm}-line with $\sigma$-filter]{\textbf{\SI{587.6}{\nm}-line with $\sigma$-filter} Two peaks with the same minor bump on the right side as in \autoref{fig:587nf} are visible.}
+	\label{fig:587f1}
+\end{figure}
+The same procedure as in \autoref{sec:500800nm} is employed, only this time, a specific spectral line is examined.
+Orthohelium features a line at $\lambda=\SI{587.6}{\nm}$\cite{hetrans}, which can be observed in second order.
+It corresponds to the $3D\rightarrow 2P$ transition, so we expect to observe anomalous Zeeman-splitting.
+However, the measured spectra with (\autoref{fig:587f1}) and without (\autoref{fig:587nf}) $\sigma$-filter only show one splitting, which - na\"ively - would lead to the conclusion that the normal Zeeman-effect is observed.
+This discrepancy can be explained by the low resolution of the used spectrometer, which does not allow for a measurement of the fine splittings.
+In the spectrum, a minor bump at $\lambda_\text{bump}=\SI{11751}{\angstrom}$ can be noticed.
+A comparison with the NIST database of helium transitions \cite{hetrans} leads to the hypothesis that the \SI{393.59}{\nm}-line is observed in third order, so it is not correlated with the Zeeman splitting.
