@@ -1,12 +1,45 @@
 \chapter{Results}
-$\frac{e}{m_\text{e}} := \kappa$ is calculated for every measurement, the results are listed in \autoref{tab:meas}. \todo{doubling of 'results'}
+The mass-to-charge ratio is calculated from the energy difference of the Zeeman levels via the Bohr magneton.
+Individual peaks are usually drowned out by the center ($\Delta m = 0$) peak, so a $\upsigma$-filter is used to block the center peak.
+The positions of the outer ($\Delta m = \pm 1$) peaks are used to obtain $\frac{e}{m_\text{e}}$:
+\begin{alignat}{2}
+	& &E &= E_0 \pm \mu_\text{B} g_\text{L} B\\
+	&\Leftrightarrow \quad &\underbrace{\frac{c h}{\lambda_+} - \frac{c h}{\lambda_-}}_{\Delta E} &=
+	2 \cdot \left(\frac{e \hbar}{2 m_\text{e}} \cdot B \right)\\
+	&\Leftrightarrow &\frac{e}{m_\text{e}} &= \frac{2 \uppi c}{B} \cdot \left(\frac{1}{\lambda_+} - \frac{1}{\lambda_-}\right)\\
+	&\Leftrightarrow &\frac{e}{m_\text{e}} &= \frac{2 \uppi c}{B} \cdot \left(\frac{\Delta \lambda}{\lambda^2}\right)
+\end{alignat}
+with $g_\text{L} = 1$.
+
+\todo{Too much 'the' in the following paragraphs, reword.}
+The only quantities for which an error can be specified are $\lambda_\pm$ and $B$.
+The error on $\lambda_\pm$ is further split into the error on the absolute ($\lambda^2$) and relative ($\Delta \lambda$) value.
+
+The error on the mean wavelength $\lambda$ is mostly dependent on the calibration of the spectroscope.
+There are no error bounds provided, so the value for $\lambda$ is assumed to be exact. \todo{Rather than assuming the wavelength to be exact, it would be better to assume that 'the uncertainty is negligably small.'}
+Comparing the average mean wavelength from the data $\lambda = \SI{6676.6}{\angstrom}$ with the literature value $\lambda_\text{lit} = \SI{6678.1517}{\angstrom}$ justifies this assumpion.
+
+The relative wavelength $\Delta \lambda$ is mostly influenced by the error between the mismatch of the speed of the diffraction grating's rotation and the computer's internal clock.
+The computer's clock can safely be assumed to be exact.
+The speed of the synchronous motor is affected by the frequency of mains voltage.
+Mains frequency is stable to within $\SI{\pm 100}{\milli\hertz}$ short term.
+This statistic error propagates linearly, resulting in a $\SI{0.2}{\percent}$ error on $\Delta\lambda$.
+
+The magnetic field is dependent on the accuracy of the provided $I-B$ chart, the shunt resistor and the voltmeter.
+As an analog instrument is used to read the current, a statistic error of $\SI{\pm 0.05}{\tesla}$ is assumed.
+It is also possible that the current through the magnet changes with time due to resistive heating.
+As the power supply was operated in constant current mode, this effect can be neglected.
+This was also confirmed by reading the current again at the end of the measurement.
+
+The errors on mains frequency and the magnetic field are uncorrelated, so gaussian error propagation is used. \todo{Do explicit calculation. They want that. :(}
+
+$\frac{e}{m_\text{e}} := \kappa$ is calculated for every measurement from the values listed in \autoref{tab:meas}.
 The result is $\frac{e}{m_\text{e}} = \num{1.95} \pm 42$.
-\todo{standard deviation}
 
 \begin{table}[tbp]
 	\centering
-	\caption[Measured Zeeman levels ($B = \num{0.5} \dots \SI{1}{T}$)]{\textbf{Measured Zeeman levels ($B = \num{0.5} \dots \SI{1}{T}$)}, description}
-	\label{tab:meas}
+	\caption[$\frac{e}{m_\text{e}}$ results]{\textbf{$\frac{e}{m_\text{e}}$ results}, description}
+	\label{tab:res}
 	\begin{tabular}{SS}
 		\toprule
 		{$B$ (\si{\tesla})}& {$\kappa$ (\SI{1e11}{\coulomb\per\kilo\gram})}\\
@@ -18,9 +51,9 @@ The result is $\frac{e}{m_\text{e}} = \num{1.95} \pm 42$.
 		0.9&	2.08 \pm 0.12\\
 		1.0&	1.91 \pm 0.10\\
 		\midrule
-		&	1.95 \pm 42\\
+		{mean, standard deviation}&	1.95 \pm 0.11\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-$\frac{e}{m_\text{e}} = \SI{-1.758820024(11)e11}{\ampere\second\per\kilo\gram}$
+$\frac{e}{m_\text{e, lit}} = \SI{-1.758820024(11)e11}{\ampere\second\per\kilo\gram}$
