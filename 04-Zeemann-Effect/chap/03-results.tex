@@ -11,19 +11,18 @@ The positions of the outer ($\Delta m = \pm 1$) peaks are used to obtain $\frac{
 \end{alignat}
 with $g_\text{L} = 1$.
 
-\todo{Too much 'the' in the following paragraphs, reword.}
 The only quantities for which an error can be specified are $\lambda_\pm$ and $B$.
-The error on $\lambda_\pm$ is further split into the error on the absolute ($\lambda^2$) and relative ($\Delta \lambda$) value.
+Errors on $\lambda_\pm$ is further split into the error on the absolute ($\lambda^2$) and relative ($\Delta \lambda$) value.
 
 The error on the mean wavelength $\lambda$ is mostly dependent on the calibration of the spectroscope.
-There are no error bounds provided, so the value for $\lambda$ is assumed to be exact. \todo{Rather than assuming the wavelength to be exact, it would be better to assume that 'the uncertainty is negligably small.'}
+There are no error bounds provided, so the error on $\lambda$ is assumed to be negligably small.
 Comparing the average mean wavelength from the data $\lambda = \SI{6676.6}{\angstrom}$ with the literature value $\lambda_\text{lit} = \SI{6678.1517}{\angstrom}$ justifies this assumpion.
 
 The relative wavelength $\Delta \lambda$ is mostly influenced by the error between the mismatch of the speed of the diffraction grating's rotation and the computer's internal clock.
 The computer's clock can safely be assumed to be exact.
 The speed of the synchronous motor is affected by the frequency of mains voltage.
 Mains frequency is stable to within $\SI{\pm 100}{\milli\hertz}$ short term.
-This statistic error propagates linearly, resulting in a $\SI{0.2}{\percent}$ error on $\Delta\lambda$.
+This statistic error propagates linearly, resulting in a $\epsilon_\text{rel} = \SI{0.2}{\percent}$ error on $\Delta\lambda$.
 
 The magnetic field is dependent on the accuracy of the provided $I-B$ chart, the shunt resistor and the voltmeter.
 As an analog instrument is used to read the current, a statistic error of $\SI{\pm 0.05}{\tesla}$ is assumed.
@@ -31,10 +30,10 @@ It is also possible that the current through the magnet changes with time due to
 As the power supply was operated in constant current mode, this effect can be neglected.
 This was also confirmed by reading the current again at the end of the measurement.
 
-The errors on mains frequency and the magnetic field are uncorrelated, so gaussian error propagation is used. \todo{Do explicit calculation. They want that. :(}
-
-$\frac{e}{m_\text{e}} := \kappa$ is calculated for every measurement from the values listed in \autoref{tab:meas}.
-The result is $\frac{e}{m_\text{e}} = \num{1.95} \pm 42$.
+The errors on mains frequency and the magnetic field are uncorrelated, so gaussian error propagation is used:
+\begin{equation}
+	\Delta \kappa = \sqrt{\abs{\frac{\d \kappa}{\d \lambda} \cdot \epsilon_\text{rel} \lambda}^2 + \abs{\frac{\d \kappa}{\d B} \cdot \Delta B}^2}
+\end{equation}
 
 \begin{table}[tbp]
 	\centering
@@ -42,7 +41,7 @@ The result is $\frac{e}{m_\text{e}} = \num{1.95} \pm 42$.
 	\label{tab:res}
 	\begin{tabular}{SS}
 		\toprule
-		{$B$ (\si{\tesla})}& {$\kappa$ (\SI{1e11}{\coulomb\per\kilo\gram})}\\
+		{$B$ (\si{\tesla})}& {$\kappa$ ($10^{11} \si{\coulomb\per\kilo\gram}$)}\\
 		\midrule
 		0.5&	1.75 \pm 0.18\\
 		0.6&	2.00 \pm 0.17\\
@@ -50,10 +49,18 @@ The result is $\frac{e}{m_\text{e}} = \num{1.95} \pm 42$.
 		0.8&	2.02 \pm 0.13\\
 		0.9&	2.08 \pm 0.12\\
 		1.0&	1.91 \pm 0.10\\
-		\midrule
-		{mean, standard deviation}&	1.95 \pm 0.11\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-$\frac{e}{m_\text{e, lit}} = \SI{-1.758820024(11)e11}{\ampere\second\per\kilo\gram}$
+$\frac{e}{m_\text{e}} := \kappa$ is calculated for every measurement from the values listed in \autoref{tab:meas}.
+Individual results are listed in \autoref{tab:res}.
+The mean result is a value of
+\begin{equation*}
+	\frac{e}{m_\text{e}} = \left(\num{1.95} \pm \num{0.06}\, \text{(stat)} \pm \num{0.11}\, \text{(std)} \right) \cdot 10^{11} \si{\ampere\second\per\kilo\gram}.
+\end{equation*}
+The propagated statistical error (stat) is calculated as the RMS of the individual calculated errors, (std) denotes the standard deviation of the individual results.
+
+The literature value $\frac{e}{m_\text{e, lit}} = \SI{-1.758820024(11)e11}{\ampere\second\per\kilo\gram}$ does not lie within the error bounds, the results deviate by \SI{11}{\percent}.
+
+All but the first individual results lie very close together, suggesting that there is an additional systematic error which is not accounted for, possibly the calibration curve of the electromagnet.
