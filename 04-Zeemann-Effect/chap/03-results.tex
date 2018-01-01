@@ -7,7 +7,7 @@ The positions of the outer ($\Delta m = \pm 1$) peaks are used to obtain $\frac{
 	&\Leftrightarrow \quad &\underbrace{\frac{c h}{\lambda_+} - \frac{c h}{\lambda_-}}_{\Delta E} &=
 	2 \cdot \left(\frac{e \hbar}{2 m_\text{e}} \cdot B \right)\\
 	&\Leftrightarrow &\frac{e}{m_\text{e}} &= \frac{2 \uppi c}{B} \cdot \left(\frac{1}{\lambda_+} - \frac{1}{\lambda_-}\right)\\
-	&\Leftrightarrow &\frac{e}{m_\text{e}} &= \frac{2 \uppi c}{B} \cdot \left(\frac{\Delta \lambda}{\lambda^2}\right)
+	&\Leftrightarrow &\frac{e}{m_\text{e}} &= \frac{2 \uppi c}{B} \cdot \left(\frac{\Delta \lambda}{\lambda^2}\right)	\label{eq:eoverm}
 \end{alignat}
 with $g_\text{L} = 1$.
 
@@ -37,7 +37,7 @@ The errors on mains frequency and the magnetic field are uncorrelated, so gaussi
 
 \begin{table}[tbp]
 	\centering
-	\caption[$\frac{e}{m_\text{e}}$ results]{\textbf{$\frac{e}{m_\text{e}}$ results}, description}
+	\caption[$\frac{e}{m_\text{e}}$ results]{\textbf{$\frac{e}{m_\text{e}}$ results},\\calculated from values in \autoref{tab:meas} using \autoref{eq:eoverm}}
 	\label{tab:res}
 	\begin{tabular}{SS}
 		\toprule
@@ -57,9 +57,9 @@ $\frac{e}{m_\text{e}} := \kappa$ is calculated for every measurement from the va
 Individual results are listed in \autoref{tab:res}.
 The mean result is a value of
 \begin{equation*}
-	\frac{e}{m_\text{e}} = \left(\num{1.95} \pm \num{0.06}\, \text{(stat)} \pm \num{0.11}\, \text{(std)} \right) \cdot 10^{11} \si{\ampere\second\per\kilo\gram}.
+	\frac{e}{m_\text{e}} = \left(\num{1.96} \pm \num{0.05}\, \text{(stat)} \pm \num{0.11}\, \text{(std)} \right) \cdot 10^{11} \si{\ampere\second\per\kilo\gram}.
 \end{equation*}
-The propagated statistical error (stat) is calculated as the RMS of the individual calculated errors, (std) denotes the standard deviation of the individual results.
+The propagated statistical error (stat) is calculated as $\sigma_{\bar{\kappa}} = \sqrt{\frac{1}{\sum \frac{1}{\sigma_{\kappa,i}}}}$, (std) denotes the standard deviation of the individual results.
 
 The literature value $\frac{e}{m_\text{e, lit}} = \SI{-1.758820024(11)e11}{\ampere\second\per\kilo\gram}$ does not lie within the error bounds, the results deviate by \SI{11}{\percent}.
 

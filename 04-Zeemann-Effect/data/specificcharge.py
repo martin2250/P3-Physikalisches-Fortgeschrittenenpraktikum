@@ -48,7 +48,8 @@ print('\n\n')
 for (b, la1, la2, m, d, k, dk) in zip(B, La1, La2, M, D, K, dK):
 	print('\t{0:0.1f}&\t{1:0.2f} \\pm {2:0.2f}\\\\'.format(b, k, dk))
 
-print('\t&\t{0:0.2f} \\pm {1:0.2f}'.format(np.mean(K), np.std(K)))
+print('\t&\t{0:0.2f} \\pm {1:0.2f}'.format(
+	np.average(K, weights=1/dK**2), np.std(K)))
 
 
-print('sys tot:', 1/len(K) * np.sqrt(np.sum(dK**2)))
+print('sys tot:', np.sqrt(1/np.sum(1/dK**2)))
