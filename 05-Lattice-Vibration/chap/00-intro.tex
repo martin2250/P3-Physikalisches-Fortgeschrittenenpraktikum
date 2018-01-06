@@ -4,11 +4,25 @@ A series of weights connected by springs is used as a model.
 The weights ride on a linear air bearing and can move freely in one direction.
 The objective of the experiment is to determine the dispersion relation $\omega(k)$ of this model and use it to conclude the mechanical properties of the setup.
 
+\section{Group-/Phase velocity}
+A wave can be characterized by its angular frequency $\omega$ and wave number $k$.
+With these quantities, we can define its \textbf{phase velocity}
+\begin{equation*}
+	v_\text{ph}=\frac{\omega}{k},
+\end{equation*}
+the velocity at which same phases of a wave propagate in space.
+In the same manner, a \textbf{group velocity}
+\begin{equation*}
+	v_\text{gr}=\frac{\d\omega}{\d k},
+\end{equation*}
+the speed at which a wave's modulation - hence information - travels through space is defined.
+In a given medium, the frequency is some function $\omega(k)$, so in general, the group- and phase velocities depend on the medium and are equal only if the \textbf{refractive index} $n=\frac{c}{v_\text{ph}}$ is constant.
+
 \section{Approximations}
 Several approximations are made in order to make this model possible:
 \begin{itemize}
-	\item the force between nodes is approximated by a harmonic potential
-	\item weights can only interact with immediate neighbours
+	\item The force between nodes is approximated by a harmonic potential and
+	\item weights can only interact with immediate neighbors.
 \end{itemize}
 
 \section{Identical Weights}
