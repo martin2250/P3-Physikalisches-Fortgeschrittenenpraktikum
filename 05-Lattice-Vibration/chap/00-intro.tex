@@ -46,10 +46,10 @@ Several approximations are made in order to make this model possible:
 \end{itemize}
 
 \section{Identical Weights}
-A chain of identical weights with mass $m$, linked by springs with stiffness $k$ and length $a$ is considered \todo{think of something better}.
+A chain of identical weights with mass $m$, linked by springs with stiffness $D$ and length $a$ is considered \todo{think of something better}.
 The newtonian equation of motion for the displacement $x_j$ of the $j$-th element of the chain is
 \begin{equation*}
-	m \ddot x_j = k \cdot \left(x_{j - 1} + x_{j + 1} - 2 x_j \right).
+	m \ddot x_j = D \cdot \left(x_{j - 1} + x_{j + 1} - 2 x_j \right).
 \end{equation*}
 The equation can be solved by the ansatz
 \begin{equation*}
@@ -57,16 +57,16 @@ The equation can be solved by the ansatz
 \end{equation*}
 which yields the dispersion relation
 \begin{equation}
-	\omega(k) = \sqrt{\frac{4k}{m}}\abs{\sin\left(\frac{ka}{2}\right)}
+	\omega(k) = \sqrt{\frac{4D}{m}}\abs{\sin\left(\frac{ka}{2}\right)}
 \end{equation}
 
 \section{Alternating Weights}
-A chain of weights with alternating masses $m_1$ and $m_2$, linked by identical springs with stiffness $k$ and length $a$ is considered \todo{think of something better}.
+A chain of weights with alternating masses $m_1$ and $m_2$, linked by identical springs with stiffness $D$ and length $a$ is considered \todo{think of something better}.
 The index $j$ denotes the $j$-th unit cell, which contains the weights $m_1$ with displacement $u_j$ and $m_2$ with displacement $v_j$.
 The newtonian equations of motions are
 \begin{gather*}
-	m_1 \ddot u_j = k \cdot \left(v_{j - 1} + v_{j} - 2 u_j \right)\\
-	m_2 \ddot v_j = k \cdot \left(u_{j} + u_{j + 1} - 2 v_j \right).
+	m_1 \ddot u_j = D \cdot \left(v_{j - 1} + v_{j} - 2 u_j \right)\\
+	m_2 \ddot v_j = D \cdot \left(u_{j} + u_{j + 1} - 2 v_j \right).
 \end{gather*}
 The equation can be solved by the ansatz
 \begin{gather*}
@@ -75,7 +75,7 @@ The equation can be solved by the ansatz
 \end{gather*}
 This yields the dispersion relation
 \begin{equation}
-	\omega_\pm^2(k) = \frac{k}{\mu} \pm \sqrt{\frac{k^2}{\mu^2} - \frac{4k}{m_1 m_2}\sin^2\left(k a\right)},
+	\omega_\pm^2(k) = \frac{D}{\mu} \pm \sqrt{\frac{D^2}{\mu^2} - \frac{4D^2}{m_1 m_2}\sin^2\left(k a\right)},
 \end{equation}
 with the reduced mass $\mu = \frac{m_1 m_2}{m_1 + m_2}$.
 
