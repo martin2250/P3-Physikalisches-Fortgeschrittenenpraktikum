@@ -1,7 +1,5 @@
 \chapter{Theory}
-This experiment illustrates the different modes of vibration of a one-dimensional lattice.
-A series of weights connected by springs is used as a model.
-The weights ride on a linear air bearing and can move freely in one direction.
+This experiment illustrates the different modes of vibration of a one-dimensional lattice by means of a mechanical model.
 The objective of the experiment is to determine the dispersion relation $\omega(k)$ of this model and use it to conclude the mechanical properties of the setup.
 
 \section{Group-/Phase velocity}
@@ -20,7 +18,7 @@ In a given medium, the frequency is some function $\omega(k)$, so in general, th
 
 \section{The First Brillouin Zone}
 The first Brillouin zone is the Wigner-Seitz-cell of the reciprocal lattice.
-For a primitive cubic with lattice parameter $a$, the first Brillouin zone extends across the interval $k\in [-\frac{\pi}{a}, \frac{\pi}{a}]$ in reciprocal space.
+For a primitive cubic crystal system with lattice parameter $a$, the first Brillouin zone extends across the interval $k\in [-\frac{\pi}{a}, \frac{\pi}{a}]$ in reciprocal space.
 
 Consider a linear chain of coupled atoms.
 As a consequence of the discrete nature of this system, the number of physically distinguishable vibration modes is finite, where $\lambda_\text{min}=2a$ and $\lambda_\text{max}=2L$ ($L$ denotes the chain's length) are the minimum and maximum wavelengths.
@@ -35,13 +33,16 @@ In the same fashion, the maximum wave number is
 	k_\text{max}=\frac{2\pi}{\lambda_\text{min}}=\frac{\pi}{a},
 \end{equation*}
 which is equal to the boundaries of the first Brillouin zone of a primitive cubic lattice.
-Therefore, the first Brillouin zone already contains every wave number $k$ that is relevant to the description of distiguishable vibrations states.
+Therefore, the first Brillouin zone already contains every wave number $k$ that is relevant to the description of distiguishable vibration modes.
 
-\section{Approximations}
+\section{Model}
+A series of weights connected by springs is used as a model.
+The weights ride on a linear air bearing and can move freely in one direction.
 Several approximations are made in order to make this model possible:
 \begin{itemize}
-	\item The force between nodes is approximated by a harmonic potential and
-	\item weights can only interact with immediate neighbors.
+	\item The force between nodes is approximated by a harmonic potential,
+	\item weights can only interact with immediate neighbors and
+	\item any effects arising from quantum mechanics are disregarded.
 \end{itemize}
 
 \section{Identical Weights}
@@ -77,3 +78,8 @@ This yields the dispersion relation
 	\omega_\pm^2(k) = \frac{k}{\mu} \pm \sqrt{\frac{k^2}{\mu^2} - \frac{4k}{m_1 m_2}\sin^2\left(k a\right)},
 \end{equation}
 with the reduced mass $\mu = \frac{m_1 m_2}{m_1 + m_2}$.
+
+This dispersion relation reflects a property specific to crystals with different weight atoms, having distinct acoustic and photonic modes of vibraion.
+In acoustic modes, all atoms share the same phase.
+In optical modes, all atoms of each kind are out of phase by \SI{180}{\degree}.
+Also there exists a photonic mode where the wave number is zero with finite angular frequency.
