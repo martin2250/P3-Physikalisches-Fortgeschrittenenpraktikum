@@ -43,7 +43,7 @@ ax.spines['left'].set_position('zero')
 ax.spines['right'].set_color('none')
 ax.yaxis.tick_left()
 ax.annotate('$\\omega$', xy=(0.5, 1.05), ha='left', va='top', xycoords='axes fraction')
-
+ax.grid(axis='x')
 #save and clear figure
 plt.savefig(os.path.join(plot_path, 'dispersion_single.pdf'))
 plt.gcf().clear()
@@ -73,6 +73,6 @@ ax.annotate('$\\omega$', xy=(0.5, 1.05), ha='left', va='top', xycoords='axes fra
 
 plt.axhspan(omega2_minus(np.pi/a, D, m, m2, a), omega2_plus(np.pi/a, D, m, m2, a), color='r', alpha=0.2)
 ax.legend()
-
+ax.grid(axis='x')
 #save figure
 plt.savefig(os.path.join(plot_path, 'dispersion_alternating.pdf'))
