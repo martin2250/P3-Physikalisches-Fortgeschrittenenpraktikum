@@ -46,7 +46,19 @@ Several approximations are made in order to make this model possible:
 \end{itemize}
 
 \section{Identical Weights}
-A chain of identical weights with mass $m$, linked by springs with stiffness $D$ and length $a$ is considered \todo{think of something better}.
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./img/chain_single.pdf}
+	\caption[Chain of Identical Weights]{\textbf{Linear chain of identical weights}}
+	\label{fig:chain_single}
+\end{figure}
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./data/plots/dispersion_single.pdf}
+	\caption[Dispersion Relation of Chain With Identical Weights]{\textbf{Dispersion relation of a chain with identical weights} Every possible frequency occurs within the range from 0 to $\frac{\pi}{a}$, which means any wave number outside this range is indistinguishable from another oscillation within it.}
+	\label{fig:dispersion_single}
+\end{figure}
+A chain of identical weights with mass $m$, linked by springs with stiffness $D$ and length $a$ is considered (as seen in \autoref{fig:chain_single}).
 The newtonian equation of motion for the displacement $x_j$ of the $j$-th element of the chain is
 \begin{equation*}
 	m \ddot x_j = D \cdot \left(x_{j - 1} + x_{j + 1} - 2 x_j \right).
@@ -57,11 +69,24 @@ The equation can be solved by the ansatz
 \end{equation*}
 which yields the dispersion relation
 \begin{equation}
-	\omega(k) = \sqrt{\frac{4D}{m}}\abs{\sin\left(\frac{ka}{2}\right)}
+	\omega(k) = \sqrt{\frac{4D}{m}}\abs{\sin\left(\frac{ka}{2}\right)},
 \end{equation}
+which is depicted in \autoref{fig:dispersion_single}.
 
 \section{Alternating Weights}
-A chain of weights with alternating masses $m_1$ and $m_2$, linked by identical springs with stiffness $D$ and length $a$ is considered \todo{think of something better}.
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./img/chain_alternating.pdf}
+	\caption[Chain of Alternating Weights]{\textbf{Linear chain of alternating weights}}
+	\label{fig:chain_alternating}
+\end{figure}
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./data/plots/dispersion_alternating.pdf}
+	\caption[Dispersion Relation of Chain With Identical Weights]{\textbf{Dispersion relation of a chain with alternating weights} Between the photonic and acoustic branches of the dispersion curve, a \textbf{band gap} is visible (colored in red). Waves with frequencies within this gap cannot propagate.}
+	\label{fig:dispersion_alternating}
+\end{figure}
+A chain of weights with alternating masses $m_1$ and $m_2$, linked by identical springs with stiffness $D$ and length $a$ is considered (as seen in \autoref{fig:chain_alternating}).
 The index $j$ denotes the $j$-th unit cell, which contains the weights $m_1$ with displacement $u_j$ and $m_2$ with displacement $v_j$.
 The newtonian equations of motions are
 \begin{gather*}
