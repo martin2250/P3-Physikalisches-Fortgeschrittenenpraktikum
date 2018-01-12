@@ -70,7 +70,7 @@ v_s = dw/dk	# NOTE: Error calculation needed.
 D2 =m / a / a * v_s**2	# NOTE: Error calculation needed.
 
 if sys.argv[1] == 'save':
-	plt.savefig(os.path.join(plot_path), 'dispersion_single.pdf')
+	plt.savefig(os.path.join(plot_path, 'dispersion_single.pdf'))
 elif sys.argv[1] == 'show':
 	print('\nExercise 1:\nlattice parameter: a = %.5f, end of first Brillouin zone: k_end = %.5f' %(a, np.pi/a))
 	print('Exercise 2:\nv_s = %.4f' %v_s)
