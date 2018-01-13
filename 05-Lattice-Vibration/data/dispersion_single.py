@@ -62,7 +62,7 @@ plt.legend()
 
 """The Speed of Sound(,the First of Her Name, The Unburnt, Queen of the Andals, the Rhoynar and the First Men, Queen of Meereen,
 Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons """
-dw = mean_data_gliders[1]-mean_data_gliders[0]
+dw = mean_data_gliders[0]
 dk = np.pi / (n+1) / a
 v_s = dw/dk	# NOTE: Error calculation needed.
 
