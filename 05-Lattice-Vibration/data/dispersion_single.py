@@ -6,10 +6,14 @@ import sys
 import scipy.optimize
 
 N  = 4		#number of measurements carried out
-L  = 5.5035	#length of chain
-dL = 0.001	#error on chain length
 n  = 12		#number of atoms in chain
-a  = L/(n+1) 	#lattice parameter NOTE: Error calculation needed.
+
+L  = 5.5035	#length of chain
+L_err = 0.01	#systematic error on chain length
+
+a  = L/(n+1) 	#lattice parameter
+a_err = L_err / (n+1)	#systematic error on lattice parameter
+
 m = 0.504	#mass of atoms
 
 if len(sys.argv) != 2:
@@ -45,6 +49,7 @@ def dispersion(k, D):
 """ plot """
 k = np.array([(i+1) * np.pi / (n+1) / a for i in range(n)])
 k_lin = np.linspace(0, np.pi/a, 1000)
+k_end_err = np.pi / a**2 * a_err	#gaussian error propagation
 
 plt.errorbar(k, mean_data_gliders, yerr=stat_error_propagated, fmt='o', label='data')
 plt.xlabel('$k$ in $\\frac{1}{m}$')
@@ -64,15 +69,19 @@ plt.legend()
 Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons """
 dw = mean_data_gliders[0]
 dk = np.pi / (n+1) / a
-v_s = dw/dk	# NOTE: Error calculation needed.
+v_s = dw/dk
+
+v_s_err = np.sqrt((1/dk)**2 * stat_error_propagated[0]**2 + (dw * (n+1) /np.pi)**2 * a_err**2)	#gaussian error propagation
 
 """ Stiffness (hehe) """
-D2 =m / a / a * v_s**2	# NOTE: Error calculation needed.
+D2 =m / a / a * v_s**2
+
+D2_err = np.sqrt((2* m * v_s / a**2)**2 * v_s_err**2 + (2 * m * v_s**2 / a**3)**2 * a_err**2)	#gaussian error propagation
 
 if sys.argv[1] == 'save':
 	plt.savefig(os.path.join(plot_path, 'dispersion_single.pdf'))
 elif sys.argv[1] == 'show':
-	print('\nExercise 1:\nlattice parameter: a = %.5f, end of first Brillouin zone: k_end = %.5f' %(a, np.pi/a))
-	print('Exercise 2:\nv_s = %.4f' %v_s)
-	print('Exercise 4:\n D_1 = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_2 = %.4f' %(D, Derr, chi2, D2))
+	print('\nExercise 1:\nlattice parameter: a = %.5f +/- %.6f, end of first Brillouin zone: k_end = %.5f +/- %.6f' %(a, a_err, np.pi/a, k_end_err))
+	print('Exercise 2:\nv_s = %.4f +/- %.5f' %(v_s, v_s_err))
+	print('Exercise 4:\n D_1 = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_2 = %.4f +/- %.5f' %(D, Derr, chi2, D2, D2_err))
 	plt.show()
