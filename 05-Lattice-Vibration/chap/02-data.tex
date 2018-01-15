@@ -1,5 +1,16 @@
 \chapter{Evaluation}
-\section{Dispersion Relations}
+
+\section{Dispersion Relations}\label{sec:disp_rels}
+\subsection{Statistical Errors}
+Averarging over all four measurement series, where systematic errors on the frequency are deemed to be negligably small, yields a statistical error of
+\begin{equation*}
+	\sigma_\text{avg,ij} = \frac{\sigma_{std,ij}}{\sqrt{4}}\quad (i,j)\in[1, 12]\otimes[1,2].
+\end{equation*}
+
+Propgating these errors into the average formation over both gliders yields
+\begin{equation*}
+	\sigma_{\omega,i} = \sqrt{\frac{1}{2}\sum_{j}\sigma_{avg,ij}}.
+\end{equation*}
 
 \subsection{''Monoatomic'' Chain}\label{subsec:disp_mono}
 \begin{figure}
@@ -16,7 +27,7 @@ Using the equation in \autoref{subsec:exp_mod_single} and the measured length $L
 	a &= \SI{0.423(1)}{\meter} \\
 	k_\text{end} = \frac{\pi}{a} &= \SI{7.421(13)}{\per\meter}.
 \end{align*}
-Gaussian error propagation was employed to obtain errors on $a$ and $k_\text{end}$.
+Errors on $a$ and $k_\text{end}$ propagate linearly with the error on $L$.
 
 \subsection{''Biatomic'' Chain}
 \begin{figure}
@@ -33,7 +44,22 @@ In the same fashion as in \autoref{subsec:disp_mono}, the lattice parameter and 
 	a &= \SI{0.847(2)}{\meter} \\
 	k_\text{end} = \frac{\pi}{a} &= \SI{3.710(7)}{\per\meter}.
 \end{align*}
-Again, Gaussian error propagation was employed to obtain errors on $a$ and $k_\text{end}$.
+
+\section{Speed of Sound}
+Linearizing the dispersion relations discussed in \autoref{sec:disp_rels} at the origin
+and utilizing equations \ref{eq:sound_single} and \ref{eq:sound_alternating}, which hold for small values of $k$ and, thus, can be used in this case,
+the speed of sound is calculated as
+\begin{align*}
+	\frac{\Delta\omega}{\Delta k} = v_\text{mono} &= \SI{3.047(6)}{\meter\per\second} \\
+	\frac{\Delta\omega}{\Delta k} = v_\text{bi} &= \SI{2.647(5)}{\meter\per\second},
+\end{align*}
+where $\Delta\omega = \omega_1$ and $\Delta k = \frac{\pi}{13a}$.
+
+Errors on these values are calculated by Gaussian error propagation like
+\begin{align*}
+	\Delta v_\text{s} = \sqrt{\left(\frac{1}{\Delta k}\right)^2 \cdot \sigma_\omega^2 + \left(\frac{\Delta\omega\cdot (n+1)}{\pi}\right)^2 \cdot \sigma_\text{a}^2},
+\end{align*}
+where $\sigma_\omega$ and $\sigma_\text{a}$ denote the errors on frequency $\omega$ and lattice parameter $a$.
 
 \section{Amplitude Ratio of hetherogenous linear Chain}
 The amplitude ratio $\frac{s_{o,m}}{s_{o,M}}$ is determined for each mode of the model.
