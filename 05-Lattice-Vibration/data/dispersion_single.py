@@ -79,7 +79,7 @@ D2 =m / a / a * v_s**2
 D2_err = np.sqrt((2* m * v_s / a**2)**2 * v_s_err**2 + (2 * m * v_s**2 / a**3)**2 * a_err**2)	#gaussian error propagation
 
 if sys.argv[1] == 'save':
-	plt.savefig(os.path.join(plot_path, 'dispersion_single.pdf'))
+	plt.savefig(os.path.join(plot_path, 'dispersion_single_data.pdf'))
 elif sys.argv[1] == 'show':
 	print('\nExercise 1:\nlattice parameter: a = %.5f +/- %.6f, end of first Brillouin zone: k_end = %.5f +/- %.6f' %(a, a_err, np.pi/a, k_end_err))
 	print('Exercise 2:\nv_s = %.4f +/- %.5f' %(v_s, v_s_err))

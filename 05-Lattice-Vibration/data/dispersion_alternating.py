@@ -100,6 +100,10 @@ plt.plot(k_lin, dispersion_plus(k_lin, D2), label='fit: $\\omega_{+}$')
 
 chi2_2 = np.sum( (dispersion_plus(k, D2) - opt_branch)**2 ) / (len(opt_branch) - 1)	#perform reduced chi2 test
 
+D_mean = (D1 + D2) / 2
+D_mean_err = np.std([D1, D2])/np.sqrt(2)
+D_prop_err = np.sqrt(np.sum(0.25*np.square([D1err, D2err])))
+
 plt.legend()
 
 """ Stiffness (hehe) """
@@ -109,11 +113,12 @@ D_double_err = np.sqrt( (2*v_s**2 / a**2)**2 * M_err**2
 + (4*(m + M)*v_s**2 / a**3)**2 * a_err**2 )	#gaussian error propagation
 
 if sys.argv[1] == 'save':
-	plt.savefig(os.path.join(plot_path, 'dispersion_alternating.pdf'))
+	plt.savefig(os.path.join(plot_path, 'dispersion_alternating_data.pdf'))
 elif sys.argv[1] == 'show':
 	print('\nExercise 1:\nlattice parameter: a = %.5f +/- %.6f, end of first Brillouin zone: k_end = %.5f +/- %.6f' %(a, a_err, np.pi/a, k_end_err))
 	print('Exercise 2:\nv_s = %.4f +/- %.5f' %(v_s, v_s_err))
 	print('Exercise 3:\n M/m = %.4f +/- %.5f, --> M = %.4f +/- %.5f' %(ratio, ratio_err, M, M_err))
 	print('Exercise 4_ac:\n D_ac = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_s = %.4f +/- %.5f' %(D1, D1err, chi2_1, D_double, D_double_err))
 	print('Exercise 4_opt:\n D_opt = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_s = %.4f +/- %.5f' %(D2, D2err, chi2_2, D_double, D_double_err))
+	print('Exercise 4_mean:\n D_mean = %.4f +/- %.6f (std) +/- %.6f (stat)' %(D_mean, D_mean_err, D_prop_err))
 	plt.show()
