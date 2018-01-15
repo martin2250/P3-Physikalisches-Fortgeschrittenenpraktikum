@@ -46,6 +46,7 @@ Several approximations are made in order to make this model possible:
 \end{itemize}
 
 \section{Identical Weights}
+\subsection{Theoretical Background}
 \begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.6\textwidth]{./img/chain_single.pdf}
@@ -73,7 +74,24 @@ which yields the dispersion relation
 \end{equation}
 which is depicted in \autoref{fig:dispersion_single}.
 
+For small $k$, it holds that $\sin(x)\approx x$.
+This approximation can be employed for the dispersion relation, so we get
+\begin{equation*}
+	\omega(k)\approx \sqrt{\frac{Da^2}{m}}\abs{k}.
+\end{equation*}
+From the above equation, it follows that the phase- and group velocity are identical
+\begin{equation*}
+	v_\text{ph} = v_\text{g}\approx \sqrt{\frac{Da^2}{m}}.
+\end{equation*}
+
+\subsection{Experimental Model}
+The model used in this experiment consists of 12 identical weights and 13 identical springs with $L=13\cdot a$.
+Hence, the possible modes are
+\begin{equation*}
+	k_n = \frac{n\pi}{L} = \frac{n\pi}{13a}\quad n\in[1, 12].
+\end{equation*}
 \section{Alternating Weights}
+\subsection{Theoretical Background}
 \begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.6\textwidth]{./img/chain_alternating.pdf}
@@ -109,3 +127,21 @@ They correspond to the $\omega_{+}$ and $\omega_{-}$ solutions respectively, whi
 In acoustic modes, all atoms share the same phase, whereas in optical modes, all atoms of each kind are out of phase by \SI{180}{\degree}.
 As a consequence of this splitting, a band gap opens up.
 Phonons with a frequency within this gap cannot propagate in the crystal.
+
+Again, for small $k$, it holds that $\sin(x)\approx x$.
+Expanding the root to the first order, it follows that
+\begin{align*}
+	\omega_{-}(k) &\approx \sqrt{\frac{Da^2}{m_1+m_2}}\abs{k}. \\
+	\omega_{+}(k) &\approx \sqrt{2D\mu}.
+\end{align*}
+Considering the positive solution approximation, it follows that the phase- and group velocity are, again, identical
+\begin{equation*}
+	v_\text{ph} = v_\text{g}\approx \sqrt{\frac{Da^2}{m_1+m_2}}.
+\end{equation*}
+\subsection{Experimental model}
+In this setup, every second weight in the chain is increased.
+The primitive cell now contains two weights, so $L=\num{6.5}\cdot a$.
+This results in the possible modes
+\begin{equation*}
+	k_n = \frac{n\pi}{L} = \frac{n\pi}{\num{6.5}a}\quad n\in[1, 6].
+\end{equation*}
