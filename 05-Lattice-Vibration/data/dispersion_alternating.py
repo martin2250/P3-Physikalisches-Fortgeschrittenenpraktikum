@@ -6,11 +6,17 @@ import sys
 import scipy.optimize
 
 N  = 4		#number of measurements carried out
-L  = 5.5035	#length of chain
-dL = 0.001	#error on chain length
 n  = 12		#number of atoms in chain
-a = 2 * L / (n+1)	#lattice parameter NOTE: Error calculation needed.
-vs_single = 3.0132	#speed of sound in single chain, obtained by executing first script
+
+L  = 5.5035		#length of chain
+L_err = 0.001	#systematic error on chain length
+
+a = 2 * L / (n+1)			#lattice parameter
+a_err = 2 * L_err / (n+1)	#systematic error on lattice parameter
+
+vs_single = 3.0132		#speed of sound in single chain, obtained by executing first script
+vs_single_err = 0.00572	#error on sound in single chain, obtained by executing first script
+
 m = 0.504	#small mass
 max_modes = 6	#number of possible modes per branch
 
@@ -43,6 +49,7 @@ stat_error_propagated = np.sqrt(1 / 2. * np.sum(mean_errors_each_glider**2, axis
 """ plot """
 k = np.array([(i+1) * np.pi / ((n+1) / 2) / a for i in range(max_modes)])
 k_lin = np.linspace(0, np.pi/a, 1000)
+k_end_err = np.pi / a**2 * a_err	#gaussian error propagation
 
 ac_branch = mean_data_gliders[:6]
 opt_branch = np.flip(mean_data_gliders[6:], 0)
@@ -61,12 +68,15 @@ plt.axvline(x=np.pi/a, color='g')	#mark end of first brillouin zone
 Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons """
 dw = ac_branch[0]
 dk = np.pi / ((n+1) /2) / a
-v_s = dw/dk	# NOTE: Error calculation needed.
+v_s = dw/dk
+v_s_err = np.sqrt((1/dk)**2 * ac_branch_errors[0]**2 + (dw * (n+1) / np.pi / 2)**2 * a_err**2)	#gaussian error propagation
 
 """ Mass ratio """
 ratio = 2 * vs_single / v_s - 1
+ratio_err = np.sqrt( (2 / v_s)**2 * vs_single_err**2 + (2 * vs_single / v_s**2)**2 * v_s_err**2 )	#gaussian error propagation
 
 M = m * ratio
+M_err = m * ratio_err
 
 """ theoretical curve """
 def dispersion_minus(x, D):
@@ -93,14 +103,17 @@ chi2_2 = np.sum( (dispersion_plus(k, D2) - opt_branch)**2 ) / (len(opt_branch) -
 plt.legend()
 
 """ Stiffness (hehe) """
-D_double = 2*(m + M) / a / a * v_s**2	# NOTE: Error calculation needed.
+D_double = 2*(m + M) / a**2 * v_s**2
+D_double_err = np.sqrt( (2*v_s**2 / a**2)**2 * M_err**2
++ (4*(m + M)*v_s / a**2)**2 * v_s_err**2
++ (4*(m + M)*v_s**2 / a**3)**2 * a_err**2 )	#gaussian error propagation
 
 if sys.argv[1] == 'save':
 	plt.savefig(os.path.join(plot_path, 'dispersion_alternating.pdf'))
 elif sys.argv[1] == 'show':
-	print('\nExercise 1:\nlattice parameter: a = %.5f, end of first Brillouin zone: k_end = %.5f' %(a, np.pi/a))
-	print('Exercise 2:\nv_s = %.4f' %v_s)
-	print('Exercise 3:\n M/m = %.4f, --> M = %.4f' %(ratio, M))
-	print('Exercise 4_ac:\n D_ac = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_s = %.4f' %(D1, D1err, chi2_1, D_double))
-	print('Exercise 4_opt:\n D_opt = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_s = %.4f' %(D2, D2err, chi2_2, D_double))
+	print('\nExercise 1:\nlattice parameter: a = %.5f +/- %.6f, end of first Brillouin zone: k_end = %.5f +/- %.6f' %(a, a_err, np.pi/a, k_end_err))
+	print('Exercise 2:\nv_s = %.4f +/- %.5f' %(v_s, v_s_err))
+	print('Exercise 3:\n M/m = %.4f +/- %.5f, --> M = %.4f +/- %.5f' %(ratio, ratio_err, M, M_err))
+	print('Exercise 4_ac:\n D_ac = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_s = %.4f +/- %.5f' %(D1, D1err, chi2_1, D_double, D_double_err))
+	print('Exercise 4_opt:\n D_opt = %.4f +/- %.6f (goodness of fit: chi2 = %.3f), D_s = %.4f +/- %.5f' %(D2, D2err, chi2_2, D_double, D_double_err))
 	plt.show()
