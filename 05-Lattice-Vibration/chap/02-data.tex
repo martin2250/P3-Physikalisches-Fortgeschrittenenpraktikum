@@ -1,7 +1,7 @@
-\chapter{Data}
+\chapter{Evaluation}
 \section{Dispersion Relations}
 
-\subsection{''Monoatomic'' Chain}
+\subsection{''Monoatomic'' Chain}\label{subsec:disp_mono}
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{./data/plots/dispersion_single_data.pdf}
@@ -10,6 +10,13 @@
 	Found fit parameter: $D=\SI{27.05(9)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{red}=\num{0.003}$.}
 	\label{fig:dispersion_single}
 \end{figure}
+The measured dispersion relation for the monoatomic chain is shown in \autoref{fig:dispersion_single}.
+Using the equation in \autoref{subsec:exp_mod_single} and the measured length $L=\SI{5.304(1)}{\meter}$ of the chain, the lattice parameter and edge of the first Brillouin zone are calculated as
+\begin{align*}
+	a &= \SI{0.423(1)}{\meter} \\
+	k_\text{end} = \frac{\pi}{a} &= \SI{7.421(13)}{\per\meter}.
+\end{align*}
+Gaussian error propagation was employed to obtain errors on $a$ and $k_\text{end}$.
 
 \subsection{''Biatomic'' Chain}
 \begin{figure}
@@ -20,6 +27,13 @@
 	Found fit parameters: $D_\text{opt}=\SI{24.6(3)}{\newton\per\meter}, D_\text{ac}=\SI{21.7(3)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{opt, red}=\num{0.028}, \chi_\text{ac, red}=\num{0.007}$.}
 	\label{fig:dispersion_single}
 \end{figure}
+The biatomic dispersion relation is shown in \autoref{fig:dispersion_alternating}.
+In the same fashion as in \autoref{subsec:disp_mono}, the lattice parameter and the edge of the first Brillouin zone are
+\begin{align*}
+	a &= \SI{0.847(2)}{\meter} \\
+	k_\text{end} = \frac{\pi}{a} &= \SI{3.710(7)}{\per\meter}.
+\end{align*}
+Again, Gaussian error propagation was employed to obtain errors on $a$ and $k_\text{end}$.
 
 \section{Amplitude Ratio of hetherogenous linear Chain}
 The amplitude ratio $\frac{s_{o,m}}{s_{o,M}}$ is determined for each mode of the model.

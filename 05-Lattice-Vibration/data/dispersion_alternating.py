@@ -9,7 +9,7 @@ N  = 4		#number of measurements carried out
 n  = 12		#number of atoms in chain
 
 L  = 5.5035		#length of chain
-L_err = 0.001	#systematic error on chain length
+L_err = 0.01	#systematic error on chain length
 
 a = 2 * L / (n+1)			#lattice parameter
 a_err = 2 * L_err / (n+1)	#systematic error on lattice parameter
