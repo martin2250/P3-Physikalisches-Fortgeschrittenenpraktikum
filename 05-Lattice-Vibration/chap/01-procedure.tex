@@ -1,0 +1,19 @@
+% !TEX root = ../05-Lattice-Vibration.tex
+\chapter{Procedure}
+\section{Model}
+The model consists of twelve thingimajigs and thirteen springs.
+The first spring is connected to a stepper motor that creates reciprocal harmonic motion at a selectable frequency.
+The last spring is fixed to the end of the rail.
+
+The thingimajigs consist of a piece of angle aluminum and have a threaded hole to mount additional weights.
+Each thingimajig has a stripe of retroreflective material glued to it's side.
+They ride on a linear air bearing which is a square tube sealed on both ends oriented on one of it's edges.
+A turbine sends an air stream into the tube.
+The tube's two sides facing upwards have a series of small holes to create an air cushion between the tube and the thingimajigs.
+To dampen the oscillation after an experiment, the turbine's air inlet is blocked briefly.
+
+\section{Data Aquisition}
+A camera with a horizontal linear CCD is used to capture the position the retroreflective stripes on the fifth and sixth thingimajig.
+Prior to the experiment the camera is aligned so the retroreflectors are in the plane of the CCD.
+A \texttt{LabView} program is used to read the two positions from the camera.
+The program is then used to apply a fast fourier transform to the positions to find the frequencies of the individual modes and later to measure the amplitudes of single modes.
