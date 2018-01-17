@@ -8,11 +8,11 @@ import scipy.optimize
 N  = 4		#number of measurements carried out
 n  = 12		#number of atoms in chain
 
-L  = 5.5035		#length of chain
+L  = 5.035		#length of chain
 L_err = 0.01	#systematic error on chain length
 
-a = 2 * L / (n+1)			#lattice parameter
-a_err = 2 * L_err / (n+1)	#systematic error on lattice parameter
+a = 2 * L / n			#lattice parameter
+a_err = 2 * L_err / n	#systematic error on lattice parameter
 
 vs_single = 3.0132		#speed of sound in single chain, obtained by executing first script
 vs_single_err = 0.00572	#error on sound in single chain, obtained by executing first script
@@ -47,7 +47,7 @@ mean_errors_each_glider = stds_each_glider / np.sqrt(len(data_list))	#statistica
 stat_error_propagated = np.sqrt(1 / 2. * np.sum(mean_errors_each_glider**2, axis=1))	#propagated mean error from previous averaging
 
 """ plot """
-k = np.array([(i+1) * np.pi / ((n+1) / 2) / a for i in range(max_modes)])
+k = np.array([(i+1) * np.pi / (n / 2) / a for i in range(max_modes)])
 k_lin = np.linspace(0, np.pi/a, 1000)
 k_end_err = np.pi / a**2 * a_err	#gaussian error propagation
 
@@ -67,9 +67,9 @@ plt.axvline(x=np.pi/a, color='g')	#mark end of first brillouin zone
 """The Speed of Sound(,the First of Her Name, The Unburnt, Queen of the Andals, the Rhoynar and the First Men, Queen of Meereen,
 Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons """
 dw = ac_branch[0]
-dk = np.pi / ((n+1) /2) / a
+dk = np.pi / (n /2) / a
 v_s = dw/dk
-v_s_err = np.sqrt((1/dk)**2 * ac_branch_errors[0]**2 + (dw * (n+1) / np.pi / 2)**2 * a_err**2)	#gaussian error propagation
+v_s_err = np.sqrt((1/dk)**2 * ac_branch_errors[0]**2 + (dw * n / np.pi / 2)**2 * a_err**2)	#gaussian error propagation
 
 """ Mass ratio """
 ratio = 2 * vs_single / v_s - 1

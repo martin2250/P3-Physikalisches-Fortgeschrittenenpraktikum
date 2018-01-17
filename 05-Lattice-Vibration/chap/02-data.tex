@@ -18,14 +18,14 @@ Propgating these errors into the average formation over both gliders yields
 	\includegraphics[width=0.7\textwidth]{./data/plots/dispersion_single_data.pdf}
 	\caption[Dispersion Relation of Monoatomic Chain]{\textbf{Dispersion Relation of Monoatomic Chain} Edge of first Brillouin zone is marked in green.
 	Dispersion function $\omega(k) = \sqrt{\frac{4D}{m}}\abs{\sin\left(\frac{ka}{2}\right)}$ with known mass $m$ and lattice parameter $a$ is fitted to the data.
-	Found fit parameter: $D=\SI{27.05(9)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{red}=\num{0.003}$.}
+	Found fit parameter: $D=\SI{24.95(40)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{red}=\num{0.083}$.}
 	\label{fig:dispersion_single}
 \end{figure}
 The measured dispersion relation for the monoatomic chain is shown in \autoref{fig:dispersion_single}.
-Using the equation in \autoref{subsec:exp_mod_single} and the measured length $L=\SI{5.304(10)}{\meter}$ of the chain, the lattice parameter and edge of the first Brillouin zone are calculated as
+Using the equation in \autoref{subsec:exp_mod_single} and the measured length $L=\SI{5.035(10)}{\meter}$ of the chain, the lattice parameter and edge of the first Brillouin zone are calculated as
 \begin{align*}
-	a &= \SI{0.423(1)}{\meter} \\
-	k_\text{end} = \frac{\pi}{a} &= \SI{7.421(13)}{\per\meter}.
+	a &= \SI{0.420(1)}{\meter} \\
+	k_\text{end} = \frac{\pi}{a} &= \SI{7.487(15)}{\per\meter}.
 \end{align*}
 Errors on $a$ and $k_\text{end}$ propagate linearly with the error on $L$.
 
@@ -35,14 +35,14 @@ Errors on $a$ and $k_\text{end}$ propagate linearly with the error on $L$.
 	\includegraphics[width=0.7\textwidth]{./data/plots/dispersion_alternating_data.pdf}
 	\caption[Dispersion Relation of Biatomic Chain]{\textbf{Dispersion Relation of Biatomic Chain} Edge of first Brillouin zone is marked in green.
 	Dispersion functions $\omega_{-}$ and $\omega_{+}$ discussed in \autoref{sec:alt_theory} with known masses $m$, $M$ and lattice parameter $a$ are fitted to the data.
-	Found fit parameters: $D_\text{opt}=\SI{24.6(3)}{\newton\per\meter}, D_\text{ac}=\SI{21.7(3)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{opt, red}=\num{0.028}, \chi_\text{ac, red}=\num{0.007}$.}
+	Found fit parameters: $D_\text{opt}=\SI{21.94(36)}{\newton\per\meter}, D_\text{ac}=\SI{26.59(27)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{opt, red}=\num{0.021}, \chi_\text{ac, red}=\num{0.012}$.}
 	\label{fig:dispersion_single}
 \end{figure}
 The biatomic dispersion relation is shown in \autoref{fig:dispersion_alternating}.
 In the same fashion as in \autoref{subsec:disp_mono}, the lattice parameter and the edge of the first Brillouin zone are
 \begin{align*}
-	a &= \SI{0.847(2)}{\meter} \\
-	k_\text{end} = \frac{\pi}{a} &= \SI{3.710(7)}{\per\meter}.
+	a &= \SI{0.839(2)}{\meter} \\
+	k_\text{end} = \frac{\pi}{a} &= \SI{3.744(7)}{\per\meter}.
 \end{align*}
 
 \section{Speed of Sound}
@@ -50,10 +50,10 @@ Linearizing the dispersion relations discussed in \autoref{sec:disp_rels} at the
 and utilizing equations \ref{eq:sound_single} and \ref{eq:sound_alternating}, which hold for small values of $k$ and, thus, can be used in this case,
 the speed of sound is calculated as
 \begin{align*}
-	\frac{\Delta\omega}{\Delta k} = v_\text{mono} &= \SI{3.047(6)}{\meter\per\second} \\
-	\frac{\Delta\omega}{\Delta k} = v_\text{bi} &= \SI{2.647(5)}{\meter\per\second},
+	\frac{\Delta\omega}{\Delta k} = v_\text{mono} &= \SI{2.788(6)}{\meter\per\second} \\
+	\frac{\Delta\omega}{\Delta k} = v_\text{bi} &= \SI{2.421(5)}{\meter\per\second},
 \end{align*}
-where $\Delta\omega = \omega_1$ and $\Delta k = \frac{\pi}{13a}$.
+where $\Delta\omega = \omega_1$ and $\Delta k = \frac{\pi}{12a}$.
 
 Errors on these values are calculated by Gaussian error propagation like
 \begin{align*}
