@@ -71,32 +71,36 @@ To obtain the actual amplitude ratio of the envelope functions, the ratio $\frac
 	\frac{s_{o,m}}{s_{o,M}} = \frac{A_{6}}{A_{5}} \cdot \frac{\sin(\frac{\uppi n}{13} \cdot 5)}{\sin(\frac{\uppi n}{13} \cdot 6)}.
 \end{equation*}
 
+To observe single modes, the previously fixed left end of the chain is driven by a stepper motor that rotates at the frequencies found in the previous experiments.
+After starting the motor, the system is left for several minutes before taking the measurements, to let any oscillations of the other modes die down.
+In total, 20 successive measurements are taken for each mode, the first of which is discarded as the \texttt{LabView} script produces a wrong reading immediately after starting the mesasurement.
 
-\todo{probably put this table somewhere else}
+The ratio $\frac{A_{6}}{A_{5}}$ is calculated for all nineteen pairs of amplitudes in each measurement series individually.
+The error on the final amplitude ratio is simply the standard deviation of the individual measurements \todo{divided by sqrt(N)? I should really take statistics more seriously.}
 
 \begin{table}
 	\centering
-	\caption[Amplitude Ratios of hetherogenous linear Chain:]{\textbf{Amplitude Ratio of hetherogenous linear Chain:} The amplitudes $A_n$ and $B_n$ of two thingimajigs (5th and 6th thingimajig) are measured. The ratio is corrected for the different position in the chain to obtain the correct amplitude ratio between heavy and light thingimajigs.}
+	\caption[Amplitude Ratios of hetherogenous linear Chain:]{\textbf{Amplitude Ratio of hetherogenous linear Chain:} The amplitudes $A_{5,n}$ and $A_{6,n}$ of two thingimajigs (5th and 6th thingimajig) are measured. The ratio is corrected for the different position in the chain and the missing sign to obtain the correct amplitude ratio between heavy and light thingimajigs.}
 	\begin{tabular}{SSSSS}
 		\toprule
-		{$n$}&
+		{Mode $n$}&
 		{$f$ (\si{\hertz})}&
 		{$A_{5,n}$}&
 		{$A_{6,n}$}&
 		{Corrected Ratio}\\
 		\midrule
-		1&	0.240&	 143.1 \pm  0.1&	 143.1 \pm  0.1&	+0.99 \pm 0.00\\
-		2&	0.477&	  90.6 \pm  0.1&	  90.6 \pm  0.1&	+0.99 \pm 0.00\\
-		3&	0.705&	  96.9 \pm  0.3&	  96.9 \pm  0.5&	+0.92 \pm 0.00\\
-		4&	0.919&	 166.9 \pm  1.6&	 166.9 \pm  2.8&	+0.86 \pm 0.03\\
-		5&	1.109&	  39.1 \pm  0.2&	  39.1 \pm  0.3&	+0.64 \pm 0.00\\
-		6&	1.248&	 126.1 \pm  1.5&	 126.1 \pm  0.6&	+0.30 \pm 0.00\\
-		7&	1.659&	  15.3 \pm  0.5&	  15.3 \pm  0.5&	-5.16 \pm 0.19\\
-		8&	1.755&	   8.5 \pm  0.9&	   8.5 \pm  0.7&	-2.32 \pm 0.29\\
-		9&	1.866&	  49.1 \pm  0.5&	  49.1 \pm  0.5&	-1.79 \pm 0.02\\
-		10&	1.963&	  22.1 \pm  0.5&	  22.1 \pm  0.5&	-1.61 \pm 0.03\\
-		11&	2.035&	  33.7 \pm  0.4&	  33.7 \pm  0.6&	-1.50 \pm 0.04\\
-		12&	2.078&	  56.0 \pm  0.3&	  56.0 \pm  0.4&	-1.60 \pm 0.01\\
+		1&	0.240&	 143.1 \pm  0.1&	 150.7 \pm  0.1&	+0.99 \pm 0.00\\
+	  2&	0.477&	  90.6 \pm  0.1&	  32.4 \pm  0.1&	+0.99 \pm 0.00\\
+	  3&	0.705&	  96.9 \pm  0.3&	 180.3 \pm  0.5&	+0.92 \pm 0.00\\
+	  4&	0.919&	 166.9 \pm  1.6&	  67.2 \pm  2.8&	+0.86 \pm 0.03\\
+	  5&	1.109&	  39.1 \pm  0.2&	  86.1 \pm  0.3&	+0.64 \pm 0.00\\
+	  6&	1.248&	 126.1 \pm  1.5&	  30.2 \pm  0.6&	+0.30 \pm 0.00\\
+	  7&	1.659&	  15.3 \pm  0.5&	  63.3 \pm  0.5&	-5.16 \pm 0.19\\
+	  8&	1.755&	   8.5 \pm  0.9&	  67.2 \pm  0.7&	-2.32 \pm 0.29\\
+	  9&	1.866&	  49.1 \pm  0.5&	  41.3 \pm  0.5&	-1.79 \pm 0.02\\
+	 10&	1.963&	  22.1 \pm  0.5&	  71.7 \pm  0.5&	-1.61 \pm 0.03\\
+	 11&	2.035&	  33.7 \pm  0.4&	  18.3 \pm  0.6&	-1.50 \pm 0.04\\
+	 12&	2.078&	  56.0 \pm  0.3&	  95.2 \pm  0.4&	-1.60 \pm 0.01\\
 		\bottomrule
 	\end{tabular}
 \end{table}

@@ -22,7 +22,7 @@ for i in range(N):
 	b = b[1:]
 
 	A[i] = np.mean(a)
-	B[i] = np.mean(a)
+	B[i] = np.mean(b)
 
 	dA[i] = np.std(a)
 	dB[i] = np.std(b)
