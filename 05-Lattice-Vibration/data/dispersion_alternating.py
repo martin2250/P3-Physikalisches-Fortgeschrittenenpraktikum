@@ -105,6 +105,7 @@ D_mean_err = np.std([D1, D2])/np.sqrt(2)
 D_prop_err = np.sqrt(np.sum(0.25*np.square([D1err, D2err])))
 
 plt.legend()
+plt.grid()
 
 """ Stiffness (hehe) """
 D_double = 2*(m + M) / a**2 * v_s**2

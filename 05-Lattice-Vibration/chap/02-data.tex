@@ -36,7 +36,7 @@ Errors on $a$ and $k_\text{end}$ propagate linearly with the error on $L$.
 	\caption[Dispersion Relation of Biatomic Chain]{\textbf{Dispersion Relation of Biatomic Chain} Edge of first Brillouin zone is marked in green.
 	Dispersion functions $\omega_{-}$ and $\omega_{+}$ discussed in \autoref{sec:alt_theory} with known masses $m$, $M$ and lattice parameter $a$ are fitted to the data.
 	Found fit parameters: $D_\text{opt}=\SI{21.94(36)}{\newton\per\meter}, D_\text{ac}=\SI{26.59(27)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{opt, red}=\num{0.021}, \chi_\text{ac, red}=\num{0.012}$.}
-	\label{fig:dispersion_single}
+	\label{fig:dispersion_alternating}
 \end{figure}
 The biatomic dispersion relation is shown in \autoref{fig:dispersion_alternating}.
 In the same fashion as in \autoref{subsec:disp_mono}, the lattice parameter and the edge of the first Brillouin zone are
@@ -45,10 +45,8 @@ In the same fashion as in \autoref{subsec:disp_mono}, the lattice parameter and 
 	k_\text{end} = \frac{\pi}{a} &= \SI{3.744(7)}{\per\meter}.
 \end{align*}
 
-\section{Speed of Sound}
-Linearizing the dispersion relations discussed in \autoref{sec:disp_rels} at the origin
-and utilizing equations \ref{eq:sound_single} and \ref{eq:sound_alternating}, which hold for small values of $k$ and, thus, can be used in this case,
-the speed of sound is calculated as
+\section{Speed of Sound}\label{sec:speed_of_sound}
+Since the slope of the dispersion relations (discussed in \autoref{sec:disp_rels}) at the origin is the speed of sound, we may linearize the curves to get
 \begin{align*}
 	\frac{\Delta\omega}{\Delta k} = v_\text{mono} &= \SI{2.788(6)}{\meter\per\second} \\
 	\frac{\Delta\omega}{\Delta k} = v_\text{bi} &= \SI{2.421(5)}{\meter\per\second},
@@ -60,6 +58,49 @@ Errors on these values are calculated by Gaussian error propagation like
 	\Delta v_\text{s} = \sqrt{\left(\frac{1}{\Delta k}\right)^2 \cdot \sigma_\omega^2 + \left(\frac{\Delta\omega\cdot n}{\pi}\right)^2 \cdot \sigma_\text{a}^2},
 \end{align*}
 where $\sigma_\omega$ and $\sigma_\text{a}$ denote the errors on frequency $\omega$, lattice parameter $a$ and $n=12$.
+
+\section{Mass Ratio}
+Using the results found in \autoref{sec:speed_of_sound}, the ratio of $m$ to $M$ may be calculated by the relation
+\begin{equation*}
+	\frac{M}{m} = 2\cdot\frac{v_\text{mono}}{v_\text{bi}} -1 = \num{1.489(7)}.
+\end{equation*}
+This value is used to find
+\begin{equation*}
+	M = \SI{0.750(4)}{\kg}.
+\end{equation*}
+Errors on $v_\text{mono/bi}$ propagate into $M$ like
+\begin{equation*}
+	\Delta M = \sqrt{ \left(\frac{2}{v_\text{bi}}\right)^2 \cdot (\Delta v_\text{mono})^2 + \left(\frac{2v_\text{mono}}{v_\text{bi}^2}\right)^2 \cdot (\Delta v_\text{bi})^2 }.
+\end{equation*}
+
+\section{Stiffness of Springs}
+The stiffness of springs used in this model experiment is determined using two different approaches.
+
+\subsection{Using Fit}
+\autoref{fig:dispersion_single} and \autoref{fig:dispersion_alternating} show the recorded dispersion relations for the monoatomic and biatomic chain, respectively.
+The models discussed in sections \ref{sec:single_theory} and \ref{sec:alt_theory} are fitted to the data, yielding the stiffness as the only fit parameter.
+We find
+\begin{align*}
+	D_\text{mono} &= \SI{24.95(40)}{\newton\meter^{-1}} \\
+	\left\{ \begin{array}{@{}ll@{}}
+		D_\text{bi, opt} = \SI{21.94(36)}{\newton\meter^{-1}} \\
+		D_\text{bi, ac} = \SI{26.59(27)}{\newton\meter^{-1}}
+	\end{array}\right\} \Rightarrow \bar{D}_\text{bi} &= \left(\num{24.26}\pm \num{1.64}\ \text{(std)}\pm \num{0.22}\ \text{(stat)}\right)\si{\newton\meter^{-1}}.
+\end{align*}
+
+\subsection{Using $v_\text{s}$}
+Rearranging the expressions in \ref{eq:sound_single} and \ref{eq:sound_alternating}, it is possible to calculate the stiffness as
+\begin{alignat*}{3}
+	D_\text{mono} &=\qquad \frac{m\cdot v_\text{s}^2}{a^2} &&=  \SI{22.25(13)}{\newton\meter^{-1}} \\
+	D_\text{bi} &= \frac{2(m+M)\cdot v_\text{s}^2}{a^2} &&= \SI{20.89(13)}{\newton\meter^{-1}}. \\
+\end{alignat*}
+Errors on $v_\text{mono/bi}$, $M$ and $a$ propagate into $D_\text{mono/bi}$ like
+\begin{align*}
+	\Delta D_\text{mono} &= \sqrt{ \left(\frac{2mv_\text{mono}}{a^2}\right)^2 \cdot(\Delta v_\text{mono})^2 + \left(\frac{2mv_\text{mono}^2}{a^3}\right)^2 \cdot (\Delta a)^2 } \\
+	\Delta D_\text{bi} &= \sqrt{ \left(\frac{2v_\text{bi}^2}{a^2}\right)^2 \cdot (\Delta M)^2
+	+ \left(\frac{4(m+M)v_\text{bi}}{a^2}\right)^2 \cdot (\Delta v_\text{bi})^2
+	+ \left(\frac{4(m+M)v_\text{bi}^2}{a^3}\right)^2 \cdot (\Delta a)^2 }.
+\end{align*}
 
 \section{Amplitude Ratio of hetherogenous linear Chain}
 The amplitude ratio $\frac{s_{o,m}}{s_{o,M}}$ is determined for each mode of the model.
@@ -76,7 +117,7 @@ After starting the motor, the system is left for several minutes before taking t
 In total, 20 successive measurements are taken for each mode, the first of which is discarded as the \texttt{LabView} script produces a wrong reading immediately after starting the mesasurement.
 
 The ratio $\frac{A_{6}}{A_{5}}$ is calculated for all nineteen pairs of amplitudes in each measurement series individually.
-The error on the final amplitude ratio is simply the standard deviation of the individual measurements \todo{divided by sqrt(N)? I should really take statistics more seriously.}
+The error on the final amplitude ratio is simply the standard deviation of the individual measurements \todo{Yes, divided by sqrt(N). If you took the mean of all ratios that is.}
 
 \begin{table}
 	\centering

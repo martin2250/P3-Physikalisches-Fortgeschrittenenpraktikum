@@ -64,6 +64,7 @@ plt.plot(k_lin, dispersion(k_lin, D), label='$\\omega(k) =\\sqrt{\\frac{4D}{m}}\
 chi2 = np.sum( (dispersion(k, D) - mean_data_gliders)**2 ) / (len(mean_data_gliders) - 1)	#perform reduced chi2 test
 
 plt.legend()
+plt.grid()
 
 """The Speed of Sound(,the First of Her Name, The Unburnt, Queen of the Andals, the Rhoynar and the First Men, Queen of Meereen,
 Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons """
