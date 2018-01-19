@@ -6,18 +6,18 @@ N = 4
 data_path = os.path.join(os.path.dirname(__file__), 'source')
 
 tablestart = """
-\\begin{table}
+\\begin{minipage}{0.5\\textwidth}
 \\centering
 \\caption{Eigenfrequencies: Monoatomic Chain, Series %i}
 \\label{tab:eigenfreqs_a1_%ia}
 \\begin{tabular}{S|SS}
 \\toprule
-{mode $n$}\t&\t{eigenfrequency $\\omega_{n,\\text{1}}$}\t&\t{eigenfrequency $\\omega_{n,\\text{2}}$} \\\\
+{mode $n$}\t&\t{$\\omega_{n,\\text{1}}$}\t&\t{$\\omega_{n,\\text{2}}$} \\\\
 \\midrule"""
 
 tableend = """\\bottomrule
 \\end{tabular}
-\\end{table}"""
+\\end{minipage}"""
 
 for i in range(N):
 	filename = 'a1-a-{:0>2d}.lvm'.format(i+1)
