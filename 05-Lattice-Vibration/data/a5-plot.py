@@ -24,8 +24,8 @@ for i in range(N):
 	A[i] = np.mean(a)
 	B[i] = np.mean(b)
 
-	dA[i] = np.std(a)
-	dB[i] = np.std(b)
+	dA[i] = np.std(a) / len(A)
+	dB[i] = np.std(b) / len(A)
 
 	ratio = b/a
 
@@ -44,7 +44,7 @@ for i in range(N):
 			r = -r
 
 	R[i] = r
-	dR[i] = np.abs(np.std(b/a)*f)
+	dR[i] = np.abs(np.std(b/a)*f) / len(R)
 
 half = int(N/2)
 x = np.pi*np.arange(1, half + 1)/(half)
