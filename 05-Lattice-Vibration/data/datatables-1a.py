@@ -9,7 +9,7 @@ tablestart = """
 \\begin{table}
 \\centering
 \\caption{Eigenfrequencies: Monoatomic Chain, Series %i}
-\\label{tab:eigenfreqs_a1_%i}
+\\label{tab:eigenfreqs_a1_%ia}
 \\begin{tabular}{S|SS}
 \\toprule
 {mode $n$}\t&\t{eigenfrequency $\\omega_{n,\\text{1}}$}\t&\t{eigenfrequency $\\omega_{n,\\text{2}}$} \\\\
