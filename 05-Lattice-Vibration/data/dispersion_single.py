@@ -43,25 +43,25 @@ mean_errors_each_glider = stds_each_glider / np.sqrt(len(data_list))	#statistica
 stat_error_propagated = np.sqrt(1 / 2. * np.sum(mean_errors_each_glider**2, axis=1))	#propagated mean error from previous averaging
 
 """ theoretical curve """
-def dispersion(k, D):
-	return np.sqrt(4 * D / m) * np.abs(np.sin(k * a / 2))
+def dispersion(x, D):
+	return np.sqrt(4 * D / m) * np.abs(np.sin(x / 2))
 
 """ plot """
-k = np.array([(i+1) * np.pi / n / a for i in range(n)])
-k_lin = np.linspace(0, np.pi/a, 1000)
+x = np.array([(i+1) * np.pi / n for i in range(n)])
+k_lin = np.linspace(0, np.pi, 1000)
 k_end_err = np.pi / a**2 * a_err	#gaussian error propagation
 
-plt.errorbar(k, mean_data_gliders, yerr=stat_error_propagated, fmt='o', label='data')
-plt.xlabel('$k$ in $\\frac{1}{m}$')
-plt.ylabel('$\\omega (k)$ in $\\frac{1}{s}$')
-plt.axvline(x=np.pi/a, color='g')	#mark end of first brillouin zone
+plt.errorbar(x, mean_data_gliders, yerr=stat_error_propagated, fmt='o', label='data')
+plt.xlabel('$k\cdot a$')
+plt.ylabel('$\\omega (ka)$ in $\\frac{1}{s}$')
+plt.axvline(x=np.pi, color='g')	#mark end of first brillouin zone
 
 """ fit of dispersion relation """
-D, pcov = scipy.optimize.curve_fit(dispersion, k, mean_data_gliders)	#fit curve
+D, pcov = scipy.optimize.curve_fit(dispersion, x, mean_data_gliders)	#fit curve
 Derr = np.sqrt(np.diag(pcov))	#standard deviation on parameter
-plt.plot(k_lin, dispersion(k_lin, D), label='$\\omega(k) =\\sqrt{\\frac{4D}{m}}\\left|\\sin\\left(\\frac{ka}{2}\\right)\\right|$')
+plt.plot(k_lin, dispersion(k_lin, D), label='$\\omega(ka) =\\sqrt{\\frac{4D}{m}}\\left|\\sin\\left(\\frac{ka}{2}\\right)\\right|$')
 
-chi2 = np.sum( (dispersion(k, D) - mean_data_gliders)**2 ) / (len(mean_data_gliders) - 1)	#perform reduced chi2 test
+chi2 = np.sum( (dispersion(x, D) - mean_data_gliders)**2 ) / (len(mean_data_gliders) - 1)	#perform reduced chi2 test
 
 plt.legend()
 plt.grid()

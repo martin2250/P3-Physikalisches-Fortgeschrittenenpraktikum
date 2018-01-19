@@ -47,8 +47,8 @@ mean_errors_each_glider = stds_each_glider / np.sqrt(len(data_list))	#statistica
 stat_error_propagated = np.sqrt(1 / 2. * np.sum(mean_errors_each_glider**2, axis=1))	#propagated mean error from previous averaging
 
 """ plot """
-k = np.array([(i+1) * np.pi / (n / 2) / a for i in range(max_modes)])
-k_lin = np.linspace(0, np.pi/a, 1000)
+x = np.array([(i+1) * np.pi / (n / 2) for i in range(max_modes)])
+k_lin = np.linspace(0, np.pi, 1000)
 k_end_err = np.pi / a**2 * a_err	#gaussian error propagation
 
 ac_branch = mean_data_gliders[:6]
@@ -58,11 +58,11 @@ ac_branch_errors = stat_error_propagated[:6]
 opt_branch_errors = np.flip(stat_error_propagated[6:], 0)
 
 
-plt.errorbar(k, opt_branch, yerr=opt_branch_errors, fmt='o', label='data: optical branch')
-plt.errorbar(k, ac_branch, yerr=ac_branch_errors, fmt='o', label='data: acoustic branch')
-plt.xlabel('$k$ in $\\frac{1}{m}$')
-plt.ylabel('$\\omega (k)$ in $\\frac{1}{s}$')
-plt.axvline(x=np.pi/a, color='g')	#mark end of first brillouin zone
+plt.errorbar(x, opt_branch, yerr=opt_branch_errors, fmt='o', label='data: optical branch')
+plt.errorbar(x, ac_branch, yerr=ac_branch_errors, fmt='o', label='data: acoustic branch')
+plt.xlabel('$k\cdot a$')
+plt.ylabel('$\\omega (ka)$ in $\\frac{1}{s}$')
+plt.axvline(x=np.pi, color='g')	#mark end of first brillouin zone
 
 """The Speed of Sound(,the First of Her Name, The Unburnt, Queen of the Andals, the Rhoynar and the First Men, Queen of Meereen,
 Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons """
@@ -81,24 +81,24 @@ M_err = m * ratio_err
 """ theoretical curve """
 def dispersion_minus(x, D):
 	mu = ( 1. / m ) + ( 1. / M )
-	return np.sqrt(D * mu - D * np.sqrt(mu**2 - 4 / (m*M) * np.sin(x * a /2)**2))
+	return np.sqrt(D * mu - D * np.sqrt(mu**2 - 4 / (m*M) * np.sin(x / 2)**2))
 
 def dispersion_plus(x, D):
 	mu = ( 1. / m ) + ( 1. / M )
-	return np.sqrt(D * mu + D * np.sqrt(mu**2 - 4 / (m*M) * np.sin(x * a /2)**2))
+	return np.sqrt(D * mu + D * np.sqrt(mu**2 - 4 / (m*M) * np.sin(x / 2)**2))
 
 """ fit of dispersion relation """
-D1, pcov = scipy.optimize.curve_fit(dispersion_minus, k, ac_branch)	#fit curve
+D1, pcov = scipy.optimize.curve_fit(dispersion_minus, x, ac_branch)	#fit curve
 D1err = np.sqrt(np.diag(pcov))	#standard deviation on parameter
 plt.plot(k_lin, dispersion_minus(k_lin, D1), label='fit: $\\omega_{-}$')
 
-chi2_1 = np.sum( (dispersion_minus(k, D1) - ac_branch)**2 ) / (len(ac_branch) - 1)	#perform reduced chi2 test
+chi2_1 = np.sum( (dispersion_minus(x, D1) - ac_branch)**2 ) / (len(ac_branch) - 1)	#perform reduced chi2 test
 
-D2, pcov = scipy.optimize.curve_fit(dispersion_plus, k, opt_branch)	#fit curve
+D2, pcov = scipy.optimize.curve_fit(dispersion_plus, x, opt_branch)	#fit curve
 D2err = np.sqrt(np.diag(pcov))	#standard deviation on parameter
 plt.plot(k_lin, dispersion_plus(k_lin, D2), label='fit: $\\omega_{+}$')
 
-chi2_2 = np.sum( (dispersion_plus(k, D2) - opt_branch)**2 ) / (len(opt_branch) - 1)	#perform reduced chi2 test
+chi2_2 = np.sum( (dispersion_plus(x, D2) - opt_branch)**2 ) / (len(opt_branch) - 1)	#perform reduced chi2 test
 
 D_mean = (D1 + D2) / 2
 D_mean_err = np.std([D1, D2])/np.sqrt(2)
