@@ -73,7 +73,7 @@ def optic(ka, ga):
 
 popta, pconva = scipy.optimize.curve_fit(acoustic, xacou[:-1], Ra[:-1],p0=(1.6))
 popto, pconvo = scipy.optimize.curve_fit(optic, xopt[1:], Ro[1:], p0=(1.4), bounds=(1, 2))
-print(popta, popto)
+print(popta, np.sqrt(pconva[0,0]), popto, np.sqrt(pconvo[0,0]))
 
 X = np.linspace(x[0], x[-1], 100)[:-1]	#discard singularity
 plt.plot(X, acoustic(X, *popta))
