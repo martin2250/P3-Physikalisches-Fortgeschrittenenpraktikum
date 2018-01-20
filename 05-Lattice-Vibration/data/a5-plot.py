@@ -55,8 +55,11 @@ xopt = x[::-1]
 Ra = R[0:half]
 Ro = R[half:N]
 
-plt.errorbar(xacou, Ra, yerr=dR[:half], label='todo', fmt='ro')
+plt.errorbar(xacou, Ra, yerr=dR[:half], label='data', fmt='ro')
 plt.errorbar(xopt, Ro, yerr=dR[half:N], fmt='ro')
+
+plt.xlabel('$k \cdot a$')
+plt.ylabel('$s_{o,m}/s_{o,M}$')
 
 # theoretical amplitude ratio, ka: wavenumber*lattice constant, ga: mass ratio, pm: plus or minus one (optic or acoustic)
 def tratio(ka, ga, pm):
@@ -76,14 +79,15 @@ popto, pconvo = scipy.optimize.curve_fit(optic, xopt[1:], Ro[1:], p0=(1.4), boun
 print(popta, np.sqrt(pconva[0,0]), popto, np.sqrt(pconvo[0,0]))
 
 X = np.linspace(x[0], x[-1], 100)[:-1]	#discard singularity
-plt.plot(X, acoustic(X, *popta))
-plt.plot(X, optic(X, *popto))
+plt.plot(X, acoustic(X, *popta), label='fit acoustic branch')
+plt.plot(X, optic(X, *popto), label='fit optic branch')
 
 plt.ylim(-6, 2)
 plt.xlim(np.pi/6 - 0.1, np.pi + 0.1)
 
 ticks = np.arange(1, half + 1)*np.pi/half
 plt.xticks(ticks, ['$%d\\pi/6$'%h for h in np.arange(1, half + 1)])
+
 
 plt.legend()
 plt.grid(True)
