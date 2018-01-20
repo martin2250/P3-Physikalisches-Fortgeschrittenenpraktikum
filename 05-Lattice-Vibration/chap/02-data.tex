@@ -79,6 +79,7 @@ The stiffness of springs used in this model experiment is determined using two d
 \subsection{Using Fit}
 \autoref{fig:dispersion_single} and \autoref{fig:dispersion_alternating} show the recorded dispersion relations for the monoatomic and biatomic chain, respectively.
 Instead of considering two pairs of values, the models discussed in sections \ref{sec:single_theory} and \ref{sec:alt_theory} are fitted to the data, yielding the stiffness as the only fit parameter.
+Evaluating data in this manner is expected to give more accurate results, since all measurements are considered.
 We find
 \begin{align*}
 	D_\text{mono} &= \SI{24.95(40)}{\newton\meter^{-1}} \\
@@ -87,6 +88,8 @@ We find
 		D_\text{bi, ac} = \SI{26.59(27)}{\newton\meter^{-1}}
 	\end{array}\right\} \Rightarrow \bar{D}_\text{bi} &= \left(\num{24.26}\pm \num{1.64}\ \text{(std)}\pm \num{0.22}\ \text{(stat)}\right)\si{\newton\meter^{-1}}.
 \end{align*}
+Stiffness values found for the biatomic chain differ from each other significantly (note the vast std-error).
+Their mean value, however, is close to the stiffness found for the monoatomic chain.
 
 \subsection{Using $v_\text{s}$}
 Rearranging the expressions in \ref{eq:sound_single} and \ref{eq:sound_alternating}, it is possible to calculate the stiffness as
@@ -102,7 +105,7 @@ Errors on $v_\text{mono/bi}$, $M$ and $a$ propagate into $D_\text{mono/bi}$ like
 	+ \left(\frac{4(m+M)v_\text{bi}^2}{a^3}\right)^2 \cdot (\Delta a)^2 }.
 \end{align*}
 
-\section{Amplitude Ratio of biatomic linear Chain}
+\section{Amplitude Ratio of Biatomic Linear Chain}
 The amplitude ratio $\frac{s_{o,m}}{s_{o,M}}$ is determined for each mode of the model.
 For obvious reasons the amplitudes $s_{o,m}$ and $s_{o,M}$ cannot be measured at the same location in the chain.
 Instead, the amplitudes $A_{5/6}$ of the fifth and sixth thingamajig are measured using the camera system.
@@ -121,8 +124,8 @@ The error on the final amplitude ratio is simply the standard deviation of the i
 
 \begin{table}
 	\centering
-	\caption[Amplitude Ratios of biatomic linear Chain:]{\textbf{Amplitude Ratio of biatomic linear Chain:} The amplitudes $A_{5,n}$ and $A_{6,n}$ of two thingmajigs (5th and 6th thingmajig) are measured. The ratio is corrected for the different position in the chain and the missing sign to obtain the correct amplitude ratio between heavy and light thingmajigs.}
-	\begin{tabular}{SSSSS}}
+	\caption[Amplitude Ratios of Biatomic Linear Chain:]{\textbf{Amplitude Ratio of Biatomic Linear Chain:} The amplitudes $A_{5,n}$ and $A_{6,n}$ of two thingmajigs (5th and 6th thingmajig) are measured. The ratio is corrected for the different position in the chain and the missing sign to obtain the correct amplitude ratio between heavy and light thingmajigs.}
+	\begin{tabular}{SSSSS[retain-explicit-plus]}
 		\toprule
 		{Mode $n$}&
 		{$f$ (\si{\hertz})}&
@@ -152,3 +155,14 @@ The error on the final amplitude ratio is simply the standard deviation of the i
 	\caption[Amplitude Ratio of biatomic Chain]{\textbf{Amplitude Ratio of biatomic Chain}, theoretical curves are fitted to the data, found parameter $\frac{M}{m} = \num{1.39(2)}$ (acoustic) and $\frac{M}{m} = \num{1.46(2)}$ (optic). The last value of the optical modes at the edge of the first Brillouin zone is not used for the fit as the model predicts a singularity there.}
 	\label{fig:amplitude-ratio}
 \end{figure}
+
+\section{Error Sources}
+This experiment hosts many sources for errors of unknown magnitude that we are not able to account for.
+Few of them are
+\begin{itemize}
+	\item \textbf{Mass of thingmajigs/Stiffness of springs:} Only the mean mass of all thingmajigs is given, so it is not possible to make assumptions regarding how much the individual thingmajigs vary from their mean value.
+	The same problem applies for the stiffness of the used springs. All springs were assumed to be identical, which is practically impossible.
+	\item \textbf{Video measurement} As described in \autoref{sec:data_acq}, a camera with a horizontal, linear CCD is used to capture the motion of the thingmajigs.
+	This is not an optimal solution, since environmental influences, such as unwanted reflections, may alter measurements.
+	Furthermore, no information concerning the spatial resolution of the camera is given, so it cannot be accounted for.
+\end{itemize}
