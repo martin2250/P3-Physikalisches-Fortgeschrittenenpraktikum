@@ -1,20 +1,19 @@
 % !TEX root = ../05-Lattice-Vibration.tex
 \chapter{Procedure}
 \section{Model}
-\todo{Please reword. Repetitive use of 'the'.}
-The model consists of twelve thingmajigs and thirteen springs.
+A model of twelve thingmajigs and thirteen springs is used.
 The first spring is connected to a stepper motor that can creates reciprocal harmonic motion at a selectable frequency and presents a fixed end to the chain.
 The last spring is fixed to the end of the rail.
 
 The thingmajigs consist of a piece of angle aluminium and have a threaded hole to mount additional weights.
-Each thingmajig has a stripe of retroreflective material glued to its side.\todo{The word its means 'belonging to it'. It is a possessive pronoun like 'his'.}
-They ride on a linear air bearing, which is a square tube sealed on both ends oriented on one of its edges.\todo{Relative clauses which give extra information must be separated off by commas.}
+Each thingmajig has a stripe of retroreflective material glued to its side.
+They ride on a linear air bearing, which is a square tube sealed on both ends oriented on one of its edges.
 A turbine sends an air stream into the tube.
 The tube's two sides facing upwards have a series of small holes to create an air cushion between the tube and the thingmajigs.
 To dampen the oscillation after an experiment, the turbine's air inlet is blocked briefly.
 
 \section{Data Acquisition}\label{sec:data_acq}
 A camera with a horizontal linear CCD is used to capture the position the retroreflective stripes on the fifth and sixth thingmajig.
-Prior to the experiment, the camera is aligned so the retroreflectors are in the plane of the CCD.\todo{When words which "set the scene" for the main part of the sentence appear at the front of the sentence, it is usual to offset them with a comma.}
+Prior to the experiment, the camera is aligned so the retroreflectors are in the plane of the CCD.
 A \texttt{LabView} program is used to read the two positions from the camera.
 The program is then used to apply a fast fourier transform to the positions to find the frequencies of the individual modes and later to measure the amplitudes of single modes.

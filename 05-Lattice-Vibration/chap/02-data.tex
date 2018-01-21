@@ -2,7 +2,7 @@
 
 \section{Dispersion Relations}\label{sec:disp_rels}
 \subsection{Statistical Errors}
-Averarging over all four measurement series, where systematic errors on the frequency are deemed to be negligably small, yields a statistical error of
+Averarging over all four measurement series, where systematic errors on the frequency are deemed to be negligibly small, yields a statistical error of
 \begin{equation*}
 	\sigma_\text{avg,ij} = \frac{\sigma_{std,ij}}{\sqrt{4}}\quad (i,j)\in[1, 12]\otimes[1,2].
 \end{equation*}
@@ -108,8 +108,8 @@ Errors on $v_\text{mono/bi}$, $M$ and $a$ propagate into $D_\text{mono/bi}$ like
 \section{Amplitude Ratio of Biatomic Linear Chain}
 The amplitude ratio $\frac{s_{o,m}}{s_{o,M}}$ is determined for each mode of the model.
 For obvious reasons the amplitudes $s_{o,m}$ and $s_{o,M}$ cannot be measured at the same location in the chain.
-Instead, the amplitudes $A_{5/6}$ of the fifth and sixth thingamajig are measured using the camera system.
-The fifth thingamajig has mass $M$, the sixth has mass $m$.
+Instead, the amplitudes $A_{5/6}$ of the fifth and sixth thingmajig are measured using the camera system.
+The fifth thingmajig has mass $M$, the sixth has mass $m$.
 To obtain the actual amplitude ratio of the envelope functions, the ratio $\frac{A_{6}}{A_{5}}$ is multiplied with the ratio of the local amplitudes of the envelopes at position five and six:
 \begin{equation*}
 	\frac{s_{o,m}}{s_{o,M}} = \frac{A_{6}}{A_{5}} \cdot \frac{\sin(\frac{\uppi n}{13} \cdot 5)}{\sin(\frac{\uppi n}{13} \cdot 6)}.
@@ -158,11 +158,6 @@ The error on the final amplitude ratio is simply the standard deviation of the i
 
 \section{Error Sources}
 This experiment hosts many sources for errors of unknown magnitude that we are not able to account for.
-Few of them are
-\begin{itemize}
-	\item \textbf{Mass of thingmajigs/Stiffness of springs:} Only the mean mass of all thingmajigs is given, so it is not possible to make assumptions regarding how much the individual thingmajigs vary from their mean value.
-	The same problem applies for the stiffness of the used springs. All springs were assumed to be identical, which is practically impossible.
-	\item \textbf{Video measurement} As described in \autoref{sec:data_acq}, a camera with a horizontal, linear CCD is used to capture the motion of the thingmajigs.
-	This is not an optimal solution, since environmental influences, such as unwanted reflections, may alter measurements.
-	Furthermore, no information concerning the spatial resolution of the camera is given, so it cannot be accounted for.
-\end{itemize}
+The most prominent of which is that pnly the mean mass of all thingmajigs is given, so it is not possible to make assumptions regarding how much the individual thingmajigs vary from their mean value.
+Also, in the calculation the springs are assumed to have no mass.
+To make this assumption valid, the mass of the springs should be meausred to be negligibly small compared to the mass of the thingmajigs.
