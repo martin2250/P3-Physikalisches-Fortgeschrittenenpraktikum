@@ -1,0 +1,4 @@
+Maximale Geschwinidigkeit: 0.03mm/s
+
+
+cal: 0.6437 - 0.7578
