@@ -26,3 +26,45 @@ This results in an interaction energy of $U = -\Xi \vec{E}^2 \propto -I$ with th
 
 Due to the positive sign of $\Xi$ for small frequencies, the interaction energy of a particle in a beam with a gaussian intensity profile has a local minimum at the center, where intensity is highest.
 The principle of minimum energy states that the particle lies in a stable state there. \todo{rephrase that}
+
+
+\section{Brownian Motion}
+If particles are suspended in a fluid, they perform random motions, namely \textbf{Brownian motion}, resulting from their collision with the thermal molecules inside the fluid.
+Since the Brownian pattern is highly chaotic, probabilistic methods have to be employed to describe it.
+
+Let $[t_\text{min}, t_\text{max}]$ be an interval during which the motion of a particle inside the fluid is tracked.
+Let $t_0, t_1,\dots,t_n$ be a finite sequence of real numbers such that $t_\text{min}=t_0<t_1<\dots<t_n=t_\text{max}$.
+If we determine the particle's location at each point of time in the partition, we may define the \textbf{mean square displacement (MSD)} as
+\begin{equation}\label{eq:msd}
+	r^2(t_i) = (x(t_i)-x(0))^2 + (y(t_i)-y(0))^2.
+\end{equation}
+
+Averaging these values over time yields the time-average MSD
+\begin{equation}\label{eq:tamsd}
+	\langle r^2 \rangle(t_n) = \frac{1}{n}\sum_{i=1}^n r^2(t_i),
+\end{equation}
+which can be adopted for multiple particles $m$
+\begin{equation}\label{eq:mptamsd}
+	\langle r^2 \rangle(t_n) = \frac{1}{m\cdot n}\sum_{j=1}^m\sum_{i=1}^n r^2_{i,j}(t_i).
+\end{equation}
+
+However, the MSD can be expressed in terms of the \textbf{diffusion coefficient} $D$,
+\begin{equation}\label{eq:diff}
+	\langle r^2 \rangle = 4Dt.
+\end{equation}
+
+Based on \textsc{Einstein}'s work \cite{einstein}, we may write $D$ like
+\begin{equation}\label{eq:diff_einstein}
+	D=\frac{k_\text{B}T}{6\pi\eta_\text{eff}a},
+\end{equation}
+where $\eta_\text{eff}$ denotes the viscocity of the fluid and $a$ is the particle radius.
+
+Fitting the linear model in \autoref{eq:diff} to data yields a slope
+\begin{equation*}
+	m = \frac{D}{4}.
+\end{equation*}
+
+Rearraging this expression for $D$ and using \autoref{eq:diff_einstein} yields
+\begin{equation}\label{eq:vis}
+	\eta_\text{eff} = \frac{2k_\text{B}T}{3\pi ma}.
+\end{equation}
