@@ -2,8 +2,9 @@
 import numpy as np
 import sys
 import matplotlib.pyplot as plt
+import scipy.optimize
 
-if len(sys.argv) != 2:
+if len(sys.argv) < 2:
 	print('dumbass')
 	exit(1)
 
@@ -17,20 +18,30 @@ n = int(np.max(data[1])) + 1
 N = int(np.max(data[0])) + 1
 print('found %d trackers in %d frames'%(n, N))
 
-R2 = np.zeros(n)
+R2 = np.zeros(N)
+T = np.arange(N)/13	#13 fps
 
-for i in range(n):
-	X = data[2, i:i+N*n:n]
-	Y = data[3, i:i+N*n:n]
+for ti in range(1, N):
+	for i in range(n):
+		X = data[2, i:i+ti*n:n]
+		Y = data[3, i:i+ti*n:n]
 
-	if False:
-		plt.plot(X, Y)
-		plt.show()
+		R2[ti] += np.sum((X - X[0])**2 + (Y - Y[0])**2) / (ti * n)
 
-	x0 = np.mean(X)
-	y0 = np.mean(Y)
 
-	R2[i] = np.sum((X - x0)**2 + (Y - y0)**2) / N
+plt.plot(T, R2)
+plt.xlabel('time $t$ (s)')
+plt.ylabel('mean square displacement $\\langle r^2\\rangle$ (mm)')
 
-print("mean displacement (mm^2):", R2)
-print("mean mean displacement (mm^2):", np.mean(R2))
+def lin(x, a, b):
+	return x*a + b
+
+popt, pcov = scipy.optimize.curve_fit(lin, T, R2)
+
+print(popt)
+
+
+if len(sys.argv) < 3:
+	plt.show()
+else:
+	plt.savefig(sys.argv[2])
