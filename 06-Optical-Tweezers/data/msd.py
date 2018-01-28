@@ -11,13 +11,13 @@ if len(sys.argv) < 2:
 pxtoum = 1e3*(0.7578 - 0.6437)/2**10
 
 if 'blender' in sys.argv[1]:
-	data = np.loadtxt(sys.argv[1], delimiter=',', skiprows=1).T
+	data = np.loadtxt(sys.argv[1], delimiter=',').T
 
 	N = int(np.max(data[0])) + 1
 	n = int(data.shape[1] / N) + 1
 	print('found %d trackers in %d frames'%(n, N))
 
-	startN = 80
+	startN = 60
 
 	data = data * pxtoum
 	R2 = np.zeros(N - 1 - startN)
