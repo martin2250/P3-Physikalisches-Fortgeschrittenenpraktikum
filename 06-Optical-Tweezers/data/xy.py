@@ -3,6 +3,7 @@ import numpy as np
 import sys
 import matplotlib.pyplot as plt
 import scipy.optimize
+import matplotlib
 
 if len(sys.argv) < 3:
 	print('dumbass')
@@ -32,16 +33,24 @@ else:
 	X = X - np.outer(X[:,10], np.ones(N))
 	Y = Y - np.outer(Y[:,10], np.ones(N))
 
+if n==1:
+	pick = 0
+else:
+	pick = 4
 
 if sys.argv[2] == 'distrib':
+	plt.figure(figsize=(5,5))
+	matplotlib.rcParams.update({'font.size': 16})
+
+	plt.plot(X[pick], Y[pick], '+', color='red', markersize=1)
+
 	size = 0.5
-	for i in range(n):
-		plt.plot(X, Y, '+', color='red', markersize=1)
-		plt.xlim(-size, size)
-		plt.ylim(-size, size)
+	plt.xlim(-size, size)
+	plt.ylim(-size, size)
 
 	plt.xlabel('position X ($\mu m$)')
 	plt.ylabel('position Y ($\mu m$)')
+
 
 elif sys.argv[2] == 'hist2d':
 	size = 0.2
@@ -69,8 +78,8 @@ elif sys.argv[2] == 'msd':
 	plt.legend()
 
 elif sys.argv[2] == 'gaussian':
-	X = X.flatten()
-	Y = Y.flatten()
+	X = X[pick].flatten()
+	Y = Y[pick].flatten()
 	R2 = X**2 + Y**2
 
 	def gauss(r2, sigma):
@@ -86,7 +95,7 @@ elif sys.argv[2] == 'gaussian':
 	left = scipy.optimize.root(neglikelihood, x0=(sigma_0 / 2), args=(offset - 0.5)).x
 	right = scipy.optimize.root(neglikelihood, x0=(3*sigma_0 / 2), args=(offset - 0.5)).x
 
-	print('sigma_0 = %0.4f [%0.4f, %0.4f]  (68%% confidence)'%(sigma_0, left, right))
+	print('sigma_0 = %0.4f [+%0.4f, -%0.4f]  (68%% confidence)'%(sigma_0, right - sigma_0, sigma_0 - left))
 
 	X = np.linspace(left, right, 100)
 	Y = [neglikelihood(x, offset) for x in X]
