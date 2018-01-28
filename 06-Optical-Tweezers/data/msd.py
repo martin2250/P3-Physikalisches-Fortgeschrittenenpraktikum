@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
 	print('dumbass')
 	exit(1)
 
-pxtoum = (0.7578e3 - 0.6437)/2**10
+pxtoum = 1e3*(0.7578 - 0.6437)/2**10
 
 if 'blender' in sys.argv[1]:
 	data = np.loadtxt(sys.argv[1], delimiter=',', skiprows=1).T
