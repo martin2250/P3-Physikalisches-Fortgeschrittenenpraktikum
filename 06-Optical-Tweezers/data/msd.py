@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
 	print('dumbass')
 	exit(1)
 
-pxtomm = (0.7578 - 0.6437)/2**10
+pxtoum = (0.7578e3 - 0.6437)/2**10
 
 if 'blender' in sys.argv[1]:
 	data = np.loadtxt(sys.argv[1], delimiter=',', skiprows=1).T
@@ -19,7 +19,7 @@ if 'blender' in sys.argv[1]:
 
 	startN = 80
 
-	data = data * pxtomm
+	data = data * pxtoum
 	R2 = np.zeros(N - 1 - startN)
 	T = np.arange(N - 1 - startN)/13	#13 fps
 
@@ -34,7 +34,7 @@ if 'blender' in sys.argv[1]:
 			R2[ti - startN - 1] += np.sum((X - np.mean(X))**2 + (Y - np.mean(Y))**2) / (ti * n)
 else:
 	data = np.loadtxt(sys.argv[1], delimiter=',', skiprows=1).T
-	data[2:3] = data[2:3] * pxtomm
+	data[2:3] = data[2:3] * pxtoum
 
 	n = int(np.max(data[1])) + 1
 	N = int(np.max(data[0])) + 1
@@ -56,7 +56,7 @@ plt.plot(T, R2, label='data')
 def lin(x, a, b):
 	return x*a + b
 popt, pcov = scipy.optimize.curve_fit(lin, T, R2)
-print('m = %0.3e mm^2/s'%popt[0])
+print('m = %0.3e um^2/s'%popt[0])
 
 plt.plot(T, lin(T, *popt),label='linear fit\n$m \\cdot t + c$')
 # plt.text(18, 0.13, '$m = %0.3e$'%popt[0])
@@ -66,7 +66,7 @@ if False:
 	ax2.plot(T[:-1], R2[1:] - R2[:-1], '+', label='instantaneous displacement')
 
 plt.xlabel('time $t$ (s)')
-plt.ylabel('mean square displacement $\\langle r^2\\rangle$ (mm)')
+plt.ylabel('mean square displacement $\\langle r^2\\rangle$ ($\mu m^2$)')
 plt.legend()
 
 if len(sys.argv) < 3:
