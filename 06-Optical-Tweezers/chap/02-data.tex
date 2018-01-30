@@ -15,6 +15,7 @@
     \caption{Without Laser, $\sigma = \num{0.0771}^{+0.0028}_{-0.0026}\si{\um}$}
   \end{subfigure}
   \caption[Particle Distibution]{\textbf{Particle Distibution}, single particle each, 402 points at 13 fps}
+	\label{fig:distrib}
 \end{figure}
 
 \begin{figure}
@@ -23,9 +24,26 @@
   \caption{This should be linear, $m = \SI{1.403e-03}{\um\squared\per\second}$}
 \end{figure}
 
-Multiple free particles are located on the microscope slide and a \num{30} second video clip is recorded.
+Multiple free particles and one trapped by the laser are located on the microscope slide and a \num{30} second video clip is recorded.
 The free sofware \texttt{Blender} is used to track the motion of the particles and save the positions for later evaluation as the provided software sucks. \todo{rephrase}
-The aquired positions are used to find the diffusion coefficient $D$ as established in \autoref{sec:brown}
+The aquired positions of the free patricles are used to find the diffusion coefficient $D$ as established in \autoref{sec:brown}.
+
+For visualization, the positions $\vec{x}(t)$ of a free particle and the trapped patricle are marked in scatter plots shown in \autoref{fig:distrib}.
+The trapped particle should move less than the free particle.
+However this cannot be observed on the recorded data, possibly because the slide was already slightly dried out, so many of the observed particles did not move as freely anymore.
+
+The pdf is given by a 2D gaussian:
+\begin{equation*}
+	P(\vec{x}) = \frac{1}{Z} \text{e}^{-\frac{U(\vec{x})}{\text{k}_\text{b} T}}
+\end{equation*}
+
+Modelling the potential as a harmonic potential $U(\vec{x}) = \frac{1}{2} D \vec{x}^2$ gives a function
+\begin{equation}
+	P(\vec{x}) = \frac{1}{Z} \text{e}^{-\frac{\vec{x}^2}{2 \sigma}},
+\end{equation}
+which is fitted to the two datasets using a likelihood method.
+From the fit paramters $\sigma$, the
+\todo{I just realized that a) there is no potential for the free particle and that b) we'd probably get a negative potential for the trapped particle when comparing it to the free particle}
 
 \section{Maximum Trapping Force}
 The maximum trapping velocity $v_\text{max}$ is determined by moving the particle at an increasing velocity while it is trapped until it slips away.
