@@ -17,6 +17,17 @@
   \caption[Particle Distibution]{\textbf{Particle Distibution}, single particle each, 402 points at 13 fps}
 \end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{./data/plots/mostly-linear-fit.pdf}
+  \caption{This should be linear, $m = \SI{1.403e-03}{\um\squared\per\second}$}
+\end{figure}
+
+Multiple free particles are located on the microscope slide and a \num{30} second video clip is recorded.
+The free sofware \texttt{Blender} is used to track the motion of the particles and save the positions for later evaluation as the provided software sucks. \todo{rephrase}
+The aquired positions are used to find the diffusion coefficient $D$ as established in \autoref{sec:brown}
+
+
 \section{ink stuff}
 A slide is prepared with a line of red and black felt-tip marker, alcohol is added as a solvent.
 The slide is placed under the microscope and the laser is turned on on it's highest power setting.

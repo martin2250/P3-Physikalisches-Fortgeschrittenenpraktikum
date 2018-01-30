@@ -62,12 +62,17 @@ elif sys.argv[2] == 'hist2d':
 elif sys.argv[2] == 'msd':
 	R2 = np.zeros(N - 1)
 	T = np.arange(len(R2))/13	#13 fps
+	Nstart = 10
 
-	for t in range(10, N):
+	for t in range(Nstart, N):
 		R2[t-1] = np.sum(X[:,:t].flatten()**2 + Y[:,:t].flatten()**2) / (n*t)
 
 	def lin(x, a, b):
 		return x*a + b
+
+	R2 = R2[Nstart:]
+	T = T[Nstart:]
+	
 	popt, pcov = scipy.optimize.curve_fit(lin, T, R2)
 	print('m = %0.3e um^2/s'%popt[0])
 
