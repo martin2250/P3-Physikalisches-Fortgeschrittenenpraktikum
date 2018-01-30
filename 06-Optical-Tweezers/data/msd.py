@@ -56,7 +56,8 @@ plt.plot(T, R2, label='data')
 def lin(x, a, b):
 	return x*a + b
 popt, pcov = scipy.optimize.curve_fit(lin, T, R2)
-print('m = %0.3e um^2/s'%popt[0])
+perr = np.sqrt(np.diag(pcov))
+print('m = %0.3e +/- %.3e um^2/s'%(popt[0], perr[0]))
 
 plt.plot(T, lin(T, *popt),label='linear fit\n$m \\cdot t + c$')
 # plt.text(18, 0.13, '$m = %0.3e$'%popt[0])

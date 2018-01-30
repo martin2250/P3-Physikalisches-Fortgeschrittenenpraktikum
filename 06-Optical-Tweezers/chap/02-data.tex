@@ -27,6 +27,23 @@ Multiple free particles are located on the microscope slide and a \num{30} secon
 The free sofware \texttt{Blender} is used to track the motion of the particles and save the positions for later evaluation as the provided software sucks. \todo{rephrase}
 The aquired positions are used to find the diffusion coefficient $D$ as established in \autoref{sec:brown}
 
+\section{Maximum Trapping Force}
+The maximum trapping velocity $v_\text{max}$ is determined by moving the particle at an increasing velocity while it is trapped until it slips away.
+A value of
+\begin{equation*}
+	v_\text{max} = \SI{30(10)}{\micro\meter\per\second}
+\end{equation*}
+is observed.
+The vast error on the velocity is a consequence of the controlling DAC's low resolution in comparsion to the characteristic length scales of the experiment.
+Utilizing \autoref{eq:max_trap}, it follows that
+\begin{equation*}
+	F_\text{max} = \frac{4k_\text{B}T}{m}\cdot v_\text{max} = \SI{805.2}{\pico\newton}.	%http://www.wolframalpha.com/input/?i=%5Cfrac%7B4*Boltzmann+constant+*+297+K%7D%7B6.111e-04+um%C2%B2%2Fs%7D*30+um%2Fs
+\end{equation*}\todo{Actually do error calculation.}
+The errors on $m$, $v_\text{max}$ and $T$ propagate into the error on $F_\text{max}$ like
+\begin{equation*}
+	\Delta F_\text{max} = \sqrt{\left(\frac{4k_\text{B}v_\text{max}}{m}\right)^2\cdot\left(\Delta T\right)^2 + \left(\frac{4k_\text{B}T}{m}\right)^2\cdot\left(\Delta v_\text{max}\right)^2 + \left(\frac{4k_\text{B}Tv_\text{max}}{m^2}\right)^2\cdot\left(\Delta m\right)^2},
+\end{equation*}
+where we assumed an error of $\Delta T = \SI{5}{\kelvin}$ on the temperature.
 
 \section{ink stuff}
 A slide is prepared with a line of red and black felt-tip marker, alcohol is added as a solvent.
