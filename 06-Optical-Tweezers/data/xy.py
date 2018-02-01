@@ -74,7 +74,8 @@ elif sys.argv[2] == 'msd':
 	T = T[Nstart:]
 
 	popt, pcov = scipy.optimize.curve_fit(lin, T, R2)
-	print('m = %0.3e um^2/s'%popt[0])
+	perr = np.sqrt(np.diag(pcov))
+	print('m = %0.3e +/- %.3e um^2/s'%(popt[0], perr[0]))
 
 	plt.plot(T, R2, '.', ms=2)
 	plt.plot(T, lin(T, *popt),label='linear fit\n$m \\cdot t + c$')

@@ -14,6 +14,9 @@
 	\maketitlepage
 
 	\MainMatter
+	\makeatletter
+	\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+	\makeatother
 
 	\include{./chap/00-intro}
 	\include{./chap/02-data}

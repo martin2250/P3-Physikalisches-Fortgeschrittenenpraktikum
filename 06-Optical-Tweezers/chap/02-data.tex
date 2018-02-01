@@ -58,14 +58,17 @@ is observed.
 The vast error on the velocity is justified by the assumption that the slide could have been dried out, effectively increasing the friction force and, hence, lowering the maximum velocity.
 Utilizing \autoref{eq:max_trap}, it follows that
 \begin{equation*}
-	F_\text{max} = \frac{4k_\text{B}T}{m}\cdot v_\text{max} = \SI{805.2}{\pico\newton}.	%http://www.wolframalpha.com/input/?i=%5Cfrac%7B4*Boltzmann+constant+*+297+K%7D%7B6.111e-04+um%C2%B2%2Fs%7D*30+um%2Fs
-\end{equation*}\todo{Actually do error calculation.}
+	F_\text{max} = \frac{4k_\text{B}T}{m}\cdot v_\text{max} = \SI{805.2(1178)}{\pico\newton}.	%http://www.wolframalpha.com/input/?i=%5Cfrac%7B4*Boltzmann+constant+*+297+K%7D%7B6.111e-04+um%C2%B2%2Fs%7D*30+um%2Fs
+\end{equation*}
 The errors on $m$, $v_\text{max}$ and $T$ propagate into the error on $F_\text{max}$ like
 \begin{equation*}
 	\Delta F_\text{max} = \sqrt{\left(\frac{4k_\text{B}v_\text{max}}{m}\right)^2\cdot\left(\Delta T\right)^2 + \left(\frac{4k_\text{B}T}{m}\right)^2\cdot\left(\Delta v_\text{max}\right)^2 + \left(\frac{4k_\text{B}Tv_\text{max}}{m^2}\right)^2\cdot\left(\Delta m\right)^2},
 \end{equation*}
 where we assumed an error of $\Delta T = \SI{2}{\kelvin}$ on the temperature.
 
+The maximum velocity is dependent on the viscosity of the used medium.
+Higher viscosities mean lower values of $v_\text{max}$ and vice versa since the trapping force remains constant at a constant intensity.
+If the particles had been suspended in ethanol ($\eta_\text{dyn} = \num{1.2}\text{cP}$)\footnote{\label{ref:viscosity}\url{https://hydramotion.com/uploads/view/20160224144736_Hydramotion_Viscosity_Units.pdf}} instead of water ($\eta_\text{dyn} = \num{1}\text{cP}$)\footnoteref{ref:viscosity}, a lower value for $v_\text{max}$ would have been measured.
 \section{ink stuff}
 A slide is prepared with a line of red and black felt-tip marker, alcohol is added as a solvent.
 The slide is placed under the microscope and the laser is turned on on it's highest power setting.
