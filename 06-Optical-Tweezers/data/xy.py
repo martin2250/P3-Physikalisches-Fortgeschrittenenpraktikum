@@ -72,11 +72,11 @@ elif sys.argv[2] == 'msd':
 
 	R2 = R2[Nstart:]
 	T = T[Nstart:]
-	
+
 	popt, pcov = scipy.optimize.curve_fit(lin, T, R2)
 	print('m = %0.3e um^2/s'%popt[0])
 
-	plt.plot(T, R2)
+	plt.plot(T, R2, '.', ms=2)
 	plt.plot(T, lin(T, *popt),label='linear fit\n$m \\cdot t + c$')
 	plt.xlabel('time $t$ (s)')
 	plt.ylabel('mean square displacement $\\langle r^2\\rangle$ ($\mu m^2$)')

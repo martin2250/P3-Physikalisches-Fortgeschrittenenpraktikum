@@ -7,14 +7,14 @@
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{./data/plots/distrib-mit.pdf}
-    \caption{With Laser, $\sigma = \num{0.1351}^{+0.0049}_{-0.0046}\si{\um}$}
+    \caption{With Laser, $\sigma_\text{t} = \num{0.1351}^{+0.0049}_{-0.0046}\si{\um}$}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{./data/plots/distrib-ohne.pdf}
-    \caption{Without Laser, $\sigma = \num{0.0771}^{+0.0028}_{-0.0026}\si{\um}$}
+    \caption{Without Laser, $\sigma_\text{f} = \num{0.0771}^{+0.0028}_{-0.0026}\si{\um}$}
   \end{subfigure}
-  \caption[Particle Distibution]{\textbf{Particle Distibution}, single particle each, 402 points at 13 fps}
+  \caption[Tracked Location of single Particles]{\textbf{Tracked Location of single Particles}, both a free and a trapped particle are recorded using the digital microscope. The particles' locations are tracked over all frames using \textit{Blender} and marked as a dot each. In total, the positions in 402 frames at 13 fps are shown for each particle.}
 	\label{fig:distrib}
 \end{figure}
 
@@ -42,8 +42,11 @@ Modelling the potential as a harmonic potential $U(\vec{x}) = \frac{1}{2} D \vec
 	P(\vec{x}) = \frac{1}{Z} \text{e}^{-\frac{\vec{x}^2}{2 \sigma}},
 \end{equation}
 which is fitted to the two datasets using a likelihood method.
-From the fit paramters $\sigma$, the
-\todo{I just realized that a) there is no potential for the free particle and that b) we'd probably get a negative potential for the trapped particle when comparing it to the free particle}
+The parameters found are $\sigma_\text{f} = \num{0.0771}^{+0.0028}_{-0.0026}\si{\um}$ for the free particle and $\sigma_\text{t} = \num{0.1351}^{+0.0049}_{-0.0046}\si{\um}$ for the trapped particle.
+
+Contrary to the expected decrease in motion for the trapped particle, the trapped particle's probability density is more spread than that of the free particle.
+This could be explained by localized heating by the laser, though it's likely not the reason as both the fluid and the \textbf{BALLS}$^{^\text{hah}}$ are transparent.
+More likely the observed free particle was held stationary by some form of friction \todo{rephrase?}.
 
 \section{Maximum Trapping Force}
 The maximum trapping velocity $v_\text{max}$ is determined by moving the particle at an increasing velocity while it is trapped until it slips away.
