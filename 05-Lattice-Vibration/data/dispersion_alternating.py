@@ -72,8 +72,8 @@ v_s = dw/dk
 v_s_err = np.sqrt((1/dk)**2 * ac_branch_errors[0]**2 + (dw * n / np.pi / 2)**2 * a_err**2)	#gaussian error propagation
 
 """ Mass ratio """
-ratio = 2 * vs_single / v_s - 1
-ratio_err = np.sqrt( (2 / v_s)**2 * vs_single_err**2 + (2 * vs_single / v_s**2)**2 * v_s_err**2 )	#gaussian error propagation
+ratio = 2 * vs_single**2 / v_s**2 - 1
+ratio_err = np.sqrt( (4 * vs_single / v_s**2)**2 * vs_single_err**2 + (4 * vs_single**2 / v_s**3)**2 * v_s_err**2 )	#gaussian error propagation
 
 M = m * ratio
 M_err = m * ratio_err
