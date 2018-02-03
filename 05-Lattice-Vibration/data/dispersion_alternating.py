@@ -14,8 +14,8 @@ L_err = 0.01	#systematic error on chain length
 a = 2 * L / n			#lattice parameter
 a_err = 2 * L_err / n	#systematic error on lattice parameter
 
-vs_single = 3.0132		#speed of sound in single chain, obtained by executing first script
-vs_single_err = 0.00572	#error on sound in single chain, obtained by executing first script
+vs_single = 2.7879		#speed of sound in single chain, obtained by executing first script
+vs_single_err = 0.00569	#error on sound in single chain, obtained by executing first script
 
 m = 0.504	#small mass
 max_modes = 6	#number of possible modes per branch

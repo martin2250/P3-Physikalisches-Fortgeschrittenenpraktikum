@@ -35,7 +35,7 @@ Errors on $a$ and $k_\text{end}$ propagate linearly with the error on $L$.
 	\includegraphics[width=0.7\textwidth]{./data/plots/dispersion_alternating_data.pdf}
 	\caption[Dispersion Relation of Biatomic Chain]{\textbf{Dispersion Relation of Biatomic Chain} Edge of first Brillouin zone is marked in green.
 	Dispersion functions $\omega_{-}$ and $\omega_{+}$ discussed in \autoref{sec:alt_theory} with known masses $m$, $M$ and lattice parameter $a$ are fitted to the data.
-	Found fit parameters: $D_\text{opt}=\SI{28.98(30)}{\newton\per\meter}, D_\text{ac}=\SI{29.32(102)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{opt, red}=\num{0.022}, \chi_\text{ac, red}=\num{0.053}$.}
+	Found fit parameters: $D_\text{opt}=\SI{27.38(15)}{\newton\per\meter}, D_\text{ac}=\SI{23.89(54)}{\newton\per\meter}$. Goodness of fit: $\chi_\text{opt, red}=\num{0.006}, \chi_\text{ac, red}=\num{0.022}$.}
 	\label{fig:dispersion_alternating}
 \end{figure}
 The biatomic dispersion relation is shown in \autoref{fig:dispersion_alternating}.
@@ -62,11 +62,11 @@ where $\sigma_\omega$ and $\sigma_\text{a}$ denote the errors on frequency $\ome
 \section{Mass Ratio}
 Using the results found in \autoref{sec:speed_of_sound}, the ratio of $m$ to $M$ may be calculated by the relation
 \begin{equation*}
-	\frac{M}{m} = 2\cdot\left(\frac{v_\text{mono}}{v_\text{bi}}\right)^2 -1 = \num{2.097(18)}.
+	\frac{M}{m} = 2\cdot\left(\frac{v_\text{mono}}{v_\text{bi}}\right)^2 -1 = \num{1.65(2)}.
 \end{equation*}
 This value is used to find
 \begin{equation*}
-	M = \SI{1.057(9)}{\kg}.
+	M = \SI{0.832(8)}{\kg}.
 \end{equation*}
 Errors on $v_\text{mono/bi}$ propagate into $M$ like
 \begin{equation*}
@@ -84,18 +84,21 @@ We find
 \begin{align*}
 	D_\text{mono} &= \SI{24.95(40)}{\newton\meter^{-1}} \\
 	\left\{ \begin{array}{@{}ll@{}}
-		D_\text{bi, opt} = \SI{28.98(30)}{\newton\meter^{-1}} \\
-		D_\text{bi, ac} = \SI{29.32(102)}{\newton\meter^{-1}}
-	\end{array}\right\} \Rightarrow \bar{D}_\text{bi} &= \left(\num{29.15}\pm \num{0.12}\ \text{(std)}\pm \num{0.53}\ \text{(stat)}\right)\si{\newton\meter^{-1}}.
+		D_\text{bi, opt} = \SI{27.38(15)}{\newton\per\meter} \\
+		D_\text{bi, ac} = \SI{23.89(54)}{\newton\per\meter}
+	\end{array}\right\} \Rightarrow \bar{D}_\text{bi} &= \left(\num{25.64}\pm \num{1.23}\ \text{(std)}\pm \num{0.28}\ \text{(stat)}\right)\si{\newton\meter^{-1}}.
 \end{align*}
-The stiffness found for the biatomic chain deviates significantly from the value found for the monoatomic chain (\num{16.8}\%). \todo{Should I discuss this issue?}
+Stiffness values found for the biatomic chain differ from each other significantly (note the vast std-error).
+Their mean value, however, is close to the stiffness found for the monoatomic chain. 
 
 \subsection{Using $v_\text{s}$}
 Rearranging the expressions in \ref{eq:sound_single} and \ref{eq:sound_alternating}, it is possible to calculate the stiffness as
 \begin{alignat*}{3}
 	D_\text{mono} &=\qquad \frac{m\cdot v_\text{mono}^2}{a^2} &&=  \SI{22.25(13)}{\newton\meter^{-1}} \\
-	D_\text{bi} &= \frac{2(m+M)\cdot v_\text{bi}^2}{a^2} &&= \SI{25.99(21)}{\newton\meter^{-1}}. \\
+	D_\text{bi} &= \frac{2(m+M)\cdot v_\text{bi}^2}{a^2} &&= \SI{22.25(18)}{\newton\meter^{-1}}. \\
 \end{alignat*}
+As expected, the stiffness for both springs is the same.
+
 Errors on $v_\text{mono/bi}$, $M$ and $a$ propagate into $D_\text{mono/bi}$ like
 \begin{align*}
 	\Delta D_\text{mono} &= \sqrt{ \left(\frac{2mv_\text{mono}}{a^2}\right)^2 \cdot(\Delta v_\text{mono})^2 + \left(\frac{2mv_\text{mono}^2}{a^3}\right)^2 \cdot (\Delta a)^2 } \\
