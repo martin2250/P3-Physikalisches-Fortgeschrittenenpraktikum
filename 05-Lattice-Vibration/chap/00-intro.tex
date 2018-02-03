@@ -123,6 +123,18 @@ This yields the dispersion relation
 \end{equation}
 with the reduced mass $\mu = \frac{m_1 m_2}{m_1 + m_2}$.
 
+The ratio of amplitudes $\frac{U}{V}$ can also be determined as
+\begin{equation}\label{eq:massratio}
+	\frac{U}{V} = \frac{\cos\left(k a\right)}{1 - \frac{1 + \gamma}{2 \gamma} \left[1 \pm \sqrt{1 - \frac{4 \gamma}{\left(1 + \gamma\right)^2} \sin^2\left(k a\right)}\right]}
+\end{equation}
+with the mass ratio $\gamma = \frac{m_2}{m_1}$.
+
+In a finite chain, the correct solution is a superposition of two waves with identical amplitudes travelling in opposite directions.
+This ensures that the boundary conditions of fixed ends are met.
+As a result, the amplitude of individual elements with identical weights in a finite chain also depend on the element's position.
+This dependence can be expressed by an envelope function proportional to $\sin\left(\frac{\uppi x n}{L}\right)$ where $x$ is the position in the chain and $n$ is the number of the excited mode.
+The envelope function is identical for both kinds of elements.
+
 For crystals with at least two different atoms in their primitive cell, the dispersion relation features two types of phonons, namely, acoustic and optical modes.
 They correspond to the $\omega_{+}$ and $\omega_{-}$ solutions respectively, which are shown in the dispersion relation \autoref{fig:dispersion_alternating}.
 In acoustic modes, all atoms share the same phase, whereas in optical modes, all atoms of each kind are out of phase by \SI{180}{\degree} relative to the other kind.
@@ -139,6 +151,8 @@ Considering the positive solution approximation, it follows that the phase- and 
 \begin{equation}\label{eq:sound_alternating}
 	v_\text{ph} = v_\text{g}\approx \sqrt{\frac{Da^2}{m_1+m_2}}.
 \end{equation}
+
+
 \subsection{Experimental model}\label{subsec:exp_mod_alternating}
 In the setup an additional weight is added to every other slider.
 The primitive cell now contains two weights, so $L=\num{6}\cdot a$.
