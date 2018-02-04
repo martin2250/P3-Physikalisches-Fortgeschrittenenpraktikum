@@ -21,11 +21,11 @@
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{./data/plots/mostly-linear-fit.pdf}
-  \caption{This should be linear, $m = \SI{1.403e-03}{\um\squared\per\second}$}
+  \caption[Mean Square Displacement over Time]{\textbf{Mean Square Displacement over Time:} five particles are tracked by computer vision and the mean square displacement is calculated as established in \autoref{sec:brown}. $m = \SI{1.403e-03}{\um\squared\per\second}$}
 \end{figure}
 
 Multiple free particles and one trapped by the laser are located on the microscope slide and a \num{30} second video clip is recorded.
-The free sofware \texttt{Blender} is used to track the motion of the particles and save the positions for later evaluation as the provided software sucks. \todo{rephrase}
+The free sofware \texttt{Blender} is used to track the motion of the particles and save the positions for later evaluation.
 The aquired positions of the free patricles are used to find the diffusion coefficient $D$ as established in \autoref{sec:brown}.
 
 For visualization, the positions $\vec{x}(t)$ of a free particle and the trapped patricle are marked in scatter plots shown in \autoref{fig:distrib}.
@@ -45,7 +45,7 @@ which is fitted to the two datasets using a likelihood method.
 The parameters found are $\sigma_\text{f} = \num{0.0771}^{+0.0028}_{-0.0026}\si{\um}$ for the free particle and $\sigma_\text{t} = \num{0.1351}^{+0.0049}_{-0.0046}\si{\um}$ for the trapped particle.
 
 Contrary to the expected decrease in motion for the trapped particle, the trapped particle's probability density is more spread than that of the free particle.
-This could be explained by localized heating by the laser, though it is likely not the reason as both the fluid and the \textbf{BALLS}$^{^\text{hah}}$ \todo{Remove humor} are transparent.
+This could be explained by localized heating by the laser, though it is likely not the reason as both the fluid and the particles are transparent.
 More likely the observed free particle was held stationary by some form of friction.
 
 \section{Maximum Trapping Force}
